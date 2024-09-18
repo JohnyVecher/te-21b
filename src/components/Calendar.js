@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './Calendar.css';
-import arrowLeft from 'C:/Users/Ars/schedule-app-frontend/src/components/arrow_left.png';
-import arrowRight from 'C:/Users/Ars/schedule-app-frontend/src/components/arrow_right.png';
-import arrowLeftWeek from 'C:/Users/Ars/schedule-app-frontend/src/components/arrow_left_week.png';
-import arrowRightWeek from 'C:/Users/Ars/schedule-app-frontend/src/components/arrow_right_week.png';
+import arrowLeft from './arrow_left.png';
+import arrowRight from './arrow_right.png';
+import arrowLeftWeek from './arrow_left_week.png';
+import arrowRightWeek from './arrow_right_week.png';
 import {
   format,
   addMonths,

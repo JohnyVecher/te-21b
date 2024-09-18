@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from './components/Calendar';
 import './App.css';
-import logo from 'C:/Users/Ars/schedule-app-frontend/src/components/logo.png'; // Убедитесь, что путь к изображению правильный
+import logo from './logo.png';
 
 const App = () => {
   const [events] = useState([
