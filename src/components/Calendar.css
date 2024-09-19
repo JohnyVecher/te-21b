@@ -355,7 +355,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   flex-grow: 1; /* Название занимает все доступное пространство */
   text-align: left; /* Название выравнивается по левому краю */
   font-weight: bold;
-  font-size: 1vw;
+  font-size: 1.7vh;
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
 
@@ -363,6 +363,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   list-style: none;
   padding: 0;
   margin: 0;
+  
 }
 
 /* Заголовок типов */
@@ -399,13 +400,13 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
 #lectures {
   background-color: #FFFFFF;
   border: 2px solid #00AE71;
-  font-size: 0.8vw;
+ font-size: 1.7vh;
 }
 
 #lectures:checked {
   background-color: #00AE71; /* Цвет фона при активации */
   border-color: #00AE71;
-  font-size: 0.8vw;
+  font-size: 1.7vh;
 }
 
 #lectures:checked::before {
@@ -415,14 +416,14 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 0.8vw;
+  font-size: 1.7vh;
 }
 
 /* Стиль для checkbox с id practicals */
 #practicals {
   background-color: #FFFFFF;
   border: 2px solid #4970FF;
-  font-size: 0.8vw;
+  font-size: 1.7vh;
 }
 
 #practicals:checked {
@@ -437,7 +438,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 0.8vw;
+  font-size: 1.7vh;
 }
 
 /* Стиль для checkbox с id labs */
@@ -449,6 +450,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
 #laba:checked {
   background-color: #8450DE; /* Цвет фона при активации */
   border-color: #8450DE;
+  font-size: 1.7vh;
 }
 
 #laba:checked::before {
@@ -458,12 +460,12 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 0.8vw;
+  font-size: 1.7vh;
 }
 
 /*Заголовок календаря*/
 .month-navigation h3 { 
-  font-size: 0.9vw;
+  font-size: 1.9vh;
   margin: 0;
   text-transform: capitalize;
   text-align: center;
@@ -627,7 +629,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   width: 6vh; /* Фиксированная ширина */
   background-color: #fff;
   border-radius: 10px;
-  font-size: 0.9vw;
+  font-size: 1.8vh;
   text-align: center;
   padding: 0; /* Минимальный padding */
   box-sizing: border-box;
