@@ -154,7 +154,7 @@ const Calendar = () => {
               )}
 			  {filters.practicals && day.getDay() === 2 && hour === 14 && (
                 <div className="practicals4">
-                  <div className="text-top">/БЖД, Практика (213 УК1)</div>
+                  <div className="text-top">БЖД, Практика (213 УК1)</div>
                   <div className="text-bottom">12:00 - 13:30</div>
                 </div>
               )}
@@ -185,7 +185,7 @@ const Calendar = () => {
               )}
               {filters.laba && day.getDay() === 4 && hour === 8 && (
                 <div className="laba">
-                  <div className="text-top">-Физические основы радиосвязи, л.р (403 УК1)</div>
+                  <div className="text-top">Физические основы радиосвязи, л.р (403 УК1)</div>
                   <div className="text-bottom">8:30 - 10:00</div>
                 </div>
               )}

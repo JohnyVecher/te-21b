@@ -18,7 +18,7 @@
   text-align: center; /* Центрирует текст "Расписание" */
   margin: 0;
   font-family: 'Franklin Gothic Medium', sans-serif;
-  font-size: 30px;
+  font-size: 1vw;
 }
 
 .logo-button {
@@ -36,14 +36,14 @@
 }
 
 .te21b {
-  font-size: 30px;
+  font-size: 1.5vw;
   font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: bold;
   margin-left: 20px; /* Отступ между текстом и кнопкой */
   margin-top: 12px;
 }
 .header-buttons {
-  margin-left: 30%;
+  margin-left: 27%;
   display: flex;
   gap: 1%; /* Расстояние между кнопками */
 }
@@ -56,7 +56,7 @@
 
 .header-button h1 {
   margin: 10px;
-  font-size: 30px;
+  font-size: 1.6vw;
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
 

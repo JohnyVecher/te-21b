@@ -3,94 +3,92 @@
 .green-block .text-top {
   /* Стили для текста сверху */
   margin-bottom: auto; /* Перемещает текст в верхнюю часть блока */
-    font-size: auto;
+  font-size: 0.8vw;
 }
 .green-block .text-bottom {
   /* Стили для времени внизу */
-  margin-top: 40%; /* Перемещает текст в нижнюю часть блока */
-    font-size: auto;
+  margin-top: auto; /* Перемещает текст в нижнюю часть блока */
+  font-size: 0.8vw;
 	
 }
 .laba .text-top {
   /* Стили для текста сверху */
   margin-bottom: auto; /* Перемещает текст в верхнюю часть блока */
-    font-size: auto;
+  font-size: 0.8vw;
 }
 .laba .text-bottom {
   /* Стили для времени внизу */
-  margin-top: 40%; /* Перемещает текст в нижнюю часть блока */
-    font-size: auto;
-	
+  margin-top: auto; /* Перемещает текст в нижнюю часть блока */
+  font-size: 0.8vw;
 }
 .green-block1 .text-top {
   /* Стили для текста сверху */
   margin-bottom: auto; /* Перемещает текст в верхнюю часть блока */
-  font-size: auto;
+  font-size: 0.8vw;
 }
 .green-block1 .text-bottom {
   /* Стили для времени внизу */
-  margin-top: 30%; /* Перемещает текст в нижнюю часть блока */
-    font-size: auto;
+  margin-top: auto;/* Перемещает текст в нижнюю часть блока */
+  font-size: 0.8vw;
 	
 }
 .green-block2 .text-top {
   /* Стили для текста сверху */
   margin-bottom: auto; /* Перемещает текст в верхнюю часть блока */
-    font-size: auto;
+    font-size: 0.8vw;
 }
 .green-block2 .text-bottom {
   /* Стили для времени внизу */
-  margin-top: 40%; /* Перемещает текст в нижнюю часть блока */
-  font-size: auto;
+  margin-top: auto; /* Перемещает текст в нижнюю часть блока */
+  font-size: 0.8vw;
 }
 .green-block3 .text-top {
   /* Стили для текста сверху */
   margin-bottom: auto; /* Перемещает текст в верхнюю часть блока */
-    font-size: auto;
+    font-size: 0.8vw;
 }
 .green-block3 .text-bottom {
   /* Стили для времени внизу */
-  margin-top: 40%; /* Перемещает текст в нижнюю часть блока */
-  font-size: auto;
+  margin-top: auto; /* Перемещает текст в нижнюю часть блока */
+  font-size: 0.8vw;
 }
 
 
 .practicals .text-bottom {
   /* Стили для времени внизу */
-  margin-top: 60%; /* Перемещает текст в нижнюю часть блока */
-  font-size: auto;
+  margin-top: auto; /* Перемещает текст в нижнюю часть блока */
+  font-size: 0.8vw;
 	
 }
 .practicals .text-top {
   /* Стили для текста сверху */
   margin-bottom: auto; /* Перемещает текст в верхнюю часть блока */
-    font-size: auto;
+      font-size: 0.8vw;
 }
  .practicals4 .text-top {
   /* Стили для времени внизу */
-  margin-top: 0%; /* Перемещает текст в нижнюю часть блока */
-  font-size: auto;
-	
+  margin-top: auto%; /* Перемещает текст в нижнюю часть блока */
+    font-size: 0.8vw;
 }
 .practicals4 .text-bottom {
   /* Стили для времени внизу */
-  margin-top: 50%; /* Перемещает текст в нижнюю часть блока */
-  font-size: auto;
-	
+  margin-top: auto; /* Перемещает текст в нижнюю часть блока */
+    font-size: 0.8vw;
 }
 .practicals5 .text-bottom {
   /* Стили для времени внизу */
-  margin-top: 60%; /* Перемещает текст в нижнюю часть блока */
-  font-size: auto;
-	
+  margin-top: auto; /* Перемещает текст в нижнюю часть блока */
+    font-size: 0.8vw;
 }
 .practicals5 .text-top {
   /* Стили для текста сверху */
   margin-bottom: auto; /* Перемещает текст в верхнюю часть блока */
-    font-size: auto;
+  font-size: 0.8vw;
 }
 
 .green-block {
+  display: flex;
+  flex-direction: column;
   margin-top: 29%;
   background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% прозрачностью */
   color: white;
@@ -107,6 +105,8 @@
   font-weight: bold;
 }
 .laba {
+  display: flex;
+  flex-direction: column;
   margin-top: 29%;
   background-color: rgba(132, 80, 222, 0.1); /* Зеленый цвет с 50% прозрачностью */
   color: white;
@@ -123,6 +123,8 @@
   font-weight: bold;
 }
 .green-block1 {
+	display: flex;
+  flex-direction: column;
   margin-top: 15%;
   background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% прозрачностью */
   color: white;
@@ -138,7 +140,9 @@
   color:#00AE71;
   font-weight: bold;
 }
-.green-block2{  
+.green-block2{ 
+display: flex;
+  flex-direction: column;
 background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% прозрачностью */
   color: white;
   border-radius: 0px 30px 30px 0;
@@ -154,6 +158,8 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   font-weight: bold;
 }
 .green-block3{  
+display: flex;
+  flex-direction: column;
 margin-top: 15%;
 background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% прозрачностью */
   color: white;
@@ -170,6 +176,8 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   font-weight: bold;
 }
 .practicals {
+	display: flex;
+  flex-direction: column;
   margin-top: 29%;
   background-color: rgba(73, 112, 255, 0.1); /* Зеленый цвет с 50% прозрачностью */
   color: white;
@@ -186,6 +194,8 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   font-weight: bold;
 }
 .practicals4 {
+	display: flex;
+  flex-direction: column;
   margin-top: 15%;
   background-color: rgba(73, 112, 255, 0.1); /* Зеленый цвет с 50% прозрачностью */
   color: white;
@@ -202,6 +212,8 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   font-weight: bold;
 }
 .practicals5 {
+	display: flex;
+  flex-direction: column;
   margin-top: 58%;
   background-color: rgba(73, 112, 255, 0.1); /* Зеленый цвет с 50% прозрачностью */
   color: white;
@@ -223,7 +235,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   position: absolute;
   top: 0px; /* Расположите палочку справа от блока */
   left: 0px; /* Расположите палочку справа от блока */
-  width: 8px; /* Ширина палочки */
+  width: 3%; /* Ширина палочки */
   height: 100%; /* Высота палочки */
   background-color: rgba(0, 174, 113, 1); /* Цвет палочки тот же, что и у блока */
 }
@@ -232,7 +244,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   position: absolute;
   top: 0px; /* Расположите палочку справа от блока */
   left: 0px; /* Расположите палочку справа от блока */
-  width: 8px; /* Ширина палочки */
+  width: 3%; /* Ширина палочки */
   height: 100%; /* Высота палочки */
   background-color: rgba(132, 80, 222, 1); /* Цвет палочки тот же, что и у блока */
 }
@@ -241,7 +253,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   position: absolute;
   top: 0px; /* Расположите палочку справа от блока */
   left: 0px; /* Расположите палочку справа от блока */
-  width: 8px; /* Ширина палочки */
+  width: 3%; /* Ширина палочки */
   height: 100%; /* Высота палочки */
   background-color: rgba(0, 174, 113, 1); /* Цвет палочки тот же, что и у блока */
 }
@@ -250,7 +262,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   position: absolute;
   top: 0px; /* Расположите палочку справа от блока */
   left: 0px; /* Расположите палочку справа от блока */
-  width: 8px; /* Ширина палочки */
+  width: 3%; /* Ширина палочки */
   height: 100%; /* Высота палочки */
   background-color: rgba(0, 174, 113, 1); /* Цвет палочки тот же, что и у блока */
 }
@@ -259,7 +271,8 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   position: absolute;
   top: 0px; /* Расположите палочку справа от блока */
   left: 0px; /* Расположите палочку справа от блока */
-  width: 8px; /* Ширина палочки */
+    width: 3%; /* Ширина палочки */
+ /* Ширина палочки */
   height: 100%; /* Высота палочки */
   background-color: rgba(0, 174, 113, 1); /* Цвет палочки тот же, что и у блока */
 }
@@ -268,7 +281,8 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   position: absolute;
   top: 0px; /* Расположите палочку справа от блока */
   left: 0px; /* Расположите палочку справа от блока */
-  width: 8px; /* Ширина палочки */
+    width: 3%; /* Ширина палочки */
+ /* Ширина палочки */
   height: 100%; /* Высота палочки */
   background-color: rgba(73, 112, 255, 1); /* Цвет палочки тот же, что и у блока */
 }
@@ -277,7 +291,8 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   position: absolute;
   top: 0px; /* Расположите палочку справа от блока */
   left: 0px; /* Расположите палочку справа от блока */
-  width: 8px; /* Ширина палочки */
+    width: 3%; /* Ширина палочки */
+ /* Ширина палочки */
   height: 100%; /* Высота палочки */
   background-color: rgba(73, 112, 255, 1); /* Цвет палочки тот же, что и у блока */
 }
@@ -286,7 +301,8 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   position: absolute;
   top: 0px; /* Расположите палочку справа от блока */
   left: 0px; /* Расположите палочку справа от блока */
-  width: 8px; /* Ширина палочки */
+    width: 3%; /* Ширина палочки */
+ /* Ширина палочки */
   height: 100%; /* Высота палочки */
   background-color: rgba(73, 112, 255, 1); /* Цвет палочки тот же, что и у блока */
 }
@@ -313,7 +329,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   display: flex;
   flex-direction: column; /* Вертикальное расположение блоков */
   gap: 20px; /* Расстояние между блоками */
-  width: 20%; /* Ширина контейнера для sidebar и activity-filter */
+  width: 200%; /* Ширина контейнера для sidebar и activity-filter */
 }
 
 .sidebar { /* Календарь */
@@ -323,6 +339,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   margin: 10px;
   font-family: 'Franklin Gothic Medium', sans-serif;
   height: auto;
+  width: 10;
 }
 
 /* Activity Filter */
@@ -338,7 +355,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   flex-grow: 1; /* Название занимает все доступное пространство */
   text-align: left; /* Название выравнивается по левому краю */
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1vw;
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
 
@@ -350,12 +367,12 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
 
 /* Заголовок типов */
 .activity-filter h2 { 
+  font-size: 2vh;
   margin-top: 5px;
   padding-bottom: 10px;
-  margin-left: -150px;
+  margin-left: -40%;
   text-transform: capitalize;
   text-align: center;
-  font-size: 20px;
   margin-right: auto; /* Заголовок остаётся слева */
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
@@ -382,11 +399,13 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
 #lectures {
   background-color: #FFFFFF;
   border: 2px solid #00AE71;
+  font-size: 0.8vw;
 }
 
 #lectures:checked {
   background-color: #00AE71; /* Цвет фона при активации */
   border-color: #00AE71;
+  font-size: 0.8vw;
 }
 
 #lectures:checked::before {
@@ -396,13 +415,14 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 16px;
+  font-size: 0.8vw;
 }
 
 /* Стиль для checkbox с id practicals */
 #practicals {
   background-color: #FFFFFF;
   border: 2px solid #4970FF;
+  font-size: 0.8vw;
 }
 
 #practicals:checked {
@@ -417,7 +437,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 16px;
+  font-size: 0.8vw;
 }
 
 /* Стиль для checkbox с id labs */
@@ -438,12 +458,12 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 16px;
+  font-size: 0.8vw;
 }
 
 /*Заголовок календаря*/
 .month-navigation h3 { 
-  font-size: 18px;
+  font-size: 0.9vw;
   margin: 0;
   text-transform: capitalize;
   text-align: center;
@@ -461,9 +481,9 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
 
 /*Кнопка месяца*/
 .month-navigation button {
-  margin-left: 30px; /* Сдвигаем кнопку вправо на 10 пикселей */ /* Сдвигаем кнопку вправо на 10 пикселей */
+  font-size: 1vw;
+  margin-left: 30%; /* Сдвигаем кнопку вправо на 10 пикселей */ /* Сдвигаем кнопку вправо на 10 пикселей */
   background: none;
-  margin-left: 60px;
   border: 1px transparent; /* Изначально прозрачная граница */
   width: 30px;
   height: 30px;
@@ -501,10 +521,11 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
 /*Заголов Недели*/
 .week-navigation h2 {
   margin: 10px 0; /* Уменьшите отступы сверху и снизу, чтобы расстояние до кнопок было меньше */
-  font-size: 28px;
+  font-size: 1.5vw;
   text-transform: capitalize;
   text-align: left;
   font-family: 'Franklin Gothic Medium', sans-serif;
+  
 }
 
 
@@ -515,7 +536,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   border: none;
   cursor: pointer;
   padding: 5px 10px;
-  font-size: 16px;
+  font-size: 0.8vw;
   margin-bottom: -5px; /* Добавьте отступ снизу, чтобы кнопки находились ближе к заголовку */
 }
 
@@ -552,41 +573,73 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   z-index: 1;
 }
 
-/* Цвет текста дней недели */
-.month-calendar th {
-  color: #989ea4;
-}
-
-/*Визуальный отступ заголовка от чисел*/
-.month-calendar {
-  margin-top: 20px;
-}
-
-/*Визуальный отступ чисел от чисел*/
-.month-calendar th, 
-.month-calendar td {
-  padding: 10px;
-  border: none;
-}	
-
 .date-cell {
   position: relative; /* Добавляем относительное позиционирование для ячейки */
-  height: 100px; /* Задаем высоту ячейки для видимости блока */
+  height: 10vh; 
+  width: 10vh;/* Задаем высоту ячейки для видимости блока */
 }
 
 /*Цвет ячеек чисел в календаре*/
-.month-calendar .cell {
-  border-radius: 20px;
-  background-color: #fff;
+
+/* Визуальный отступ заголовка от чисел */
+.month-calendar {
+  margin-top: 20px;
+  width: 100%; /* Явно задаем ширину для календаря */
+  height: auto; /* Автоматическая высота */
 }
 
-/*Настройка ячеек чисел календаря*/
-.cell {
- width: auto;
- height: auto;
- font-family: 'Franklin Gothic Medium', sans-serif;
- font-weight: bold;
+/* Ячейки заголовков и дней месяца */
+.month-calendar th, 
+.month-calendar td {
+  height: 6vh; /* Устанавливаем одинаковую высоту для ячеек */
+  width: auto; /* Ширина определяется автоматически */
+  font-size: 1vw;
+  padding: 0; /* Минимальный padding */
+  text-align: center; /* Центрируем текст */
+  border: none;
+  box-sizing: border-box; /* Учитываем padding при расчете ширины */
 }
+
+/* Настройка для строк */
+.month-calendar tr {
+  height: auto; /* Высота строки адаптируется к содержимому */
+  width: 100%; /* Ширина строки 100% */
+  border: none;
+}	
+
+/* Ячейка дня месяца */
+.month-calendar .date-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Относительное позиционирование */
+  height: 6vh; /* Фиксированная высота для ячеек */
+  width: 6vh; /* Фиксированная ширина для ячеек */
+  background-color: #fff; /* Фон ячеек */
+  border-radius: 10px; /* Закругленные углы */
+  box-sizing: border-box; /* Учитываем padding и border */
+}
+
+
+/* Общее оформление для ячеек с числами */
+.month-calendar .cell {
+  height: 5vh; /* Фиксированная высота */
+  width: 6vh; /* Фиксированная ширина */
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 0.9vw;
+  text-align: center;
+  padding: 0; /* Минимальный padding */
+  box-sizing: border-box;
+}
+
+.cell {
+  width: 1000%; /* Фиксируем ширину */
+  height: 100%; /* Фиксируем высоту */
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: bold;
+}
+
 
 /* НАСТРОЙКА НЕДЕЛИ(сетки и тд)*/
 .weekly-calendar {
@@ -620,6 +673,7 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   height: auto;
   text-align: left; /* Выравнивание текста по правому краю */
   color: #4E7CA3;
+  font-size: 1.9vh;
   font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: bold; 
 }
@@ -640,9 +694,21 @@ background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% пр
   border-left: none; /* Убираем правую границу для последнего столбца */
   border-bottom: none;
 }
+.month-calendar .week-table-cell{
+  position: relative;
+  height: 10%;
+  width: 10%;
+  font-size: 1.7vh;
+  padding: 10px;
+  color: #7B9BB9;
+  background-color: #fff;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
 
 .week-table-cell {
-  
+  position: relative;
+  height: 3vh;
+  font-size: 1.7vh;
   padding: 10px;
   color: #7B9BB9;
   background-color: #fff;
