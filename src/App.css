@@ -5,7 +5,7 @@
 }
 
 .header {
-  display: flex;
+  display: flex	;
   align-items: center;
   background-color: #ffff;
   padding: 10px;

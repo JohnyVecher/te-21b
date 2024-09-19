@@ -18,11 +18,13 @@
   padding: 20px;
   text-align: left;
   font-size: 25px;
-  font-weight: solid;
+  font-weight: bold;
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
 
 .professors-table th {
+  color: #7B9BB9;
+  font-weight: bold;
   border-right: none; /* Убираем правую границу для последнего столбца */
   border-left: none; /* Убираем правую границу для последнего столбца */
   border-top: none;
@@ -30,11 +32,13 @@
 
 .professors-table td {
   background-color: #fff;
+  display: flex-column;
   border-left: none; /* Граница слева для первого столбца */
   border-bottom: none;
 }
 .professors-table td:last-child {
   background-color: #fff;
+  display: flex-column;
   border-right: none; /* Граница слева для первого столбца */
   border-bottom: none;
 }
