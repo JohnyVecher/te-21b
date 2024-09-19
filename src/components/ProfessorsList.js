@@ -1,6 +1,5 @@
 import React from 'react';
 import './ProfessorsList.css';
-
 const ProfessorsList = () => {
   const professors = [
     { discipline: 'Многоканальные телекоммуникационные системы', name: 'Шестаков Иван Игоревич', email: '' },

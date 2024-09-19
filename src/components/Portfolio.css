@@ -1,19 +1,18 @@
-.professors-container {
+.portfolios-container {
   padding: 30px;
   border-radius: 0 0 30px 30px;
   background-color: #F5F6FA;
 }
 
-.professors-table {
+.portfolios-table {
   width: 100%;
-  padding: 30px;
   border-collapse: collapse;
   margin: 0 auto;
   background-color: #F8F9FF;
   border-radius: 20px 20px 20px 20px;
 }
 
-.professors-table th, .professors-table td {
+.portfolios-table th, .portfolios-table td {
   border: 1px solid #ddd;
   padding: 20px;
   text-align: left;
@@ -22,18 +21,18 @@
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
 
-.professors-table th {
+.portfolios-table th {
   border-right: none; /* Убираем правую границу для последнего столбца */
   border-left: none; /* Убираем правую границу для последнего столбца */
   border-top: none;
 }
 
-.professors-table td {
+.portfolios-table td {
   background-color: #fff;
   border-left: none; /* Граница слева для первого столбца */
   border-bottom: none;
 }
-.professors-table td:last-child {
+.portfolios-table td:last-child {
   background-color: #fff;
   border-right: none; /* Граница слева для первого столбца */
   border-bottom: none;

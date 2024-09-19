@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from './components/Calendar';
 import ProfessorsList from './components/ProfessorsList';
+import Portfolio from './components/Portfolio';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import logo from './logo.png';
@@ -25,12 +26,16 @@ const App = () => {
               </Link>
               <Link to="/professors" className="header-button">
                 <h1>Преподаватели</h1>
+				</Link>
+			  <Link to="/Portfolio" className="header-button">
+                <h1>Портфолио</h1>
               </Link>
             </div>
           </div>
           <Routes>
             <Route path="/" element={<Calendar events={events} />} />
             <Route path="/professors" element={<ProfessorsList />} />
+			<Route path="/portfolio" element={<Portfolio />} />
           </Routes>
         </div>
       </div>
