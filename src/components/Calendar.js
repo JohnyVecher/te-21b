@@ -116,16 +116,70 @@ const Calendar = () => {
                   <div className="text-bottom">8:30 - 10:00</div>
                 </div>
               )}
+			  {filters.lectures && day.getDay() === 1 && hour === 10 && (
+                <div className="green-block1">
+                  <div className="text-top">Обработка эспериментальных данных, лекция (408 УК1)</div>
+                  <div className="text-bottom">10:15 - 11:45</div>
+                </div>
+              )}
+			  {filters.lectures && day.getDay() === 1 && hour === 12 && (
+                <div className="green-block2">
+                  <div className="text-top">Перспективные технологии, лекция (VII)</div>
+                  <div className="text-bottom">12:00 - 13:30</div>
+                </div>
+              )}
+			  {filters.lectures && day.getDay() === 1 && hour === 14 && (
+                <div className="green-block3">
+                  <div className="text-top">БЖД, лекция (I)</div>
+                  <div className="text-bottom">14:15 - 15:45</div>
+                </div>
+              )}
               {filters.lectures && day.getDay() === 2 && hour === 8 && (
                 <div className="green-block">
                   <div className="text-top">Компьютерное моделирование, лекция (VII)</div>
                   <div className="text-bottom">8:30 - 10:00</div>
                 </div>
               )}
-              {filters.lectures && day.getDay() === 3 && hour === 8 && (
-                <div className="green-block">
+			  {filters.lectures && day.getDay() === 2 && hour === 10 && (
+                <div className="green-block1">
+                  <div className="text-top">Перспективные технологии, лекция (VIII)</div>
+                  <div className="text-bottom">10:15 - 11:45</div>
+                </div>
+              )}
+			  {filters.lectures && day.getDay() === 2 && hour === 12 && (
+                <div className="green-block2">
+                  <div className="text-top">БЖД, лекция (408)</div>
+                  <div className="text-bottom">12:00 - 13:30</div>
+                </div>
+              )}
+			  {filters.practicals && day.getDay() === 2 && hour === 14 && (
+                <div className="practicals4">
+                  <div className="text-top">БЖД, Практика (213 УК1)</div>
+                  <div className="text-bottom">12:00 - 13:30</div>
+                </div>
+              )}
+			  {filters.lectures && day.getDay() === 3 && hour === 10 && (
+                <div className="green-block1">
+                  <div className="text-top">Многоканальные телеком. системы, лекция (VIII)</div>
+                  <div className="text-bottom">10:15 - 11:45</div>
+                </div>
+              )}
+			  {filters.lectures && day.getDay() === 3 && hour === 12 && (
+                <div className="green-block2">
+                  <div className="text-top">Физические основы радиосвязи, лекция (414 УК1)</div>
+                  <div className="text-bottom">12:00 - 13:30</div>
+                </div>
+              )}
+			  {filters.lectures && day.getDay() === 3 && hour === 14 && (
+                <div className="green-block3">
                   <div className="text-top">Сети связи и системы коммутации, лекция (VI)</div>
-                  <div className="text-bottom">8:30 - 10:00</div>
+                  <div className="text-bottom">14:15 - 15:45</div>
+                </div>
+              )}
+			  {filters.practicals && day.getDay() === 3 && hour === 15 && (
+                <div className="practicals5">
+                  <div className="text-top">Физра</div>
+                  <div className="text-bottom">16:00 - 17:30</div>
                 </div>
               )}
               {filters.laba && day.getDay() === 4 && hour === 8 && (
@@ -134,91 +188,39 @@ const Calendar = () => {
                   <div className="text-bottom">8:30 - 10:00</div>
                 </div>
               )}
-              {filters.practicals && day.getDay() === 5 && hour === 8 && (
-                <div className="practicals">
-                  <div className="text-top">Физра</div>
-                  <div className="text-bottom">8:30 - 10:00</div>
-                </div>
-              )}
-              {filters.lectures && day.getDay() === 1 && hour === 10 && (
-                <div className="green-block1">
-                  <div className="text-top">Обработка эспериментальных данных, лекция (408 УК1)</div>
-                  <div className="text-bottom">10:15 - 11:45</div>
-                </div>
-              )}
-              {filters.lectures && day.getDay() === 2 && hour === 10 && (
-                <div className="green-block1">
-                  <div className="text-top">Перспективные технологии, лекция (VIII)</div>
-                  <div className="text-bottom">10:15 - 11:45</div>
-                </div>
-              )}
-              {filters.lectures && day.getDay() === 3 && hour === 10 && (
-                <div className="green-block1">
-                  <div className="text-top">Многоканальные телеком. системы, лекция (VIII)</div>
-                  <div className="text-bottom">10:15 - 11:45</div>
-                </div>
-              )}
+              
               {filters.lectures && day.getDay() === 4 && hour === 10 && (
                 <div className="green-block1">
                   <div className="text-top">Обработка эспериментальных данных, лекция (408 УК1)</div>
                   <div className="text-bottom">10:15 - 11:45</div>
                 </div>
               )}
-              {filters.lectures && day.getDay() === 5 && hour === 10 && (
+              
+			  {filters.practicals && day.getDay() === 5 && hour === 8 && (
+                <div className="practicals">
+                  <div className="text-top">Физра</div>
+                  <div className="text-bottom">8:30 - 10:00</div>
+                </div>
+              )}
+			  {filters.lectures && day.getDay() === 5 && hour === 10 && (
                 <div className="green-block1">
                   <div className="text-top">Направляющие системы электросвязи, лекция (VIII)</div>
                   <div className="text-bottom">10:15 - 11:45</div>
                 </div>
               )}
-              {filters.lectures && day.getDay() === 1 && hour === 12 && (
-                <div className="green-block2">
-                  <div className="text-top">Перспективные технологии, лекция (VII)</div>
-                  <div className="text-bottom">12:00 - 13:30</div>
-                </div>
-              )}
-              {filters.lectures && day.getDay() === 2 && hour === 12 && (
-                <div className="green-block2">
-                  <div className="text-top">БЖД, лекция (408)</div>
-                  <div className="text-bottom">12:00 - 13:30</div>
-                </div>
-              )}
-              {filters.lectures && day.getDay() === 3 && hour === 12 && (
-                <div className="green-block2">
-                  <div className="text-top">Физические основы радиосвязи, лекция (414 УК1)</div>
-                  <div className="text-bottom">12:00 - 13:30</div>
-                </div>
-              )}
-			  {filters.practicals && day.getDay() === 3 && hour === 15 && (
-                <div className="practicals1">
-                  <div className="text-top">Физра</div>
-                  <div className="text-bottom">16:00 - 17:30</div>
-                </div>
-              )}
-              {filters.lectures && day.getDay() === 5 && hour === 12 && (
+			   {filters.lectures && day.getDay() === 5 && hour === 12 && (
                 <div className="green-block2">
                   <div className="text-top">Обработка экспериментальных данных, лекция (414)</div>
                   <div className="text-bottom">12:00 - 13:30</div>
-                </div>
-              )}
-			  {filters.lectures && day.getDay() === 1 && hour === 14 && (
-                <div className="green-block2">
-                  <div className="text-top">Обработка экспериментальных данных, лекция (414)</div>
-                  <div className="text-bottom">14:15 - 15:45</div>
-                </div>
-              )}
-			  
-			  {filters.lectures && day.getDay() === 3 && hour === 14 && (
-                <div className="green-block2">
-                  <div className="text-top">Сети связи и системы коммутации, лекция (VI)</div>
-                  <div className="text-bottom">14:15 - 15:45</div>
                 </div>
               )}
 			  {filters.lectures && day.getDay() === 5 && hour === 14 && (
-                <div className="green-block2">
+                <div className="green-block3">
                   <div className="text-top">Сети связи и системы коммутации, лекция (VIII)</div>
                   <div className="text-bottom">14:15 - 15:45</div>
                 </div>
               )}
+			 
             </td>
           ))}
         </tr>
