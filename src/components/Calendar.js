@@ -4,6 +4,7 @@ import arrowLeft from './arrow_left.png';
 import arrowRight from './arrow_right.png';
 import arrowLeftWeek from './arrow_left_week.png';
 import arrowRightWeek from './arrow_right_week.png';
+import { isWithinInterval } from 'date-fns';
 import {
   format,
   addMonths,
@@ -102,137 +103,155 @@ const Calendar = () => {
       day = addDays(day, 1);
     }
 
-    const hours = Array.from({ length: 11 }, (_, i) => i + 8);
+    const timeIntervals = [
+  { start: "08:30", end: "10:00" },
+  { start: "10:15", end: "11:45" },
+  { start: "12:00", end: "13:30" },
+  { start: "14:15", end: "15:45" },
+  { start: "16:00", end: "17:30" },
+];
 
-    const timeRows = hours.map(hour => (
-      <React.Fragment key={hour}>
-        <tr>
-          <td className="time-cell">{`${hour}:00`}</td>
-          {days.map((day, dayIndex) => (
-            <td key={dayIndex} className="date-cell">
-              {filters.lectures && day.getDay() === 1 && hour === 8 && (
-                <div className="green-block">
+const timeRows = timeIntervals.map((interval, index) => (
+  <React.Fragment key={index}>
+    <tr>
+      <td className="time-cell">{`${interval.start} - ${interval.end}`}</td>
+      {days.map((day, dayIndex) => {
+        // Убедитесь, что currentTime правильно инициализирован
+        const currentDateTime = new Date(); // или используйте ваше значение
+        const intervalStart = new Date(
+          day.getFullYear(), day.getMonth(), day.getDate(), 
+          parseInt(interval.start.split(":")[0]), 
+          parseInt(interval.start.split(":")[1])
+        );
+        const intervalEnd = new Date(
+          day.getFullYear(), day.getMonth(), day.getDate(), 
+          parseInt(interval.end.split(":")[0]), 
+          parseInt(interval.end.split(":")[1])
+        );
+
+        // Проверяем, находится ли текущее время в пределах этого интервала
+        const isCurrent = isWithinInterval(currentDateTime, { start: intervalStart, end: intervalEnd });
+
+        return (
+          <td key={dayIndex} className="date-cell">
+			  {filters.lectures && day.getDay() === 1 && index === 0 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Компьютерное моделирование, лекция (VII)</div>
                   <div className="text-bottom">8:30 - 10:00</div>
                 </div>
               )}
-			  {filters.lectures && day.getDay() === 1 && hour === 10 && (
-                <div className="green-block1">
+			  {filters.lectures && day.getDay() === 1 && index === 1 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Обработка эспериментальных данных, лекция (408 УК1)</div>
                   <div className="text-bottom">10:15 - 11:45</div>
                 </div>
               )}
-			  {filters.lectures && day.getDay() === 1 && hour === 12 && (
-                <div className="green-block2">
+			  {filters.lectures && day.getDay() === 1 && index === 2 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Перспективные технологии, лекция (VII)</div>
                   <div className="text-bottom">12:00 - 13:30</div>
                 </div>
               )}
-			  {filters.lectures && day.getDay() === 1 && hour === 14 && (
-                <div className="green-block3">
+			  {filters.lectures && day.getDay() === 1 && index ===3 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">БЖД, лекция (I)</div>
                   <div className="text-bottom">14:15 - 15:45</div>
                 </div>
               )}
-              {filters.lectures && day.getDay() === 2 && hour === 8 && (
-                <div className="green-block">
+              {filters.lectures && day.getDay() === 2 && index === 0 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Компьютерное моделирование, лекция (VII)</div>
                   <div className="text-bottom">8:30 - 10:00</div>
                 </div>
               )}
-			  {filters.lectures && day.getDay() === 2 && hour === 10 && (
-                <div className="green-block1">
+			  {filters.lectures && day.getDay() === 2 && index === 1 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Перспективные технологии, лекция (VIII)</div>
                   <div className="text-bottom">10:15 - 11:45</div>
                 </div>
               )}
-			  {filters.lectures && day.getDay() === 2 && hour === 12 && (
-                <div className="green-block2">
+			  {filters.lectures && day.getDay() === 2 && index === 2 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">БЖД, лекция (408)</div>
                   <div className="text-bottom">12:00 - 13:30</div>
                 </div>
               )}
-			  {filters.practicals && day.getDay() === 2 && hour === 14 && (
-                <div className="practicals4">
+			  {filters.practicals && day.getDay() === 2 && index === 3 && (
+                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">БЖД, Практика (213 УК1)</div>
-                  <div className="text-bottom">12:00 - 13:30</div>
+                  <div className="text-bottom">14:15 - 15:45</div>
                 </div>
               )}
               
-			  {filters.lectures && day.getDay() === 3 && hour === 10 && (
-                <div className="green-block1">
+			  {filters.lectures && day.getDay() === 3 && index === 1 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Многоканальные телеком. системы, лекция (VIII)</div>
                   <div className="text-bottom">10:15 - 11:45</div>
                 </div>
               )}
-			  {filters.lectures && day.getDay() === 3 && hour === 12 && (
-                <div className="green-block2">
+			  {filters.lectures && day.getDay() === 3 && index === 2 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Физические основы радиосвязи, лекция (414 УК1)</div>
                   <div className="text-bottom">12:00 - 13:30</div>
                 </div>
               )}
-			  {filters.lectures && day.getDay() === 3 && hour === 14 && (
-                <div className="green-block3">
+			  {filters.lectures && day.getDay() === 3 && index === 3 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Сети связи и системы коммутации, лекция (VI)</div>
                   <div className="text-bottom">14:15 - 15:45</div>
                 </div>
               )}
-			  {filters.practicals && day.getDay() === 3 && hour === 15 && (
-                <div className="practicals5">
+			  {filters.practicals && day.getDay() === 3 && index === 4 && (
+                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Физра</div>
                   <div className="text-bottom">16:00 - 17:30</div>
                 </div>
               )}
-              {filters.laba && day.getDay() === 4 && hour === 8 && (
-                <div className="laba">
+              {filters.laba && day.getDay() === 4 && index === 0 && (
+                <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Физические основы радиосвязи, л.р (403 УК1)</div>
                   <div className="text-bottom">8:30 - 10:00</div>
                 </div>
               )}
               
-              {filters.lectures && day.getDay() === 4 && hour === 10 && (
-                <div className="green-block1">
+              {filters.lectures && day.getDay() === 4 && index === 1 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Обработка эспериментальных данных, лекция (408 УК1)</div>
                   <div className="text-bottom">10:15 - 11:45</div>
                 </div>
               )}
               
-			  {filters.practicals && day.getDay() === 5 && hour === 8 && (
-                <div className="practicals">
+			  {filters.practicals && day.getDay() === 5 && index === 0 && (
+                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Физра</div>
                   <div className="text-bottom">8:30 - 10:00</div>
                 </div>
               )}
-			  {filters.lectures && day.getDay() === 5 && hour === 10 && (
-                <div className="green-block1">
+			  {filters.lectures && day.getDay() === 5 && index === 1 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Направляющие системы электросвязи, лекция (VIII)</div>
                   <div className="text-bottom">10:15 - 11:45</div>
                 </div>
               )}
-			   {filters.lectures && day.getDay() === 5 && hour === 12 && (
-                <div className="green-block2">
-                  <div className="text-top">Обработка экспериментальных данных, лекция (414)</div>
+			   {filters.lectures && day.getDay() === 5 && index === 2 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
+                  <div className="text-top">БЖД, лекция (I)</div>
                   <div className="text-bottom">12:00 - 13:30</div>
                 </div>
               )}
-			  {filters.lectures && day.getDay() === 5 && hour === 14 && (
-                <div className="green-block3">
+			  {filters.lectures && day.getDay() === 5 && index === 3 && (
+                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Сети связи и системы коммутации, лекция (VIII)</div>
                   <div className="text-bottom">14:15 - 15:45</div>
                 </div>
-              )}
-			 
-            </td>
-          ))}
-        </tr>
-        <tr className="hidden-row">
-          <td className="time-cell">{`${hour}:30`}</td>
-          {days.map((day, dayIndex) => (
-            <td key={dayIndex} className="date-cell"></td>
-          ))}
-        </tr>
-      </React.Fragment>
-    ));
+			
+            )}
+          </td>
+        );
+      })}
+    </tr>
+  </React.Fragment>
+));
 
     return <>{timeRows}</>;
   };
