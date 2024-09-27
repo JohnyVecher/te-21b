@@ -66,3 +66,39 @@
 .header-button:hover h1 {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .App {
+	height: 100%;
+    width: 100%;
+    padding: 10px; /* Уменьшаем отступ */
+  }
+
+  .header {
+    flex-direction: column; /* Переводим элементы в столбик */
+    align-items: flex-start; /* Выравниваем элементы по левому краю */
+  }
+
+  .header h1 {
+    font-size: 5vw; /* Увеличиваем размер шрифта для заголовка на мобильных */
+  }
+
+  .logo-button {
+    width: 50px; /* Уменьшаем размер кнопки */
+    height: 50px; /* Уменьшаем размер кнопки */
+  }
+
+  .te21b {
+    font-size: 3vh; /* Увеличиваем размер текста */
+    margin-left: 10px; /* Уменьшаем отступ */
+  }
+
+  .header-buttons {
+    margin-left: 0; /* Убираем левый отступ */
+    justify-content: center; /* Центрируем кнопки */
+  }
+
+  .header-button h1 {
+    font-size: 4vh; /* Уменьшаем размер шрифта кнопок */
+  }
+}

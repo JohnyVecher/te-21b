@@ -25,7 +25,7 @@ const App = () => {
                 <h1>Расписание</h1>
               </Link>
               <Link to="/professors" className="header-button">
-                <h1>Преподаватели</h1>
+ 
 				</Link>
 			  <Link to="/Portfolio" className="header-button">
                 <h1>Портфолио</h1>

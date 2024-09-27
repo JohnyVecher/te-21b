@@ -1,3 +1,18 @@
+@keyframes glowGreenafter {
+  0% {
+    background-color: rgba(0, 174, 113, 0.9);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+  50% {
+    background-color: rgba(129, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(0, 174, 113, 0.9);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+}
 
 @keyframes glowGreen {
   0% {
@@ -5,8 +20,9 @@
     box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
   }
   50% {
-    background-color: rgba(0, 174, 113, 0.2);
-    box-shadow: 0 0 30px rgba(0, 174, 113, 0.8);
+    background-color: rgba(206, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
   }
   100% {
     background-color: rgba(0, 174, 113, 0.1);
@@ -36,7 +52,7 @@
   }
   50% {
     background-color: rgba(73, 112, 255, 0.2);
-    box-shadow: 0 0 34px rgba(73, 112, 255, 0.8);
+    box-shadow: 0 0 34px rgba(73, 112, 255, 0.9);
   }
   100% {
     background-color: rgba(73, 112, 255, 0.1);
@@ -44,9 +60,13 @@
   }
 }
 
+.green-block.current-interval::after {
+  animation: glowGreenafter 3s infinite; /* Применяем анимацию к псевдоэлементу */
+}
+
 /* Классы для блоков */
 .green-block.current-interval {
-  animation: glowGreen 2s infinite;
+  animation: glowGreen 3s infinite;
 }
 
 .laba.current-interval {
@@ -58,7 +78,7 @@
 }
 
 .green-block .text-top {
-	padding-top:3%;
+	
   /* Стили для текста сверху */
   margin-bottom: auto; /* Перемещает текст в верхнюю часть блока */
   font-size: 0.8vw;
@@ -175,15 +195,16 @@
 .green-block::after {
   content: ''; 
   position: absolute;
-  margin-top:6%;
   top: 0; /* Расположите палочку справа от блока */
   left: 0px; /* Расположите палочку справа от блока */
   width: 2%; /* Ширина палочки */
-  height:89%; /* Высота палочки */
+  height:88%; /* Высота палочки */
   background-color: rgba(0, 174, 113, 1);
-  max-width: 50%; 
+  margin-top:6%;
+  max-width: 199%; 
   max-height: 100%;
   overflow: hidden;
+  animation: var(animation) 3s infinite;
 }
 
 .practicals ::after {
@@ -616,4 +637,50 @@
   color: #7B9BB9;
   background-color: #fff;
   font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .calendar-container {
+	 width: 100%;
+    flex-direction: column; /* Вертикальное расположение для мобильных устройств */
+    padding: 10px; /* Уменьшаем отступы */
+  }
+
+  .sidebar-activity-container {
+    width: 100%; /* Задаем 100% ширины для мобильных */
+    gap: 10px; /* Уменьшаем расстояние между блоками */
+  }
+.weekly-calendar {
+    width: 200%; /* Задаем 100% ширины для мобильных */
+ /* Уменьшаем расстояние между блоками */
+  }
+  
+  .sidebar, .activity-filter {
+    width: 100%; /* Задаем 100% ширины для мобильных */
+    margin: 5px 0; /* Уменьшаем отступы */
+  }
+.time-cell {
+	font-size: 1vh;
+}
+  .date-cell {
+    height: auto; /* Даем автоматическую высоту для ячеек */
+    width: 100%; /* Задаем 100% ширины для ячеек */
+  }
+
+  .month-navigation h3, .week-navigation h3, .week-navigation h2 {
+    font-size: 4vh; /* Увеличиваем размер шрифта для лучшей читаемости */
+  }
+
+  .month-navigation button, .week-navigation button {
+    font-size: 2vh; /* Увеличиваем размер шрифта для кнопок */
+    width: 40px; /* Ширина кнопок */
+    height: 40px; /* Высота кнопок */
+  }
+  
+  /* Уменьшаем размер текста в блоках */
+  .green-block .text-top, .green-block .text-bottom,
+  .laba .text-top, .laba .text-bottom,
+  .practicals .text-top, .practicals .text-bottom {
+    font-size: 2.5vw; /* Размер шрифта в vw для адаптивности */
+  }
 }
