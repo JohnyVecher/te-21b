@@ -124,7 +124,7 @@
 .green-block {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 174, 113, 0.1); /* Зеленый цвет с 50% прозрачностью */
+  background-color: rgba(0, 174, 113, 0.1);
   color: white;
   border-radius: 0px 30% 30% 0;
   padding: 5px;
@@ -135,12 +135,14 @@
   font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: bold;
   color: #00AE71;
-  
-  /* Убедитесь, что блок не выходит за пределы ячейки */
   max-width: 100%; 
   max-height: 110%;
   overflow: hidden; /* Скрываем содержимое, если оно превышает размеры блока */
+  
+  /* Добавление визуальной тени */
+  box-shadow: 0 4px 8px rgba(0, 174, 113, 0.3); /* Настраиваем тень */
 }
+
 .laba {
   display: flex;
   flex-direction: column;
@@ -158,6 +160,7 @@
   max-width: 100%; 
   max-height: 110%;
   overflow: hidden; /* Скрываем содержимое, если оно превышает размеры блока */
+    box-shadow: 0 4px 8px rgba(132, 80, 222, 0.3);
 }
 
 .practicals {
@@ -177,6 +180,8 @@
   max-width: 100%; 
   max-height: 110%;
   overflow: hidden; /* Скрываем содержимое, если оно превышает размеры блока */
+  box-shadow: 0 4px 8px rgba(73, 112, 255, 0.3);
+  
 }
 
 .laba::after {
@@ -592,14 +597,29 @@
 }
 
 .time-cell {
+  
   padding: px;
-  width: 20%; /* Фиксированная ширина для выравнивания */
+  width: 100%; /* Фиксированная ширина для выравнивания */
   height: auto;
   text-align: center; /* Выравнивание текста по правому краю */
   color: #4E7CA3;
   font-size: 1.9vh;
   font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: bold; 
+}
+
+
+.pair-name {
+	margin-top: 25%;
+  flex: 1; /* Занимает доступное пространство */
+  display: flex; /* Включаем Flexbox для выравнивания */
+  align-items: center; /* Центрируем по вертикали */
+  justify-content: center; /* Центрируем по горизонтали */
+}
+
+.pair-time {
+  font-size: 2h; /* Меньший шрифт для времени */
+  margin-top: 38%; /* Отступ между наименованием и временем */
 }
 
 .week-table tr:first-child {

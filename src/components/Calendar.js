@@ -104,17 +104,20 @@ const Calendar = () => {
     }
 
     const timeIntervals = [
-  { start: "08:30", end: "10:00" },
-  { start: "10:15", end: "11:45" },
-  { start: "12:00", end: "13:30" },
-  { start: "14:15", end: "15:45" },
-  { start: "16:00", end: "17:30" },
+  { paranumber: "Первая пара", start: "08:30", end: "10:00" },
+  { paranumber: "Вторая пара", start: "10:15", end: "11:45" },
+  { paranumber: "Третья пара", start: "12:00", end: "13:30" },
+  { paranumber: "Четвертая пара", start: "14:15", end: "15:45" },
+  { paranumber: "Пятая пара", start: "16:00", end: "17:30" },
 ];
 
 const timeRows = timeIntervals.map((interval, index) => (
   <React.Fragment key={index}>
     <tr>
-      <td className="time-cell">{`${interval.start} - ${interval.end}`}</td>
+      <td className="time-cell">
+        <div className="pair-name">{interval.paranumber}</div>
+        <div className="pair-time">{`${interval.start} - ${interval.end}`}</div>
+      </td>
       {days.map((day, dayIndex) => {
         // Убедитесь, что currentTime правильно инициализирован
         const currentDateTime = new Date(); // или используйте ваше значение
