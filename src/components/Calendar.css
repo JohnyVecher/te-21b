@@ -14,6 +14,38 @@
   }
 }
 
+@keyframes glowlabaafter {
+	0%{ 
+    background-color: rgba(132, 80, 222, 1);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+  50% {
+    background-color: rgba(129, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(132, 80, 222, 1);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+}
+
+@keyframes glowpracticalsafter {
+  0% {
+    background-color: rgba(73, 112, 255, 1);
+    box-shadow: 0 0 5px rgba(73, 112, 255, 0.3);
+  }
+  50% {
+    background-color: rgba(129, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(73, 112, 255, 1);
+    box-shadow: 0 0 5px rgba(73, 112, 255, 0.3);
+  }
+}
+
 @keyframes glowGreen {
   0% {
     background-color: rgba(0, 174, 113, 0.1);
@@ -36,8 +68,9 @@
     box-shadow: 0 0 5px rgba(132, 80, 222, 0.5);
   }
   50% {
-    background-color: rgba(132, 80, 222, 0.3);
-    box-shadow: 0 0 34px rgba(132, 80, 222, 0.8);
+    background-color: rgba(206, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
   }
   100% {
     background-color: rgba(132, 80, 222, 0.1);
@@ -51,8 +84,9 @@
     box-shadow: 0 0 5px rgba(73, 112, 255, 0.5);
   }
   50% {
-    background-color: rgba(73, 112, 255, 0.2);
-    box-shadow: 0 0 34px rgba(73, 112, 255, 0.9);
+    background-color: rgba(206, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
   }
   100% {
     background-color: rgba(73, 112, 255, 0.1);
@@ -64,61 +98,38 @@
   animation: glowGreenafter 3s infinite; /* Применяем анимацию к псевдоэлементу */
 }
 
-/* Классы для блоков */
+.laba.current-interval::after {
+  animation: glowlabaafter 3s infinite; /* Применяем анимацию к псевдоэлементу */
+}
+
+.practicals.current-interval::after {
+  animation: glowpracticalsafter 3s infinite; /* Применяем анимацию к псевдоэлементу */
+}
+
 .green-block.current-interval {
   animation: glowGreen 3s infinite;
 }
 
 .laba.current-interval {
-  animation: glowlaba 2s infinite;
+  animation: glowlaba 3s infinite;
 }
 
 .practicals.current-interval {
-  animation: glowpracticals 2s infinite;
+  animation: glowpracticals 3s infinite;
 }
 
-.green-block .text-top {
-	
-  /* Стили для текста сверху */
-  margin-bottom: auto; /* Перемещает текст в верхнюю часть блока */
+.green-block .text-top, .laba .text-top, .practicals .text-top  {
+  padding-top: 10px;
   font-size: 0.8vw;
 }
-.green-block .text-bottom {
-	padding-bottom:10%;
+
+.green-block .text-bottom, .laba .text-bottom, .practicals .text-bottom  {
+	padding-bottom:5%;
   /* Стили для времени внизу */
   margin-top: auto; /* Перемещает текст в нижнюю часть блока */
   font-size: 0.8vw;
 	
 }
-
-.laba .text-top {
-	padding-top:3%;
-  /* Стили для текста сверху */
-  margin-bottom: auto; /* Перемещает текст в верхнюю часть блока */
-  font-size: 0.8vw;
-}
-.laba .text-bottom {
-	padding-bottom:10%;
-  /* Стили для времени внизу */
-  margin-top: auto; /* Перемещает текст в нижнюю часть блока */
-  font-size: 0.8vw;
-}
-
-
-.practicals .text-bottom {
-	padding-bottom:10%;
-  /* Стили для времени внизу */
-  margin-top: auto; /* Перемещает текст в нижнюю часть блока */
-  font-size: 0.8vw;
-	
-}
-.practicals .text-top {
-	padding-top:3%;
-  /* Стили для текста сверху */
-  margin-bottom: auto; /* Перемещает текст в верхнюю часть блока */
-      font-size: 0.8vw;
-}
-
 
 
 .green-block {
@@ -206,13 +217,12 @@
   height:88%; /* Высота палочки */
   background-color: rgba(0, 174, 113, 1);
   margin-top:6%;
-  max-width: 199%; 
+  max-width: 100%; 
   max-height: 100%;
   overflow: hidden;
-  animation: var(animation) 3s infinite;
 }
 
-.practicals ::after {
+.practicals::after {
   content: ''; 
   position: absolute;
   margin-top:6%;
@@ -578,10 +588,11 @@
 }
 
 .week-table {
-	background-color: #Ffffff; /* Фон заголовков */
+  background-color: #Ffffff; /* Фон заголовков */
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse; /* Убирает двойные границы между ячейками */
+  border-radius: 10%;
 }
 
 .week-table th,
@@ -610,7 +621,6 @@
 
 
 .pair-name {
-	margin-top: 25%;
   flex: 1; /* Занимает доступное пространство */
   display: flex; /* Включаем Flexbox для выравнивания */
   align-items: center; /* Центрируем по вертикали */

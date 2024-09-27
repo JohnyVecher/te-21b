@@ -109,6 +109,7 @@ const Calendar = () => {
   { paranumber: "Третья пара", start: "12:00", end: "13:30" },
   { paranumber: "Четвертая пара", start: "14:15", end: "15:45" },
   { paranumber: "Пятая пара", start: "16:00", end: "17:30" },
+  { paranumber: "Шестая пара", start: "16:00", end: "17:30" },
 ];
 
 const timeRows = timeIntervals.map((interval, index) => (
@@ -116,7 +117,6 @@ const timeRows = timeIntervals.map((interval, index) => (
     <tr>
       <td className="time-cell">
         <div className="pair-name">{interval.paranumber}</div>
-        <div className="pair-time">{`${interval.start} - ${interval.end}`}</div>
       </td>
       {days.map((day, dayIndex) => {
         // Убедитесь, что currentTime правильно инициализирован
