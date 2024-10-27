@@ -1,46 +1,62 @@
-import React, { useState } from 'react';
-import Calendar from './components/Calendar';
-import ProfessorsList from './components/ProfessorsList';
+import React, { useContext } from 'react';
+import { ThemeContext, ThemeProvider } from './components/ThemeContext'; 
+import TE21B from './components/TE21B';
 import Portfolio from './components/Portfolio';
+import ProfileSelection from './components/ProfileSelection';
+import CourseSelectionTE from './components/CourseSelectionTE';
+import CourseSelectionITE from './components/CourseSelectionITE';
+import GroupSelectionTE from './components/GroupSelectionTE';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import logo from './logo.png';
+import night from './night.png';
 
 const App = () => {
-  const [events] = useState([
-    // Пример данных для событий
-  ]);
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
   return (
     <Router>
-      <div style={{ backgroundColor: '#D9E1F0', minHeight: '130vh', maxHeight: '1500vh' }}>
-        <div className="App">
-          <div className="header">
-            <button className="logo-button">
-              <img src={logo} alt="Logo" className="logo-image" />
-            </button>
-            <div className="te21b">ТЕ-21Б</div>
-            <div className="header-buttons">
-              <Link to="/" className="header-button">
-                <h1>Расписание</h1>
-              </Link>
-              <Link to="/professors" className="header-button">
- 
-				</Link>
-			  <Link to="/Portfolio" className="header-button">
-                <h1>Портфолио</h1>
-              </Link>
-            </div>
+      <div className={isDarkMode ? 'app dark-mode' : 'app'} style={{ minHeight: '130vh' }}>
+        <div className="header">
+          <button className="logo-button">
+            <img src={logo} alt="Logo" className="logo-image" />
+          </button>
+          <div className="te21b"></div>
+          <div className="header-buttons">
+            <Link to="/" className="header-button">
+              <h1>Расписание</h1>
+            </Link>
+            <Link to="/portfolio" className="header-button">
+              <h1>Портфолио</h1>
+            </Link>
           </div>
-          <Routes>
-            <Route path="/" element={<Calendar events={events} />} />
-            <Route path="/professors" element={<ProfessorsList />} />
-			<Route path="/portfolio" element={<Portfolio />} />
-          </Routes>
+          <button
+          onClick={toggleTheme}
+          className="theme-toggle"
+          style={{
+            backgroundColor: isDarkMode ? '#cccccc' : '#fff', // Цвет фона кнопки
+            color: isDarkMode ? '#fff' : '#fff' // Цвет текста кнопки
+          }}
+        >
+          <img src={night} alt="night" className="logo-image" />
+        </button>
         </div>
+        <Routes>
+        <Route path="/" element={<ProfileSelection />} />
+		<Route path="/course-selectionte" element={<CourseSelectionTE />} />
+		<Route path="/group-selectionte3" element={<GroupSelectionTE/>} />
+		<Route path="/TE21B" element={<TE21B />} />
+		<Route path="/portfolio" element={<Portfolio />} />
+      </Routes>
       </div>
     </Router>
   );
 };
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TE-21B.css';
+import './TE21B.css';
 import arrowLeft from './arrow_left.png';
 import { ThemeContext } from './ThemeContext';
 import arrowRight from './arrow_right.png';

@@ -280,72 +280,6 @@
   height: auto;
 }
 
-
-.dark-mode .sidebar {
-  background-color: #181C3A;
-}
-
-.dark-mode .calendar-container {
-  color: #ffff;
-  background-color: #090D28;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode .activity-filter {
-  color: #ffff;
-  background-color: #181C3A;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-.dark-mode .time-cell {
-  color: #ffff;
-  background-color: #151934;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode .week-table-cell {
-  color: #ffff;
-  background-color: #181C3A;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
-.dark-mode .date-cell {
-  color: #ffff;
-  background-color: #151934;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode .month-calendar .cell {
-  color: #ffff;
-  background-color: #181C3A;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode .month-calendar .week-table-cell {
-  color: #ffff;
-  background-color: #181C3A;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode .week-table th{
-  color: #ffff;
-  background-color: #181C3A;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode .week-navigation{
-  color: #ffff;
-  background-color: #181C3A;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode .week-table th{
-  color: #ffff;
-  border: 1px solid #181C3A;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
 .activity-list label {
   flex-grow: 1; 
   text-align: left;
@@ -674,7 +608,7 @@
 }
 
 .time-cell {
- 
+  
   padding: px;
   width: 100%; /* Фиксированная ширина для выравнивания */
   height: auto;
