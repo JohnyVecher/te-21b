@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className={isDarkMode ? 'app dark-mode' : 'app'} style={{ minHeight: '130vh' }}>
+      <div className={isDarkMode ? 'app dark-mode' : 'app'} style={{ minHeight: '100vh' }}>
         <div className="header">
           <button className="logo-button">
             <img src={logo} alt="Logo" className="logo-image" />

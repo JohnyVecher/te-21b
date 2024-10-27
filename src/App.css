@@ -150,36 +150,69 @@
 
 @media (max-width: 768px) {
   .App {
-	height: 100%;
-    width: 100%;
-    padding: 10px; /* Уменьшаем отступ */
+     font-family: Arial, sans-serif;
+  padding: 1%;
+  margin-right:200px;
+  background-color: #D7E2F1;
+  height: -1%;
   }
 
   .header {
-    flex-direction: column; /* Переводим элементы в столбик */
+	  gap:1%;
+	height: 70px;
+    flex-direction: row; 
     align-items: flex-start; /* Выравниваем элементы по левому краю */
   }
 
-  .header h1 {
-    font-size: 5vw; /* Увеличиваем размер шрифта для заголовка на мобильных */
-  }
 
   .logo-button {
     width: 50px; /* Уменьшаем размер кнопки */
     height: 50px; /* Уменьшаем размер кнопки */
   }
 
-  .te21b {
-    font-size: 3vh; /* Увеличиваем размер текста */
-    margin-left: 10px; /* Уменьшаем отступ */
-  }
 
   .header-buttons {
-    margin-left: 0; /* Убираем левый отступ */
+	  gap:1px;
+    margin-left: -2%; /* Убираем левый отступ */
     justify-content: center; /* Центрируем кнопки */
   }
+ .theme-toggle
+ {
+ margin-left:10px;	
+ margin-top	:10px;
+} 
+ 
+ 
+.header-button {
+  width: 35%; /* Фиксированная ширина кнопки */
+  height: 15%; /* Фиксированная высота кнопки для лучшего контроля */
+  margin: 15px;
+  gap:10px
+}
 
+.header-button h1 {
+  margin: 10px;
+  font-size: 3vh;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+.header-button:hover {
+  background-color: #f5f5f5; /* Фон при наведении */
+  transform: translateY(-1px) scale(1.05); /* Подъём и увеличение кнопки */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
+}
+
+/* Убираем эффект при фокусе */
+.header-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Тень при фокусе */
+}
+
+.header-button:active {
+  transform: translateY(2px) scale(0.98); /* Сжатие и уменьшение при нажатии */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
+}
   .header-button h1 {
-    font-size: 4vh; /* Уменьшаем размер шрифта кнопок */
+    font-size: 1.7vh; /* Уменьшаем размер шрифта кнопок */
   }
 }

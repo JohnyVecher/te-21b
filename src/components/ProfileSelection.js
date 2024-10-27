@@ -8,7 +8,9 @@ const ProfileSelection = () => {
 
   return (
     <div className="profile-container">
-      <h2 className="profile-header">Выбери свой профиль</h2>
+      <h2 className="profile-header">Выбери свой профиль</
+	  h2>
+	  <h2 className="level">Высшее образование</h2>
       <button className="profile-button" onClick={() => navigate('/course-selectionte')}>
         Транспортные сети и системы связи
       </button>

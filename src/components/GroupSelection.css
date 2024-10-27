@@ -1,52 +1,51 @@
 /* GroupSelection.css */
 
 .group-container {
-  padding-bottom: 18%;
+   min-height: 79vh; /* Изменено на min-height для адаптивности */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 50vh;
+  justify-content: flex-start; /* Содержимое перемещено вверх */
   background-color: #F5F6FA;
   border-radius: 0% 0% 20px 20px;
+  padding: 20px; /* Уменьшенный padding */
 }
 
 .group-header {
- font-size: 2.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #333;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
 
 .group-button {
- width: 13%; /* Фиксированная ширина кнопки */
-  height: 15%; /* Фиксированная высота кнопки для лучшего контроля */
+ width: 20%; /* Фиксированная ширина кнопки */
+  height: auto; /* Убрана фиксированная высота */
+  padding: 15px; /* Добавлено для удобного нажатия */
   font-size: 1.2rem;
   font-weight: 600;
-  color: #000; /* Цвет текста */
-  background-color: #fff; /* Фон */
-  border: none; /* Без границ */
-  border-radius: 10px; /* Более закруглённые углы */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: all 0.4s ease; /* Плавные переходы для всех свойств */
+  transition: all 0.4s ease;
   margin: 15px;
-  display: flex; /* Используем flexbox для центрирования текста */
-  align-items: center; /* Центрируем текст по вертикали */
-  justify-content: center; /* Центрируем текст по горизонтали */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Franklin Gothic Medium', sans-serif;
-  font-weight: bold;
 }
 
-/* Эффекты при наведении */
+/* Hover effects */
 .group-button:hover {
-   background-color: #f5f5f5; /* Фон при наведении */
-  transform: translateY(-6px) scale(1.05); /* Подъём и увеличение кнопки */
+  background-color: #f5f5f5; /* Фон при наведении */
+  transform: translateY(-5px) scale(1.05); /* Подъём и увеличение кнопки */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
 }
 
-/* Убираем эффект при фокусе */
 .group-button:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(255, 112, 67, 0.4); /* Тень при фокусе */
@@ -55,4 +54,30 @@
 .group-button:active {
   transform: translateY(2px) scale(0.98); /* Сжатие и уменьшение при нажатии */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
+}
+
+@media (max-width: 768px) {
+  .group-container {
+       padding-bottom: 20px; /* Уменьшен padding-bottom */
+    min-height: 83vh; /* Убедитесь, что высота гибкая */
+  }
+
+  .group-header {
+    	padding-bottom:-100px;
+  padding-right: 30%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  }
+
+  .group-button {
+    width: 90%; /* Увеличиваем ширину для мобильных */
+    height: auto; /* Даем авторазмер для мобильных */
+    font-size: 1rem;
+    padding-left: 20px;
+    justify-content: flex-start;
+    margin: 12px 0;
+  }
 }

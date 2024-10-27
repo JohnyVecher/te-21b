@@ -1,14 +1,14 @@
 /* CourseSelection.css */
 
 .course-container {
-  padding-bottom: 18%;
+   min-height: 79vh; /* Изменено на min-height для адаптивности */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 50vh;
+  justify-content: flex-start; /* Содержимое перемещено вверх */
   background-color: #F5F6FA;
   border-radius: 0% 0% 20px 20px;
+  padding: 20px; /* Уменьшенный padding */
 }
 
 .course-header {
@@ -20,23 +20,23 @@
 }
 
 .course-button {
-  width: 15%; /* Фиксированная ширина кнопки */
-  height: 15%; /* Фиксированная высота кнопки для лучшего контроля */
+ width: 20%; /* Фиксированная ширина кнопки */
+  height: auto; /* Убрана фиксированная высота */
+  padding: 15px; /* Добавлено для удобного нажатия */
   font-size: 1.2rem;
   font-weight: 600;
-  color: #000; /* Цвет текста */
-  background-color: #fff; /* Фон */
-  border: none; /* Без границ */
-  border-radius: 10px; /* Более закруглённые углы */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: all 0.4s ease; /* Плавные переходы для всех свойств */
+  transition: all 0.4s ease;
   margin: 15px;
-  display: flex; /* Используем flexbox для центрирования текста */
-  align-items: center; /* Центрируем текст по вертикали */
-  justify-content: center; /* Центрируем текст по горизонтали */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Franklin Gothic Medium', sans-serif;
-  font-weight: bold;
 }
 
 /* Эффекты при наведении */
@@ -55,4 +55,45 @@
 .course-button:active {
   transform: translateY(2px) scale(0.98); /* Сжатие и уменьшение при нажатии */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
+}
+
+@media (max-width: 768px) {
+	
+	.course-container {
+ 	 gap:-10px;
+  padding-bottom: 300px;
+  margin-bottom:300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F6FA;
+  border-radius: 0% 0% 20px 20px;
+
+}
+
+.course-header {
+  	padding-bottom:-100px;
+  padding-right: 30%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+
+}
+
+.course-button {
+  width: 90%; /* Фиксированная ширина кнопки */
+  height: 10%; /* Фиксированная высота кнопки для лучшего контроля */
+  font-size: 0.9rem;
+  color: #000; /* Цвет текста */
+  background-color: #fff; /* Фон */
+  border: none; /* Без границ */
+  padding-left:20px;
+  justify-content: flex-start;
+  border-radius: 30px; /* Более закруглённые углы */
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: bold;
+}
+
+
 }

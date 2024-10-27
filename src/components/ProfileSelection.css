@@ -1,16 +1,18 @@
 /* ProfileSelection.css */
 
 .profile-container {
-  padding-bottom: 18%;
+  min-height: 79vh; /* Изменено на min-height для адаптивности */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 50vh;
+  justify-content: flex-start; /* Содержимое перемещено вверх */
   background-color: #F5F6FA;
   border-radius: 0% 0% 20px 20px;
+  padding: 20px; /* Уменьшенный padding */
 }
-
+ .level{
+font-size: 0rem;	 
+ }
 .profile-header {
   font-size: 2.5rem;
   font-weight: bold;
@@ -20,40 +22,78 @@
 }
 
 .profile-button {
-  width: 20%; /* Фиксированная ширина кнопки */
-  height: 15%; /* Фиксированная высота кнопки для лучшего контроля */
+  width: 23%; /* Фиксированная ширина кнопки */
+  height: auto; /* Убрана фиксированная высота */
+  padding: 15px; /* Добавлено для удобного нажатия */
   font-size: 1.2rem;
   font-weight: 600;
-  color: #000; /* Цвет текста */
-  background-color: #fff; /* Фон */
-  border: none; /* Без границ */
-  border-radius: 10px; /* Более закруглённые углы */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: all 0.4s ease; /* Плавные переходы для всех свойств */
+  transition: all 0.4s ease;
   margin: 15px;
-  display: flex; /* Используем flexbox для центрирования текста */
-  align-items: center; /* Центрируем текст по вертикали */
-  justify-content: center; /* Центрируем текст по горизонтали */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Franklin Gothic Medium', sans-serif;
-  font-weight: bold;
 }
 
-/* Эффекты при наведении */
 .profile-button:hover {
-  background-color: #f5f5f5; /* Фон при наведении */
-  transform: translateY(-6px) scale(1.05); /* Подъём и увеличение кнопки */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
+  background-color: #f5f5f5;
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Убираем эффект при фокусе */
 .profile-button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.4); /* Тень при фокусе */
+  box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.4);
 }
 
 .profile-button:active {
-  transform: translateY(2px) scale(0.98); /* Сжатие и уменьшение при нажатии */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Стили для мобильной версии */
+@media (max-width: 768px) {
+  .profile-container {
+    padding-bottom: 20px; /* Уменьшен padding-bottom */
+    min-height: 83vh; /* Убедитесь, что высота гибкая */
+  }
+  .level {
+  margin-top:10px;
+  padding-right: 35%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #8f8f8f;
+  margin-bottom: 30px;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+.profile-header {
+	padding-bottom:-100px;
+  padding-right: 17%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+.profile-button {
+  width: 95%; /* Фиксированная ширина кнопки */
+  height: 12%; /* Фиксированная высота кнопки для лучшего контроля */
+  font-size: 0.9rem;
+  color: #000; /* Цвет текста */
+  background-color: #fff; /* Фон */
+  border: none; /* Без границ */
+  padding-left:20px;
+  justify-content: flex-start;
+  border-radius: 30px; /* Более закруглённые углы */
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: bold;
+}
+}
