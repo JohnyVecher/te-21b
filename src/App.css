@@ -3,7 +3,7 @@
   padding: 0.5%;
   margin-right: 200px;
   background-color: #D7E2F1;
-  width: 98%;
+  width: 99%;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -92,7 +92,7 @@
 
 /* Кнопка для открытия шторки */
 .menu-button {
-  width: 30px;
+  width: 20px;
   height: 30px;
   position: relative;
   cursor: pointer;
@@ -149,9 +149,9 @@
   width: 20%;
   margin-left: 1%;
   display: flex;
-  font-weight: 300;
+  font-weight: 600;
   font-size: 1rem;
-  font-family: 'SF Pro Text';
+  font-family: 'Franklin Gothic';
   gap: 1%;
 }
 
@@ -204,7 +204,7 @@
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.4s ease;
-    font-family: 'SF Pro Text';
+    font-family: 'Franklin Gothic';
     font-weight: 600;
   }
 
