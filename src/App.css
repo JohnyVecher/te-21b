@@ -1,9 +1,9 @@
 .app {
   font-family: Arial, sans-serif;
-  padding: 0.5%;
+  padding: 1%;
   margin-right: 200px;
   background-color: #D7E2F1;
-  width: 99%;
+  width: 98%;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -92,7 +92,8 @@
 
 /* Кнопка для открытия шторки */
 .menu-button {
-  width: 20px;
+	
+  width: 32px;
   height: 30px;
   position: relative;
   cursor: pointer;
@@ -103,18 +104,18 @@
 
 .line {
   position: absolute;
-  width: 20px;
-  height: 2px;
+  width: 16px;
+  height:1px;
   background-color: #333;
   transition: all 0.4s ease;
 }
 
 .line1 {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
 }
 
 .line2 {
-  transform: translateY(8px);
+  transform: translateY(5px);
 }
 
 /* Состояние "открыто" */
@@ -151,7 +152,7 @@
   display: flex;
   font-weight: 600;
   font-size: 1rem;
-  font-family: 'Franklin Gothic';
+  font-family: 'Franklin Gothic Medium', sans-serif;
   gap: 1%;
 }
 
@@ -230,7 +231,7 @@
     display: flex;
     flex-direction: column;
     font-size: 1rem;
-    font-family: 'SF Pro Text';
+    font-family: 'Franklin Gothic Medium', sans-serif;
     font-weight: 600;
   }
 
