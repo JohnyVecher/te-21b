@@ -171,6 +171,7 @@
   display: flex; /* Используем flexbox для центрирования текста */
   align-items: center; /* Центрируем текст по вертикали */
   justify-content: center; /* Центрируем текст по горизонтали */
+  font-family: 'Franklin Gothic Medium', sans-serif;
 }
 
 
@@ -205,7 +206,7 @@
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.4s ease;
-    font-family: 'Franklin Gothic';
+    font-family: 'Franklin Gothic Medium', sans-serif;
     font-weight: 600;
   }
 
