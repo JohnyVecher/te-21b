@@ -1,12 +1,27 @@
 
 .app {
   font-family: Arial, sans-serif;
-  padding: 1%;
+  padding: 0.5%;
   margin-right:200px;
   background-color: #D7E2F1;
   height: 10%;
   width: 98%;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logo-button {
+  margin-left:30%;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 30px; /* Увеличиваем ширину кнопки */
+  height: 70px; /* Увеличиваем высоту кнопки */
+}
+
+.logo-image {
+  width: 30px;
+  height: auto;
 }
 
  .dark-mode {
@@ -27,8 +42,8 @@
 }
 
 .theme-toggle {
-  width: 6vh; /* Фиксированная ширина кнопки */
-  height: 6vh; /* Исправлено: фиксированная высота кнопки */
+  width: 3vh; /* Фиксированная ширина кнопки */
+  height: 3vh; /* Исправлено: фиксированная высота кнопки */
   font-size: 1.2rem;
   font-weight: 600;
   color: #000; /* Цвет текста */
@@ -63,8 +78,48 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
 }
 
- 
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+ .menu-button {
+  margin-left:-29px;
+  margin-top:-5px;
+  width: 5vh; /* Фиксированная ширина кнопки */
+  height: 4vh; /* Исправлено: фиксированная высота кнопки */
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000; /* Цвет текста */
+  background-color: #fff; /* Фон */
+  border: none; /* Без границ */
+  border-radius: 100%; /* Более закруглённые углы */
+  cursor: pointer;
+  transition: all 0.4s ease; /* Плавные переходы для всех свойств */
+  display: flex; /* Используем flexbox для центрирования текста */
+  align-items: center; /* Центрируем текст по вертикали */
+  justify-content: center; /* Центрируем текст по горизонтали */
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: bold;
+}
+
 .header {
+  height:25px;
   display: flex	;
   align-items: center;
   background-color: #ffff;
@@ -73,62 +128,43 @@
   position: relative;
 }
 
-.header h1 {
-  flex: 1;
-  text-align: center; /* Центрирует текст "Расписание" */
-  margin: 0;
-  font-family: 'Franklin Gothic Medium', sans-serif;
-  font-size: 1vw;
-}
 
-.logo-button {
-  background: none;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  width: 60px; /* Увеличиваем ширину кнопки */
-  height: 60px; /* Увеличиваем высоту кнопки */
-}
-
-.logo-image {
-  width: 50px;
-  height: auto;
-}
-
-
-.header-buttons {
-  margin-left: 36%;
+.header-buttons1 {
+  height: 70%;
+  width:20%;
+  margin-left:1%;
   display: flex;
   gap: 1%; /* Расстояние между кнопками */
-
+}
+.header-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .header-button {
   text-decoration: none;
   color: black;
-  cursor: pointer;
-  width: 200%; /* Фиксированная ширина кнопки */
-  height: 15%; /* Фиксированная высота кнопки для лучшего контроля */
-  font-size: 1.2rem;
-  font-weight: 600;
+  width: 50%; /* Фиксированная ширина кнопки */
+  height: 100%; /* Фиксированная высота кнопки для лучшего контроля */
   color: #000; /* Цвет текста */
   background-color: #fff; /* Фон */
   border: none; /* Без границ */
-  border-radius: 10px; /* Более закруглённые углы */
+  border-radius: 30px; /* Более закруглённые углы */
   cursor: pointer;
   transition: all 0.4s ease; /* Плавные переходы для всех свойств */
-  margin: 15px;
+  margin-left: 15px;
   display: flex; /* Используем flexbox для центрирования текста */
   align-items: center; /* Центрируем текст по вертикали */
   justify-content: center; /* Центрируем текст по горизонтали */
-  font-family: 'Franklin Gothic Medium', sans-serif;
-  font-weight: bold;
 }
 
+
+
 .header-button h1 {
-  margin: 10px;
-  font-size: 3vh;
-  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: 'SF Pro Text';
 }
 
 .header-button:hover {
@@ -140,7 +176,7 @@
 /* Убираем эффект при фокусе */
 .header-button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 1); /* Тень при фокусе */
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0); /* Тень при фокусе */
 }
 
 .header-button:active {
@@ -154,65 +190,68 @@
   padding: 1%;
   margin-right:200px;
   background-color: #D7E2F1;
-  height: -1%;
+  height: 20%;
   }
 
   .header {
 	  gap:1%;
-	height: 70px;
+	height: 30px;
     flex-direction: row; 
     align-items: flex-start; /* Выравниваем элементы по левому краю */
   }
 
-
-  .logo-button {
-    width: 50px; /* Уменьшаем размер кнопки */
-    height: 50px; /* Уменьшаем размер кнопки */
+.drawer {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: #ffffff;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
   }
-
-
-  .header-buttons {
-	  gap:1px;
-    margin-left: -2%; /* Убираем левый отступ */
-    justify-content: center; /* Центрируем кнопки */
+  
+  .drawer.open {
+    transform: translateX(0);
   }
- .theme-toggle
- {
- margin-left:10px;	
- margin-top	:10px;
+  
+.logo-button img {
+    width: 35px; /* Масштабирует изображение до размера контейнера */
+    height: auto; /* Сохраняет пропорции изображения */
+    object-fit: contain; /* Если нужно подогнать изображение по размеру контейнера */
+	margin-top: -40px; /* Сдвиг по вертикали */
+    margin-left: -50px; /* Сдвиг по горизонтали */
+    /* Или используйте transform */
+    transform: translate(-80px, -6px); /* Сдвиг по горизонтали и вертикали */
+}
+
+ 
+ .header-buttons1 {
+  display: none;
+}
+ 
+  
+ .theme-toggle{
+    width: 30px; /* Масштабирует изображение до размера контейнера */
+    height: 30px; /* Сохраняет пропорции изображения */
+    object-fit: contain; /* Если нужно подогнать изображение по размеру контейнера */
+	margin-top: 5px; /* Сдвиг по вертикали */
+    margin-left: 185px; /* Сдвиг по горизонтали */
+    /* Или используйте transform */
+    transform: translate(-5px, -6px); /* Сдвиг по горизонтали и вертикали */
 } 
- 
- 
-.header-button {
-  width: 35%; /* Фиксированная ширина кнопки */
-  height: 15%; /* Фиксированная высота кнопки для лучшего контроля */
-  margin: 15px;
-  gap:10px
+
+
 }
 
-.header-button h1 {
-  margin: 10px;
-  font-size: 3vh;
-  font-family: 'Franklin Gothic Medium', sans-serif;
-}
+@media (min-width: 769px) {
+  .header-buttons {
+    display: flex;
+  }
 
-.header-button:hover {
-  background-color: #f5f5f5; /* Фон при наведении */
-  transform: translateY(-1px) scale(1.05); /* Подъём и увеличение кнопки */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
-}
-
-/* Убираем эффект при фокусе */
-.header-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Тень при фокусе */
-}
-
-.header-button:active {
-  transform: translateY(2px) scale(0.98); /* Сжатие и уменьшение при нажатии */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
-}
-  .header-button h1 {
-    font-size: 1.7vh; /* Уменьшаем размер шрифта кнопок */
+  /* Скрываем кнопку меню на десктопе */
+  .menu-button {
+    display: none;
   }
 }

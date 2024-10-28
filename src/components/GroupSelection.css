@@ -1,7 +1,7 @@
 /* GroupSelection.css */
 
 .group-container {
-   min-height: 79vh; /* Изменено на min-height для адаптивности */
+   min-height: 86vh; /* Изменено на min-height для адаптивности */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +59,7 @@
 @media (max-width: 768px) {
   .group-container {
        padding-bottom: 20px; /* Уменьшен padding-bottom */
-    min-height: 83vh; /* Убедитесь, что высота гибкая */
+    min-height: 88vh; /* Убедитесь, что высота гибкая */
   }
 
   .group-header {
@@ -73,11 +73,21 @@
   }
 
   .group-button {
-    width: 90%; /* Увеличиваем ширину для мобильных */
-    height: auto; /* Даем авторазмер для мобильных */
-    font-size: 1rem;
-    padding-left: 20px;
-    justify-content: flex-start;
-    margin: 12px 0;
-  }
+ width: 100%; /* Фиксированная ширина кнопки */
+  height: 12%; /* Фиксированная высота кнопки для лучшего контроля */
+  font-size: 0.9rem;
+  color: #000; /* Цвет текста */
+  background-color: #fff; /* Фон */
+  border: none; /* Без границ */
+  padding-left:20px;
+   justify-content: space-between;
+  border-radius: 30px; /* Более закруглённые углы */
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: bold;
+}
+
+.arrow-icon {
+  width: 15px; /* Размер стрелки */
+  height: auto;
+}
 }

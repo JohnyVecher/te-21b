@@ -1,7 +1,7 @@
 /* ProfileSelection.css */
 
 .profile-container {
-  min-height: 79vh; /* Изменено на min-height для адаптивности */
+  min-height: 86vh; /* Изменено на min-height для адаптивности */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +19,9 @@ font-size: 0rem;
   color: #333;
   margin-bottom: 30px;
   font-family: 'Franklin Gothic Medium', sans-serif;
+}
+.arrow-icon { 
+width:0
 }
 
 .profile-button {
@@ -61,7 +64,7 @@ font-size: 0rem;
 @media (max-width: 768px) {
   .profile-container {
     padding-bottom: 20px; /* Уменьшен padding-bottom */
-    min-height: 83vh; /* Убедитесь, что высота гибкая */
+    min-height: 88vh; /* Убедитесь, что высота гибкая */
   }
   .level {
   margin-top:10px;
@@ -84,16 +87,22 @@ font-size: 0rem;
 }
 
 .profile-button {
-  width: 95%; /* Фиксированная ширина кнопки */
+  width: 100%; /* Фиксированная ширина кнопки */
   height: 12%; /* Фиксированная высота кнопки для лучшего контроля */
   font-size: 0.9rem;
   color: #000; /* Цвет текста */
   background-color: #fff; /* Фон */
   border: none; /* Без границ */
   padding-left:20px;
-  justify-content: flex-start;
+   justify-content: space-between;
   border-radius: 30px; /* Более закруглённые углы */
   font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: bold;
 }
+
+.arrow-icon {
+  width: 15px; /* Размер стрелки */
+  height: auto;
+}
+
 }
