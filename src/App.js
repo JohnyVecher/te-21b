@@ -13,9 +13,16 @@ import night from './night.png';
 const App = () => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isFullyOpened, setIsFullyOpened] = useState(false);
 
-  const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
+ const toggleDrawer = () => {
+    if (isDrawerOpen) {
+      setIsFullyOpened(false); // Вернем полоски к исходному состоянию
+      setTimeout(() => setIsDrawerOpen(false), 300); // Закроем шторку после анимации
+    } else {
+      setIsDrawerOpen(true); // Открытие шторки
+      setTimeout(() => setIsFullyOpened(true), 300); // Добавим крестик после анимации
+    }
   };
 
   return (
@@ -26,51 +33,36 @@ const App = () => {
           <button className="logo-button">
             <img src={logo} alt="Logo" className="logo-image" />
           </button>
-          <div className="te21b"></div>
           <div className="header-buttons1">
-            <Link to="/" className="header-button">
-              <h1>Расписание</h1>
-            </Link>
-            <Link to="/portfolio" className="header-button">
-              <h1>Портфолио</h1>
-            </Link>
-			<Link to="/portfolio" className="header-button">
-              <h1>Сессия</h1>
-            </Link>
-			<Link to="/portfolio" className="header-button">
-              <h1>Инфо</h1>
-            </Link>
+            <Link to="/" className="header-button">Расписание</Link>
+            <Link to="/portfolio" className="header-button">Портфолио</Link>
+            <Link to="/session" className="header-button">Сессия</Link>
+            <Link to="/info" className="header-button">Инфо</Link>
           </div>
-        <button
-          onClick={toggleTheme}
-          className="theme-toggle"
-          style={{
-            backgroundColor: isDarkMode ? '#cccccc' : '#fff', // Цвет фона кнопки
-            color: isDarkMode ? '#fff' : '#fff' // Цвет текста кнопки
-          }}
-        >
-          <img src={night} alt="night" className="logo-image" />
-        </button>
-          <button className="menu-button" onClick={toggleDrawer}>
-            ☰
+          <button
+            onClick={toggleTheme}
+            className="theme-toggle"
+            style={{
+              backgroundColor: isDarkMode ? '#cccccc' : '#fff',
+              color: isDarkMode ? '#fff' : '#fff'
+            }}
+          >
+            <img src={night} alt="night" className="logo-image" />
           </button>
+          {/* Кнопка для шторки с анимацией */}
+          <div className={`menu-button ${isDrawerOpen ? 'open' : ''}`} onClick={toggleDrawer}>
+            <span className={`line line1 ${isFullyOpened ? 'opened' : ''}`}></span>
+            <span className={`line line2 ${isFullyOpened ? 'opened' : ''}`}></span>
+          </div>
         </div>
 
-        {/* Выдвижная шторка для кнопок навигации */}
+        {/* Выдвижная шторка */}
         <div className={`drawer ${isDrawerOpen ? 'open' : ''}`}>
           <div className="header-buttons">
-            <Link to="/" className="header-button" onClick={toggleDrawer}>
-              <h1>Расписание</h1>
-            </Link>
-            <Link to="/portfolio" className="header-button" onClick={toggleDrawer}>
-              <h1>Портфолио</h1>
-            </Link>
-            <Link to="/session" className="header-button" onClick={toggleDrawer}>
-              <h1>Сессия</h1>
-            </Link>
-            <Link to="/info" className="header-button" onClick={toggleDrawer}>
-              <h1>Инфо</h1>
-            </Link>
+            <Link to="/" className="header-button" onClick={toggleDrawer}>Расписание</Link>
+            <Link to="/portfolio" className="header-button" onClick={toggleDrawer}>Портфолио</Link>
+            <Link to="/session" className="header-button" onClick={toggleDrawer}>Сессия</Link>
+            <Link to="/info" className="header-button" onClick={toggleDrawer}>Инфо</Link>
           </div>
         </div>
 
