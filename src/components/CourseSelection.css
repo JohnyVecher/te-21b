@@ -60,9 +60,9 @@
 @media (max-width: 768px) {
 	
 	.course-container {
- padding-bottom: 20px; /* Уменьшен padding-bottom */
-    min-height: 88vh; /* Убедитесь, что высота гибкая */
-
+	border-radius: 0% 0% 0px 0px;
+    padding-bottom: 20px; /* Уменьшен padding-bottom */
+    min-height: 90vh; /* Убедитесь, что высота гибкая */
 }
 
 .course-header {

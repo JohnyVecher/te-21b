@@ -192,6 +192,15 @@
 }
 
 @media (max-width: 896px) {
+	
+.app {
+  font-family: Arial, sans-serif;
+  padding: 0%;
+  background-color: #D7E2F1;
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
   .header-button {
     display: flex;
     align-items: center;
@@ -241,16 +250,16 @@
   align-items: center;
   background-color: #fff;
   padding: 10px;
-  border-radius: 20px 20px 0 0;
+  border-radius: 0px 0px 0 0;
   z-index: 1000;
   height: 30px;
 }
 
  .drawer {
   position: absolute; /* Привязываем шторку к header */
-  top:5.8%; /* Располагаем шторку сразу под header */
-  left: 4px;
-  width: 98.1%;
+  top:5%; /* Располагаем шторку сразу под header */
+  left: 0;
+  width: 100%;
   max-height: 0; /* Изначально скрываем */
   overflow: hidden;
   background-color: #fff;
@@ -291,17 +300,22 @@
   }
 
   
-
+.theme-toggle  {
+ margin-left:70%;
+ transition: background-color 0.5s ease; /* Плавный переход для фона */
+ width: 30px;
+ height: 30px;
+ object-fit: contain;
+ transform: translate(0px, 0px);
+}
   
-.theme-toggle {
-
-  transition: background-color 0.5s ease; /* Плавный переход для фона */
-    margin-right:10px;
-	  margin-top:0px;
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    transform: translate(0px, 0px);
+.theme-toggle img {
+ margin-left:0%;
+ transition: background-color 0.5s ease; /* Плавный переход для фона */
+ width: 30px;
+ height: 30px;
+ object-fit: contain;
+ transform: translate(0px, 0px);
 }
 
 /* Анимация вращения при нажатии */

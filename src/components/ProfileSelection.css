@@ -63,8 +63,9 @@ width:0
 /* Стили для мобильной версии */
 @media (max-width: 768px) {
   .profile-container {
+	border-radius: 0% 0% 0px 0px;
     padding-bottom: 20px; /* Уменьшен padding-bottom */
-    min-height: 88vh; /* Убедитесь, что высота гибкая */
+    min-height: 90vh; /* Убедитесь, что высота гибкая */
   }
   .level {
   margin-top:10px;
