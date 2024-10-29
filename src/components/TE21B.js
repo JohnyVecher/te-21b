@@ -141,11 +141,11 @@ const timeRows = timeIntervals.map((interval, index) => (
         return (
           <td key={dayIndex} className="date-cell">
 			  {filters.lectures && day.getDay() === 1 && index === 0 && (
-                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
-                  <div className="text-top">Компьютерное моделирование, лекция (VII)</div>
-                  <div className="text-bottom">8:30 - 10:00</div>
-                </div>
-              )}
+  <div className={`green-block ${isCurrent ? 'current-interval' : ''} monday-style`}>
+    <div className="text-top">Компьютерное моделирование, лекция (VII)</div>
+    <div className="text-bottom">8:30 - 10:00</div>
+  </div>
+)}
 			  {filters.lectures && day.getDay() === 1 && index === 1 && (
                 <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                   <div className="text-top">Обработка эспериментальных данных, лекция (408 УК1)</div>

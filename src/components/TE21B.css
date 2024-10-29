@@ -736,32 +736,37 @@
 }
 
 @media (max-width: 768px) {
-  .calendar-container {
-	 width: 100%;
-    flex-direction: column; /* Вертикальное расположение для мобильных устройств */
-    padding: 10px; /* Уменьшаем отступы */
+	
+	.sidebar{
+	display:none;	
+	}
+	
+   .calendar-container {
+    flex-direction: column; /* Вертикальное расположение */
+	font-family: Arial, sans-serif;
+    padding: 0%;
+    background-color: #D7E2F1;
+	height:100%;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
+  .week-table-cell{
+	  display:none;
+  }
   .sidebar-activity-container {
-    width: 100%; /* Задаем 100% ширины для мобильных */
-    gap: 10px; /* Уменьшаем расстояние между блоками */
-  }
-.weekly-calendar {
-    width: 200%; /* Задаем 100% ширины для мобильных */
- /* Уменьшаем расстояние между блоками */
-  }
-  
-  .sidebar, .activity-filter {
     width: 100%; /* Задаем 100% ширины для мобильных */
     margin: 5px 0; /* Уменьшаем отступы */
   }
+  
 .time-cell {
-	font-size: 1vh;
+	display:none;
 }
-  .date-cell {
-    height: auto; /* Даем автоматическую высоту для ячеек */
-    width: 100%; /* Задаем 100% ширины для ячеек */
-  }
+
+.month-calendar .date-cell {
+  display: none;
+}
+
 
   .month-navigation h3, .week-navigation h3, .week-navigation h2 {
     font-size: 4vh; /* Увеличиваем размер шрифта для лучшей читаемости */
@@ -773,7 +778,6 @@
     height: 40px; /* Высота кнопок */
   }
   
-  /* Уменьшаем размер текста в блоках */
   .green-block .text-top, .green-block .text-bottom,
   .laba .text-top, .laba .text-bottom,
   .practicals .text-top, .practicals .text-bottom {
