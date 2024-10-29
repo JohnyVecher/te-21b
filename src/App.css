@@ -72,17 +72,28 @@
   }
 }
 
-.drawer {
-  position: fixed;
-  top: 48px; /* Расположение под заголовком */
-  left: 3px; /* Обеспечивает фиксацию с левой стороны */
-  width: 100%;
-  height: 0; /* Высота автоматическая для контента */
-  background-color: #fff; /* Цвет, совпадающий с основным блоком */
-  overflow: hidden;
-  border-radius: 0px 0px 30px 30px;
-  transition: height 0.7s ease; /* Плавное изменение высоты */
+.header {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 20px 20px 0 0;
+  position: relative;
   z-index: 1000;
+}
+
+.drawer {
+  position: absolute; /* Привязываем шторку к header */
+  top: 10%; /* Располагаем шторку под header */
+  left: 10px;
+  width: 90%;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 0px 0px 30px 30px;
+  transition: max-height 0.3s ease; /* Плавный переход */
+  z-index: 999;
 }
 
 /* Состояние шторки "открыто" */
@@ -105,9 +116,9 @@
 .line {
   position: absolute;
   width: 16px;
-  height:1px;
+  height:2px;
   background-color: #333;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 }
 
 .line1 {
@@ -132,18 +143,6 @@
   transform: rotate(-45deg); /* Вторая линия поворачивается для крестика */
 }
 
-
-
-.header {
-  height: 25px;
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 20px 20px 0 0;
-  position: relative;
-  z-index: 1000;
-}
 
 .header-buttons1 {
   height: 70%;
@@ -236,48 +235,61 @@
     font-weight: 600;
   }
 
-  .header {
-    height: 30px;
-    flex-direction: row;
-    align-items: flex-start;
-  }
+ .header {
+  position: relative; /* Устанавливаем header как контекст для дочернего элемента drawer */
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 20px 20px 0 0;
+  z-index: 1000;
+  height: 30px;
+}
 
-  .drawer {
-    position: fixed;
-    top: 48px; /* Расположение под заголовком */
-    background-color: #fff; /* Фоновый цвет для шторки */
-    width: 97.7%;
-    display: flex;
-    z-index: 1000;
-    transition: height 0.7s ease; /* Плавное изменение высоты */
-  }
+ .drawer {
+  position: absolute; /* Привязываем шторку к header */
+  top:5.8%; /* Располагаем шторку сразу под header */
+  left: 4px;
+  width: 98.1%;
+  max-height: 0; /* Изначально скрываем */
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 0px 0px 30px 30px;
+  transition: max-height 0.3s ease; /* Плавное открытие */
+  z-index: 999;
+}
 
   .drawer.open {
-    max-height: 25vh; /* Высота для полного отображения */
-  }
+  max-height: 25vh; /* Задаем высоту шторки при открытии */
+}
 
   .logo-button img {
     width: 30px;
     height: auto;
     object-fit: contain;
-    transform: translate(-120px, -20px);
+    transform: translate(-120px, 0px);
   }
 
+.menu-button {
+	margin-left:229px;
+  width: 0px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
   .header-buttons1 {
-    display: none;
+    display: none; /* Прячем кнопки в мобильной версии */
   }
+
+  
 
   
 .theme-toggle {
 
-  transition: background-color 0.5s ease; /* Плавный переход для фона */
-    margin-right:10px;
-	  margin-top:0px;
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    transform: translate(0px, 0px);
+  display:none;
 }
 
 /* Анимация вращения при нажатии */
