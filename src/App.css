@@ -191,7 +191,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 896px) {
   .header-button {
     display: flex;
     align-items: center;
@@ -263,11 +263,18 @@
   max-height: 25vh; /* Задаем высоту шторки при открытии */
 }
 
-  .logo-button img {
+.logo-button {
+	  margin-left:0%;
     width: 30px;
     height: auto;
     object-fit: contain;
-    transform: translate(-120px, 0px);
+  }
+
+  .logo-button img {
+	  margin-left:0%;
+    width: 30px;
+    height: auto;
+    object-fit: contain;
   }
 
 .menu-button {
