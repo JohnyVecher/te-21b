@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ThemeContext, ThemeProvider } from './components/ThemeContext'; 
 import TE21B from './components/TE21B';
 import Portfolio from './components/Portfolio';
-import Otladka from './components/otladka';
 import ProfileSelection from './components/ProfileSelection';
 import CourseSelectionTE from './components/CourseSelectionTE';
 import GroupSelectionTE from './components/GroupSelectionTE';
@@ -63,7 +62,6 @@ const App = () => {
             <Link to="/" className="header-button" onClick={toggleDrawer}>Расписание</Link>
             <Link to="/portfolio" className="header-button" onClick={toggleDrawer}>Портфолио</Link>
             <Link to="/session" className="header-button" onClick={toggleDrawer}>Сессия</Link>
-            <Link to="/otladka" className="header-button" onClick={toggleDrawer}>Отладка</Link>
           </div>
         </div>
 
@@ -74,7 +72,6 @@ const App = () => {
           <Route path="/group-selectionte3" element={<GroupSelectionTE />} />
           <Route path="/TE21B" element={<TE21B />} />
           <Route path="/portfolio" element={<Portfolio />} />
-		  <Route path="/otladka" element={<Otladka />} />
         </Routes>
       </div>
     </Router>
