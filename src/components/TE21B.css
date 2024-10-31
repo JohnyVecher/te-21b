@@ -747,7 +747,7 @@
 }
 	.calendar-container {
     flex-direction: column; /* Вертикальное расположение */
-	font-family: 'Franklin Gothic Medium';
+	font-family: 'Franklin Gothic Medium', serif;
     padding: 0%;
     background-color: #D7E2F1;
 	height:100%;
@@ -767,9 +767,10 @@
     align-items: center;
 	height:40px;
 	color: #00000;
+	font-family: 'Franklin Gothic Medium', serif;
 	}	
 	.group-name h2 {
-	font-family: 'Franklin Gothic Medium';
+	font-family: 'Franklin Gothic Medium', serif;
     font-weight: 900;
 	padding:10px;
 	font-size: 1.5rem;
@@ -784,6 +785,7 @@
     align-items: center;
 	height:50px;
 	color: #7d878f;
+	font-family: 'Franklin Gothic Medium', serif;
 	}
 	.week-navigation-mobile h2 {
 	font-family: 'Franklin Gothic Medium', serif;
@@ -800,9 +802,10 @@
 	background-color:#e3e8ff;
 	height:60px;
 	z-index:1000;
+	font-family: 'Franklin Gothic Medium', serif;
 	}
 	.data-prime h2 {
-	font-family: 'Franklin Gothic Medium';
+    font-family: 'Franklin Gothic Medium', serif;
     font-weight: 600;
 	padding:20px;
 	color:#172a39;
@@ -842,19 +845,24 @@
     margin-bottom: 0px;
   }
 
-  .day-button {
-    flex: 2;
+ .day-button {
+    flex: 0; /* Или flex: 2, в зависимости от желаемой ширины */
+    min-width: 10%; /* Минимальная ширина кнопки */
     border: 1px solid #9aacfd;
     background-color: #9aacfd;
     font-size: 1.3rem;
     text-align: center;
     cursor: pointer;
-	color: #ffffff;
-	border-radius: 10px 10px 10px 10px;
-	font-family: 'Franklin Gothic Medium', sans-serif;
-	font-weight: 500;
+    color: #ffffff;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', serif;
+    font-weight: 500;
     transition: background-color 0.2s ease, color 0.2s ease;
-  }
+}
+
+.day-button:hover {
+    background-color: #7a9fcf; /* Пример эффекта при наведении */
+}
 
   .day-button.selected {
     background-color: #9aacfd;
@@ -871,6 +879,7 @@
   }
 	
 	.mobile-day-schedule table {
+		font-family: 'Franklin Gothic Medium', serif;
     width: 100%; /* Убедитесь, что таблица занимает всю ширину */
     background-color: #fffff; /* Цвет фона для ячеек таблицы */
 	border-radius: 0px
