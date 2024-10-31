@@ -585,7 +585,7 @@
 .date-cell-desktop {
   position: relative; /* Добавляем относительное позиционирование для ячейки */
   height: 20vh; 
-  width: 10vh;/* Задаем высоту ячейки для видимости блока */
+  width: 20vh;/* Задаем высоту ячейки для видимости блока */
 }
 
 /*Цвет ячеек чисел в календаре*/
@@ -679,7 +679,7 @@
 }
 
 .time-cell {
- 
+
   padding: px;
   width: 100%; /* Фиксированная ширина для выравнивания */
   height: auto;
@@ -746,14 +746,6 @@
 	flex-direction: column;
     font-family: 'Franklin Gothic Medium', sans-serif;
 }
-	.calendar-container {
-    flex-direction: column; /* Вертикальное расположение */
-    padding: 0%;
-    background-color: #D7E2F1;
-	height:100%;
-    width: 100%;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
 	
 	.group-name{
     margin-top:2%;
