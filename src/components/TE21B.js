@@ -320,24 +320,6 @@ const Calendar = () => {
           </ul>
         </div>
       </div>
-<div className="weekly-calendar">
-        <div className="week-navigation">
-          <button onClick={prevWeek}><img src={arrowLeftWeek} alt="Previous Week" /></button>
-          <h2>{weekRange}</h2>
-          <button onClick={nextWeek}><img src={arrowRightWeek} alt="Next Week" /></button>
-        </div>
-        <table className="week-table">
-          <thead>
-            <tr>
-              <th></th>
-              {renderDaysOfWeek()}
-            </tr>
-          </thead>
-          <tbody>
-            {renderWeek()}
-          </tbody>
-        </table>
-      </div>
 
       <div className="mobile-schedule-container">
 	  <div className="group-name">
@@ -377,7 +359,24 @@ const Calendar = () => {
         </div>
       </div>
 
-      
+      <div className="weekly-calendar">
+        <div className="week-navigation">
+          <button onClick={prevWeek}><img src={arrowLeftWeek} alt="Previous Week" /></button>
+          <h2>{weekRange}</h2>
+          <button onClick={nextWeek}><img src={arrowRightWeek} alt="Next Week" /></button>
+        </div>
+        <table className="week-table">
+          <thead>
+            <tr>
+              <th></th>
+              {renderDaysOfWeek()}
+            </tr>
+          </thead>
+          <tbody>
+            {renderWeek()}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
