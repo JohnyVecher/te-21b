@@ -238,18 +238,7 @@ const Calendar = () => {
 
             return (
               <td key={dayIndex} className="date-cell-desktop">
-                {filters.lectures && day.getDay() === 1 && index === 0 && (
-                  <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
-                    <div className="text-top">Компьютерное моделирование, лекция (VII)</div>
-                    <div className="text-bottom">8:30 - 10:00</div>
-                  </div>
-                )}
-				{filters.lectures && day.getDay() === 1 && index === 1 && (
-                  <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
-                    <div className="text-top">Компьютерное моделирование, лекция (VII)</div>
-                    <div className="text-bottom">8:30 - 10:00</div>
-                  </div>
-                )}
+                
               </td>
             );
           })}
@@ -320,7 +309,6 @@ const Calendar = () => {
           </ul>
         </div>
       </div>
-
       <div className="mobile-schedule-container">
 	  <div className="group-name">
           <h2>TE-21Б</h2>
@@ -358,7 +346,6 @@ const Calendar = () => {
           </table>
         </div>
       </div>
-
       <div className="weekly-calendar">
         <div className="week-navigation">
           <button onClick={prevWeek}><img src={arrowLeftWeek} alt="Previous Week" /></button>
