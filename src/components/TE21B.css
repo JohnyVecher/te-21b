@@ -803,7 +803,9 @@
 	padding:20px;
 	color:#172a39;
 	}
-	
+	.daun-calendar{
+		display:none;
+	}
 	.sidebar-activity-container{
 		display:none;
 	}
@@ -859,11 +861,11 @@
   }
 
   .mobile-day-schedule {
+
 	  width: 100%;
-    padding: px;
-    background-color: #F5F6FA;
-    border-radius: 10px;
-	border: 3px solid #F5F6FA;
+
+    border-radius: 0px;
+	border: 0.1px solid #fffffff;
   }
 	
 	.mobile-day-schedule table {
@@ -871,7 +873,7 @@
 	font-family: 'Franklin Gothic Medium', sans-serif;
     width: 100%; /* Убедитесь, что таблица занимает всю ширину */
     background-color: #fffff; /* Цвет фона для ячеек таблицы */
-	border-radius: 0px
+	border-radius: 1px
 	
 }
 	
