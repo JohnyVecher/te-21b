@@ -1,9 +1,5 @@
-
-
-
-@media (max-width: 768px) {
-	
-	@keyframes glowGreenafter {
+@media (min-width: 768px){
+@keyframes glowGreenafter {
   0% {
     background-color: rgba(0, 174, 113, 0.9);
     box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
@@ -251,11 +247,16 @@
 
 /* Стиль для контейнера календаря */
 .calendar-container {
+	
   display: flex;
   padding: 20px;
   background-color: #F5F6FA;
   border-radius: 0 0 30px 30px;
   gap: 20px;
+}
+
+.mobile-schedule-container{
+	display:none;
 }
 
 /* Внутренний контейнер для вертикального расположения sidebar и activity-filter */
@@ -273,7 +274,7 @@
   margin: 10px;
   font-family: 'Franklin Gothic Medium', sans-serif;
   height: auto;
-  width: 10;
+  width: 90%;
 }
 
 /* Activity Filter */
@@ -283,6 +284,7 @@
   background-color: #fff;
   border-radius: 20px;
   height: auto;
+  width: 90%;
 }
 
 
@@ -582,10 +584,10 @@
   z-index: 1;
 }
 
-.date-cell {
+.date-cell-desktop {
   position: relative; /* Добавляем относительное позиционирование для ячейки */
   height: 20vh; 
-  width: 10vh;/* Задаем высоту ячейки для видимости блока */
+  width: 20vh;/* Задаем высоту ячейки для видимости блока */
 }
 
 /*Цвет ячеек чисел в календаре*/
@@ -617,7 +619,7 @@
 }	
 
 /* Ячейка дня месяца */
-.month-calendar .date-cell {
+.month-calendar .date-cell-desktop {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -649,13 +651,13 @@
   font-weight: bold;
 }
 
-
-/* НАСТРОЙКА НЕДЕЛИ(сетки и тд)*/
 .weekly-calendar {
+  height:0%;
   flex-grow: 1; /* Заполняет оставшееся пространство */
   padding: 10;
   background-color: #fff;
   border-radius: 20px;
+  max-height:10%;
 }
 
 .week-table {
@@ -679,7 +681,7 @@
 }
 
 .time-cell {
- 
+
   padding: px;
   width: 100%; /* Фиксированная ширина для выравнивания */
   height: auto;
@@ -739,54 +741,80 @@
   background-color: #fff;
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
-
 }
-
 @media (max-width: 768px) {
-	
-	.green-block {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(0, 174, 113, 0.1);
-  color: white;
-  padding: 5px;
-  text-align: center;
-  width: 95%;
-  height: 90%; /* Измените на auto для автоматической подгонки под содержимое */
-  box-sizing: border-box;
-  font-family: 'Franklin Gothic Medium', sans-serif;
-  font-weight: bold;
-  color: #00AE71;
-  max-width: 100%; 
-  max-height: 110%;
-  overflow: hidden; /* Скрываем содержимое, если оно превышает размеры блока */
-  
-  /* Добавление визуальной тени */
-  box-shadow: 0 4px 8px rgba(0, 174, 113, 0.3); /* Настраиваем тень */
+	.mobile-schedule-container{
+	display:flex;
+	flex-direction: column;
+    font-family: 'Franklin Gothic Medium', sans-serif;
 }
-	
-	.sidebar{
-	display:none;	
-	}
-	
-   .calendar-container {
+	.calendar-container {
     flex-direction: column; /* Вертикальное расположение */
-	font-family: Arial, sans-serif;
     padding: 0%;
     background-color: #D7E2F1;
 	height:100%;
     width: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-
-.weekly-calendar{
-	display:none;
-}
-
-.day-selector-container {
+	
+	.group-name{
+    margin-top:2%;
+	margin-left:33%;
+	width: 35%;
+	margin-bottom:20px;
+	background-color: #ffff;
+	border-radius:20px 20px 20px 20px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	height:40px;
+	color: #00000;
+	}	
+	.group-name h2 {
+    font-weight: 900;
+	padding:10px;
+	font-size: 1.5rem;
+	}
+	
+	.week-navigation-mobile{
+	margin-bottom:8%;
+	background-color: #ffff;
+	border-radius:20px 20px 20px 20px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	height:50px;
+	color: #7d878f;
+	}
+	.week-navigation-mobile h2 {
+    font-weight: 600;
+	padding:10px;
+	}
+	
+	.data-prime {
+	border-radius:20px 20px 0px 0px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color:#172a39;
+	background-color:#e3e8ff;
+	height:60px;
+	z-index:1000;
+	}
+	.data-prime h2 {
+    font-weight: 600;
+	padding:20px;
+	color:#172a39;
+	}
+	
+	.sidebar-activity-container{
+		display:none;
+	}
+	
+	.day-selector-container {
 	height: 100%;
-    border-radius: 10px 10px 0px 0px;
-    background-color: #007bff;
+    border-radius: 20px 20px 0px 0px;
+    background-color: #e3e8ff;
   }
 
   .mobile-schedule-container {
@@ -796,51 +824,300 @@
     background-color: #F5F6FA;
   }
 
-  /* Секция с кнопками для выбора дня недели */
   .day-selector {
+	  height:70px;
+	background-color: #9aacfd;
 	padding-top:10px;
     display: flex;
     justify-content: space-between;
+	border-radius: 20px 20px 0px 0px;
     gap: 4px;
     margin-bottom: 0px;
   }
 
-  /* Кнопки для выбора дня недели */
-  .day-button {
-    flex: 1;
-    padding: 10px 0;
-    border: 1px solid #007bff;
-    background-color: #007bff;
-    font-size: 18px;
+ .day-button {
+    flex: 2; /* Или flex: 2, в зависимости от желаемой ширины */
+	width: 0%;
+    min-width: 10%; /* Минимальная ширина кнопки */
+    border: 1px solid #9aacfd;
+    background-color: #9aacfd;
+    font-size: 1.3rem;
     text-align: center;
     cursor: pointer;
-	color: #ffffff;
-	border-radius: 10px 10px 10px 10px;
-	font-family: 'Franklin Gothic Medium', sans-serif;
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: 500;
     transition: background-color 0.2s ease, color 0.2s ease;
-  }
-
-  /* Стиль активной кнопки (выбранный день) */
-  .day-button.selected {
-    background-color: #007bff; /* Основной цвет для выделения */
-    font-weight: bold;
-    border-color: #007bff;
-  }
-
-  /* Контейнер для расписания выбранного дня */
-  .mobile-day-schedule {
-    padding: 12px;
-    background-color: #ffffff;
-    border-radius: 0px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Стиль элементов внутри расписания для выбранного дня */
-  
-  .date-cell {
-  position: relative; /* Добавляем относительное позиционирование для ячейки */
-  height: 0vh; 
-  width: 50vh;/* Задаем высоту ячейки для видимости блока */
 }
 
+.day-button:hover {
+    background-color: #7a9fcf; /* Пример эффекта при наведении */
+}
+
+  .day-button.selected {
+    background-color: #9aacfd;
+    font-weight: 800;
+    border-color: #9aacfd;
+	color: #000000;
+  }
+`
+  .mobile-day-schedule {
+    padding: px;
+    background-color: #D7E2F1;
+    border-radius: 30px;
+	border: 0.1px solid #ffffff;
+  }
+	
+	.mobile-day-schedule table {
+	font-family: 'Franklin Gothic Medium', sans-serif;
+    width: 100%; /* Убедитесь, что таблица занимает всю ширину */
+    background-color: #fffff; /* Цвет фона для ячеек таблицы */
+	border-radius: 0px
+	
+}
+	
+	.mobile-day-schedule td {
+background-color: #ffffff;
+}
+	
+  .weekly-calendar{
+	display:none;
+}
+	
+ .date-cell-mobile {
+  display: table-cell; /* Убедитесь, что ячейки отображаются корректно */ 
+}
+
+.date-cell-mobile:empty {
+  display: none; /* Скрыть пустые ячейки */
+}
+
+	
+
+.practicals .text-task, .green-block .text-task, .laba .text-task {
+  display: flex;
+  justify-content: left;
+  padding-top: 4%;
+  margin-left:7%;
+  font-size: 1rem,;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: 1000;
+}
+
+.practicals .text-place, .green-block .text-place, .laba .text-place {
+   display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top:6%;
+  margin-left:7%;
+  font-size: 1rem;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: 500;
+}
+
+.practicals .text-time, .green-block .text-time, .laba .text-time  {
+   display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top:10%;
+  margin-left:7%;
+  margin-left:7%;
+  font-size: 1.2rem;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: 1000;
+}
+
+.practicals {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(73, 112, 255, 0.2);
+  color: white;
+  border-radius: 0px 15px 15px 0;
+  padding: 0px;
+  text-align: center;
+  width: 100%;
+  height: 150px; /* Измените на auto для автоматической подгонки под содержимое */
+  box-sizing: border-box;
+
+  color: #4970ff;
+  max-width: 100%; 
+  max-height: 100%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(73, 112, 255, 0.3);
+  margin-top: 40px;  
+  margin-bottom: 40px;
+  position: relative; /* Добавьте это для позиционирования ::after */
+}
+
+.practicals::after {
+  content: '';
+  position: absolute ; 
+  top: -17%; 
+  left: 0%; 
+  width: 2%;
+  height: 100%; 
+}
+
+
+
+.green-block {
+  display: flex;
+  flex-direction: collumn;
+  background-color: rgba(0, 174, 113, 0.2);
+  color: white;
+  border-radius: 0px 20px 20px 0;
+  padding: 0px;
+  text-align: center;
+  width: 100%;
+  height: 150px; /* Измените на auto для автоматической подгонки под содержимое */
+  box-sizing: border-box;
+  color: #00AE71;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 174, 113, 0.3);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative; /* Добавьте это для позиционирования ::after */
+}
+
+.green-block::after {
+  content: '';
+  position: absolute; 
+  top: -17%; 
+  left: 0%; 
+  width: 2%;
+  height: 170%; 
+  background-color: rgba(0, 174, 113, 1);
+}
+  
+  
+ .laba {
+  display: flex;
+  flex-direction: collumn;
+  background-color: rgba(160, 51, 255, 0.2);
+  color: white;
+  border-radius: 0px 20px 20px 0;
+  padding: 0px;
+  text-align: center;
+  width: 100%;
+  height: 150px; /* Измените на auto для автоматической подгонки под содержимое */
+  box-sizing: border-box;
+  color: #8450DE;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(160, 51, 255, 0.3);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative; /* Добавьте это для позиционирования ::after */
+}
+
+.laba::after {
+  content: '';
+  position: absolute; 
+  top: -17%; 
+  left: 0%; 
+  width: 2%;
+  height: 170%; 
+  background-color: rgba(160, 51, 255, 1);
+} 
+  
+  @keyframes glowGreenafter {
+  0% {
+    background-color: rgba(0, 174, 113, 0.9);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+  50% {
+    background-color: rgba(129, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(0, 174, 113, 0.9);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+}
+
+@keyframes glowlabaafter {
+	0%{ 
+    background-color: rgba(132, 80, 222, 1);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+  50% {
+    background-color: rgba(129, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(132, 80, 222, 1);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+}
+
+@keyframes glowpracticalsafter {
+  0% {
+    background-color: rgba(73, 112, 255, 1);
+    box-shadow: 0 0 5px rgba(73, 112, 255, 0.3);
+  }
+  50% {
+    background-color: rgba(129, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(73, 112, 255, 1);
+    box-shadow: 0 0 5px rgba(73, 112, 255, 0.3);
+  }
+}
+
+@keyframes glowGreen {
+  0% {
+    background-color: rgba(0, 174, 113, 0.1);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+  50% {
+    background-color: rgba(206, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(0, 174, 113, 0.1);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+}
+
+@keyframes glowlaba {
+  0% {
+    background-color: rgba(132, 80, 222, 0.1);
+    box-shadow: 0 0 5px rgba(132, 80, 222, 0.5);
+  }
+  50% {
+    background-color: rgba(206, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(132, 80, 222, 0.1);
+    box-shadow: 0 0 5px rgba(132, 80, 222, 0.5);
+  }
+}
+
+@keyframes glowpracticals {
+  0% {
+    background-color: rgba(73, 112, 255, 0.1);
+    box-shadow: 0 0 5px rgba(73, 112, 255, 0.5);
+  }
+  50% {
+    background-color: rgba(206, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(73, 112, 255, 0.1);
+    box-shadow: 0 0 5px rgba(73, 112, 255, 0.5);
+  }
+}
+
+  
 }

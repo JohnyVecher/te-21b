@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 @keyframes glowGreenafter {
   0% {
@@ -1123,3 +1124,1014 @@
 
   
 }
+=======
+
+@keyframes glowGreenafter {
+  0% {
+    background-color: rgba(0, 174, 113, 0.9);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+  50% {
+    background-color: rgba(129, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(0, 174, 113, 0.9);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+}
+
+@keyframes glowlabaafter {
+	0%{ 
+    background-color: rgba(132, 80, 222, 1);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+  50% {
+    background-color: rgba(129, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(132, 80, 222, 1);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+}
+
+@keyframes glowpracticalsafter {
+  0% {
+    background-color: rgba(73, 112, 255, 1);
+    box-shadow: 0 0 5px rgba(73, 112, 255, 0.3);
+  }
+  50% {
+    background-color: rgba(129, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(73, 112, 255, 1);
+    box-shadow: 0 0 5px rgba(73, 112, 255, 0.3);
+  }
+}
+
+@keyframes glowGreen {
+  0% {
+    background-color: rgba(0, 174, 113, 0.1);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+  50% {
+    background-color: rgba(206, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(0, 174, 113, 0.1);
+    box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+  }
+}
+
+@keyframes glowlaba {
+  0% {
+    background-color: rgba(132, 80, 222, 0.1);
+    box-shadow: 0 0 5px rgba(132, 80, 222, 0.5);
+  }
+  50% {
+    background-color: rgba(206, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(132, 80, 222, 0.1);
+    box-shadow: 0 0 5px rgba(132, 80, 222, 0.5);
+  }
+}
+
+@keyframes glowpracticals {
+  0% {
+    background-color: rgba(73, 112, 255, 0.1);
+    box-shadow: 0 0 5px rgba(73, 112, 255, 0.5);
+  }
+  50% {
+    background-color: rgba(206, 20, 2, 0.7);
+    box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+	color: rgba(0,0,0, 0.7);
+  }
+  100% {
+    background-color: rgba(73, 112, 255, 0.1);
+    box-shadow: 0 0 5px rgba(73, 112, 255, 0.5);
+  }
+}
+
+.green-block.current-interval::after {
+  animation: glowGreenafter 3s infinite; /* Применяем анимацию к псевдоэлементу */
+}
+
+.laba.current-interval::after {
+  animation: glowlabaafter 3s infinite; /* Применяем анимацию к псевдоэлементу */
+}
+
+.practicals.current-interval::after {
+  animation: glowpracticalsafter 3s infinite; /* Применяем анимацию к псевдоэлементу */
+}
+
+.green-block.current-interval {
+  animation: glowGreen 3s infinite;
+}
+
+.laba.current-interval {
+  animation: glowlaba 3s infinite;
+}
+
+.practicals.current-interval {
+  animation: glowpracticals 3s infinite;
+}
+
+.green-block .text-top, .laba .text-top, .practicals .text-top  {
+  padding-top: 10px;
+  font-size: 0.8vw;
+}
+
+.green-block .text-bottom, .laba .text-bottom, .practicals .text-bottom  {
+	padding-bottom:5%;
+  /* Стили для времени внизу */
+  margin-top: auto; /* Перемещает текст в нижнюю часть блока */
+  font-size: 0.8vw;
+	
+}
+
+
+.green-block {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 174, 113, 0.1);
+  color: white;
+  border-radius: 0px 30% 30% 0;
+  padding: 5px;
+  text-align: center;
+  width: 95%;
+  height: 90%; /* Измените на auto для автоматической подгонки под содержимое */
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: bold;
+  color: #00AE71;
+  max-width: 100%; 
+  max-height: 110%;
+  overflow: hidden; /* Скрываем содержимое, если оно превышает размеры блока */
+  
+  /* Добавление визуальной тени */
+  box-shadow: 0 4px 8px rgba(0, 174, 113, 0.3); /* Настраиваем тень */
+}
+
+.laba {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(132, 80, 222, 0.1); /* Зеленый цвет с 50% прозрачностью */
+  color: white;
+  border-radius: 0px 30% 30% 0;
+  padding: 5px;
+  text-align: center;
+  width: 95%;
+  height: 90%; /* Измените на auto для автоматической подгонки под содержимое */
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  color:#8450DE;
+  font-weight: bold;
+  max-width: 100%; 
+  max-height: 110%;
+  overflow: hidden; /* Скрываем содержимое, если оно превышает размеры блока */
+    box-shadow: 0 4px 8px rgba(132, 80, 222, 0.3);
+}
+
+.practicals {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(73, 112, 255, 0.1); /* Зеленый цвет с 50% прозрачностью */
+  color: white;
+  border-radius: 0px 30% 30% 0;
+  padding: 5px;
+  text-align: center;
+  width: 95%;
+  height: 90%; /* Измените на auto для автоматической подгонки под содержимое */
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  color:#4970ff;
+  font-weight: bold;
+  max-width: 100%; 
+  max-height: 110%;
+  overflow: hidden; /* Скрываем содержимое, если оно превышает размеры блока */
+  box-shadow: 0 4px 8px rgba(73, 112, 255, 0.3);
+  
+}
+
+.laba::after {
+  content: ''; 
+  position: absolute;
+  margin-top:6%;
+  top: 0; /* Расположите палочку справа от блока */
+  left: 0px; /* Расположите палочку справа от блока */
+  width: 2%; /* Ширина палочки */
+  height:89%; /* Высота палочки */
+  background-color: rgba(132, 80, 222, 1); /* Цвет палочки тот же, что и у блока */
+  max-width: 50%; 
+  max-height: 100%;
+  overflow: hidden;
+}
+.green-block::after {
+  content: ''; 
+  position: absolute;
+  top: 0; /* Расположите палочку справа от блока */
+  left: 0px; /* Расположите палочку справа от блока */
+  width: 2%; /* Ширина палочки */
+  height:88%; /* Высота палочки */
+  background-color: rgba(0, 174, 113, 1);
+  margin-top:6%;
+  max-width: 100%; 
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.practicals::after {
+  content: ''; 
+  position: absolute;
+  margin-top:6%;
+  top: 0; /* Расположите палочку справа от блока */
+  left: 0px; /* Расположите палочку справа от блока */
+  width: 2%; /* Ширина палочки */
+  height:89%; /* Высота палочки */
+  background-color: rgba(73, 112, 255, 1); /* Цвет палочки тот же, что и у блока */
+  max-width: 50%; 
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.hidden-row {
+  display: none;
+}
+
+.visible-row {
+  display: table-row;
+}
+
+/* Стиль для контейнера календаря */
+.calendar-container {
+	
+  display: flex;
+  padding: 20px;
+  background-color: #F5F6FA;
+  border-radius: 0 0 30px 30px;
+  gap: 20px;
+}
+
+.mobile-schedule-container{
+	display:none;
+}
+
+/* Внутренний контейнер для вертикального расположения sidebar и activity-filter */
+.sidebar-activity-container {
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение блоков */
+  gap: 20px; /* Расстояние между блоками */
+  width: 200%; /* Ширина контейнера для sidebar и activity-filter */
+}
+
+.sidebar { /* Календарь */
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 10px;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  height: auto;
+  width: 90%;
+}
+
+/* Activity Filter */
+.activity-filter {
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 20px;
+  height: auto;
+  width: 90%;
+}
+
+
+.dark-mode .sidebar {
+  background-color: #181C3A;
+}
+
+.dark-mode .calendar-container {
+  color: #ffff;
+  background-color: #090D28;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .activity-filter {
+  color: #ffff;
+  background-color: #181C3A;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dark-mode .time-cell {
+  color: #ffff;
+  background-color: #151934;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .week-table-cell {
+  color: #ffff;
+  background-color: #181C3A;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.dark-mode .date-cell {
+  color: #ffff;
+  background-color: #151934;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .month-calendar .cell {
+  color: #ffff;
+  background-color: #181C3A;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .month-calendar .week-table-cell {
+  color: #ffff;
+  background-color: #181C3A;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .week-table th{
+  color: #ffff;
+  background-color: #181C3A;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .week-navigation{
+  color: #ffff;
+  background-color: #181C3A;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .week-table th{
+  color: #ffff;
+  border: 1px solid #181C3A;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.activity-list label {
+  flex-grow: 1; 
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.7vh;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+/* Заголовок типов */
+.activity-filter h2 { 
+  font-size: 2vh;
+  margin-top: 5px;
+  padding-bottom: 10px;
+  margin-left: -40%;
+  text-transform: capitalize;
+  text-align: center;
+  margin-right: auto;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+.activity-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.activity-list input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 10px;
+}
+
+/* Стиль для checkbox с id lectures */
+#lectures {
+  background-color: #FFFFFF;
+  border: 2px solid #00AE71;
+ font-size: 1.7vh;
+}
+
+#lectures:checked {
+  background-color: #00AE71; /* Цвет фона при активации */
+  border-color: #00AE71;
+  font-size: 1.7vh;
+}
+
+#lectures:checked::before {
+  content: '\2714'; /* Символ галочки */
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.7vh;
+}
+
+/* Стиль для checkbox с id practicals */
+#practicals {
+  background-color: #FFFFFF;
+  border: 2px solid #4970FF;
+  font-size: 1.7vh;
+}
+
+#practicals:checked {
+  background-color: #4970FF; /* Цвет фона при активации */
+  border-color: #4970FF;
+}
+
+#practicals:checked::before {
+  content: '\2714'; /* Символ галочки */
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.7vh;
+}
+
+/* Стиль для checkbox с id labs */
+#laba {
+  background-color: #FFFFFF;
+  border: 2px solid #8450DE;
+}
+
+#laba:checked {
+  background-color: #8450DE; /* Цвет фона при активации */
+  border-color: #8450DE;
+  font-size: 1.7vh;
+}
+
+#laba:checked::before {
+  content: '\2714'; /* Символ галочки */
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.7vh;
+}
+.week-navigation h3 { 
+  padding: 1%;
+  font-size: 3vh;
+  margin: 0;
+  text-transform: capitalize;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+/*Заголовок календаря*/
+.month-navigation h3 { 
+  font-size: 1.9vh;
+  margin: 0;
+  text-transform: capitalize;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+/*Навигация по месяцу*/
+.month-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-right; /* Кнопки справа */
+  padding: 0 10px;
+  gap: 10px;
+}
+
+/*Кнопка месяца*/
+.month-navigation button {
+  font-size: 1vw;
+  margin-left: 30%; /* Сдвигаем кнопку вправо на 10 пикселей */ /* Сдвигаем кнопку вправо на 10 пикселей */
+  background: none;
+  border: 1px transparent; /* Изначально прозрачная граница */
+  width: 30px;
+  height: 30px;
+  border-radius: 5px; /* Радиус для скругления углов */
+}
+
+.month-navigation button + button {
+  margin-left: 1px; /* Уменьшите расстояние между кнопками */
+}
+
+.month-navigation button:hover {
+  background-color: #dcdcdc; /* Цвет фона при наведении */
+  border-color: #aaa; /* Цвет границы при наведении */
+  width: 30px; /* Установите ширину обратно на 30px */
+}
+
+
+/* Стили для изображений стрелок навигации*/
+.month-navigation img {
+  width: 20px;
+  height: auto;
+  color: #5AAC74;
+}
+
+/*Навигация по неделям*/
+.week-navigation {
+  background-color: #F8F9FF;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Выравниваем содержимое по левому краю */
+  padding: 0 px;
+  border-radius: 10px 10px 0 0;
+}
+
+/*Заголов Недели*/
+.week-navigation h2 {
+  margin: 10px 0; /* Уменьшите отступы сверху и снизу, чтобы расстояние до кнопок было меньше */
+  font-size: 1.5vw;
+  text-transform: capitalize;
+  text-align: left;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  
+}
+
+
+/*Кнопка недели*/
+.week-navigation button {
+  border-radius: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 0.8vw;
+  margin-bottom: -5px; /* Добавьте отступ снизу, чтобы кнопки находились ближе к заголовку */
+}
+
+.week-navigation button:hover {
+  background-color: #dcdcdc; /* Цвет фона при наведении */
+  border-color: #aaa; /* Цвет границы при наведении */
+  width: 30px; /* Установите ширину обратно на 30px */
+}
+
+/* Изображения стрелок */
+.week-navigation img {
+  width: 20px; /* Ширина стрелок */
+  height: auto;
+  color: #5AAC74;
+}
+
+/* Стиль для выделенного дня */
+.selected-day {
+  position: relative;
+  background-color: rgba(0, 0, 255, 0.3);
+  border-radius: 50%;
+}
+
+.selected-day::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 123, 255, 0.4);
+  z-index: 1;
+}
+
+.date-cell-desktop {
+  position: relative; /* Добавляем относительное позиционирование для ячейки */
+  height: 20vh; 
+  width: 20vh;/* Задаем высоту ячейки для видимости блока */
+}
+
+/*Цвет ячеек чисел в календаре*/
+
+/* Визуальный отступ заголовка от чисел */
+.month-calendar {
+  margin-top: 20px;
+  width: 100%; /* Явно задаем ширину для календаря */
+  height: auto; /* Автоматическая высота */
+}
+
+/* Ячейки заголовков и дней месяца */
+.month-calendar th, 
+.month-calendar td {
+  height: 6vh; /* Устанавливаем одинаковую высоту для ячеек */
+  width: auto; /* Ширина определяется автоматически */
+  font-size: 1vw;
+  padding: 0; /* Минимальный padding */
+  text-align: center; /* Центрируем текст */
+  border: none;
+  box-sizing: border-box; /* Учитываем padding при расчете ширины */
+}
+
+/* Настройка для строк */
+.month-calendar tr {
+  height: auto; /* Высота строки адаптируется к содержимому */
+  width: 100%; /* Ширина строки 100% */
+  border: none;
+}	
+
+/* Ячейка дня месяца */
+.month-calendar .date-cell-desktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Относительное позиционирование */
+  height: 6vh; /* Фиксированная высота для ячеек */
+  width: 6vh; /* Фиксированная ширина для ячеек */
+  background-color: #fff; /* Фон ячеек */
+  border-radius: 10px; /* Закругленные углы */
+  box-sizing: border-box; /* Учитываем padding и border */
+}
+
+
+/* Общее оформление для ячеек с числами */
+.month-calendar .cell {
+  height: 5vh; /* Фиксированная высота */
+  width: 6vh; /* Фиксированная ширина */
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 1.8vh;
+  text-align: center;
+  padding: 0; /* Минимальный padding */
+  box-sizing: border-box;
+}
+
+.cell {
+  width: 1000%; /* Фиксируем ширину */
+  height: 100%; /* Фиксируем высоту */
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: bold;
+}
+
+.weekly-calendar {
+  height:0%;
+  flex-grow: 1; /* Заполняет оставшееся пространство */
+  padding: 10;
+  background-color: #fff;
+  border-radius: 20px;
+  max-height:10%;
+}
+
+.week-table {
+  background-color: #Ffffff; /* Фон заголовков */
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse; /* Убирает двойные границы между ячейками */
+  border-radius: 10%;
+}
+
+.week-table th,
+.week-table td {
+  padding: 2px;
+  border: 1px solid #E5E8F2; /* Граница между ячейками */
+}
+
+.week-table th { /*Дни недели*/
+  padding: 10px;
+  background-color: #F8F9FF; /* Фон заголовков */
+  border: 1px solid #F8F9FF; /* Граница между ячейками */
+}
+
+.time-cell {
+
+  padding: px;
+  width: 100%; /* Фиксированная ширина для выравнивания */
+  height: auto;
+  text-align: center; /* Выравнивание текста по правому краю */
+  color: #4E7CA3;
+  font-size: 1.9vh;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: bold; 
+}
+
+
+.pair-name {
+  flex: 1; /* Занимает доступное пространство */
+  display: flex; /* Включаем Flexbox для выравнивания */
+  align-items: center; /* Центрируем по вертикали */
+  justify-content: center; /* Центрируем по горизонтали */
+}
+
+.pair-time {
+  font-size: 2h; /* Меньший шрифт для времени */
+  margin-top: 38%; /* Отступ между наименованием и временем */
+}
+
+.week-table tr:first-child {
+  border-left: none; /* Граница слева для первого столбца */
+  border-top: none;
+}
+
+.week-table td { /*Сетка*/
+  border-left: none; /* Убираем правую границу для последнего столбца */
+  border-bottom: none;
+}
+
+.week-table td:last-child { /*Сетка*/
+  margin-top: 34%;
+  border-right: none; /* Убираем правую границу для последнего столбца */
+  border-left: none; /* Убираем правую границу для последнего столбца */
+  border-bottom: none;
+}
+.month-calendar .week-table-cell{
+  position: relative;
+  height: 10%;
+  width: 10%;
+  font-size: 1.7vh;
+  padding: 10px;
+  color: #7B9BB9;
+  background-color: #fff;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+.week-table-cell {
+  position: relative;
+  height: 3vh;
+  font-size: 1.7vh;
+  padding: 10px;
+  color: #7B9BB9;
+  background-color: #fff;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .mobile-schedule-container {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Franklin Gothic Medium', sans-serif;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 0px;
+        background-color: #F5F6FA;
+    }
+
+    .calendar-container {
+        flex-direction: column; /* Вертикальное расположение */
+        padding: 0;
+        background-color: #D7E2F1;
+        height: 100%;
+        width: 100%;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .group-name {
+        margin-top: 2%;
+        margin-left: 33%;
+        width: 35%;
+        margin-bottom: 20px;
+        background-color: #ffff;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        color: #000;
+    }
+
+    .group-name h2 {
+        font-weight: 900;
+        padding: 10px;
+        font-size: 1.5rem;
+    }
+
+    .week-navigation-mobile {
+        margin-bottom: 8%;
+        background-color: #ffff;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        color: #7d878f;
+    }
+
+    .week-navigation-mobile h2 {
+        font-weight: 600;
+        padding: 10px;
+    }
+
+    .data-prime {
+        border-radius: 20px 20px 0px 0px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        color: #172a39;
+        background-color: #e3e8ff;
+        height: 60px;
+        z-index: 1000;
+    }
+
+    .data-prime h2 {
+        font-weight: 600;
+        padding: 20px;
+        color: #172a39;
+    }
+
+    .sidebar-activity-container {
+        display: none;
+    }
+
+    .day-selector-container {
+        height: 100%;
+        border-radius: 20px 20px 0px 0px;
+        background-color: #e3e8ff;
+    }
+
+    .day-selector {
+        height: 70px;
+        background-color: #9aacfd;
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 20px 20px 0px 0px;
+        gap: 4px;
+        margin-bottom: 0px;
+    }
+
+    .day-button {
+        flex: 2; 
+        min-width: 10%;
+        border: 1px solid #9aacfd;
+        background-color: #9aacfd;
+        font-size: 1.3rem;
+        text-align: center;
+        cursor: pointer;
+        color: #ffffff;
+        border-radius: 10px;
+        font-weight: 500;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .day-button:hover {
+        background-color: #7a9fcf; /* Пример эффекта при наведении */
+    }
+
+    .day-button.selected {
+        background-color: #9aacfd;
+        font-weight: 800;
+        border-color: #9aacfd;
+        color: #000000;
+    }
+
+     .mobile-day-schedule {
+    padding: 0px;
+    background-color: #D7E2F1;
+    border-radius: 30px;
+	border: 0.1px solid #ffffff;
+  }
+
+    .mobile-day-schedule table {
+        font-family: 'Franklin Gothic Medium', sans-serif;
+        width: 100%; /* Убедитесь, что таблица занимает всю ширину */
+        background-color: #ffffff; /* Цвет фона для ячеек таблицы */
+        border-radius: 0; 
+    }
+
+    .mobile-day-schedule td {
+        background-color: #ffffff;
+    }
+
+    .weekly-calendar {
+        display: none;
+    }
+
+    .date-cell-mobile {
+        display: table-cell; /* Убедитесь, что ячейки отображаются корректно */ 
+    }
+
+    .date-cell-mobile:empty {
+        display: none; /* Скрыть пустые ячейки */
+    }
+
+    .practicals .text-task,
+    .green-block .text-task,
+    .laba .text-task {
+        display: flex;
+        justify-content: left;
+        padding-top: 4%;
+        margin-left: 7%;
+        font-size: 1rem;
+        font-family: 'Franklin Gothic Medium', sans-serif;
+        font-weight: 1000;
+    }
+
+    .practicals .text-place,
+    .green-block .text-place,
+    .laba .text-place {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-top: 6%;
+        margin-left: 7%;
+        font-size: 1rem;
+        font-family: 'Franklin Gothic Medium', sans-serif;
+        font-weight: 500;
+    }
+
+    .practicals .text-time,
+    .green-block .text-time,
+    .laba .text-time {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-top: 10%;
+        margin-left: 7%;
+        font-size: 1.2rem;
+        font-family: 'Franklin Gothic Medium', sans-serif;
+        font-weight: 1000;
+    }
+
+    .practicals,
+    .green-block,
+    .laba {
+        display: flex;
+        flex-direction: column; /* Исправлено на column */
+        background-color: rgba(73, 112, 255, 0.2);
+        color: white;
+        border-radius: 0 20px 20px 0;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        height: 150px; /* Измените на auto для автоматической подгонки под содержимое */
+        box-sizing: border-box;
+        color: #4970ff;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(73, 112, 255, 0.3);
+        margin-top: 40px;
+        margin-bottom: 40px;
+        position: relative; /* Добавьте это для позиционирования ::after */
+    }
+
+    .practicals::after,
+    .green-block::after,
+    .laba::after {
+        content: '';
+        position: absolute;
+        top: -17%;
+        left: 0%;
+        width: 2%;
+        height: 170%; 
+    }
+
+    .green-block {
+        background-color: rgba(0, 174, 113, 0.2);
+        color: #00AE71;
+    }
+
+    .laba {
+        background-color: rgba(160, 51, 255, 0.2);
+        color: #8450DE;
+    }
+
+    @keyframes glowGreenafter {
+        0% {
+            background-color: rgba(0, 174, 113, 0.9);
+            box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+        }
+        50% {
+            background-color: rgba(129, 20, 2, 0.7);
+            box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+            color: rgba(0,0,0, 0.7);
+        }
+        100% {
+            background-color: rgba(0, 174, 113, 0.9);
+            box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+        }
+    }
+
+    @keyframes glowlabaafter {
+        0% {
+            background-color: rgba(132, 80, 222, 1);
+            box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+        }
+        50% {
+            background-color: rgba(129, 20, 2, 0.7);
+            box-shadow: 0 0 30px rgba(206, 20, 2, 0.7);
+            color: rgba(0,0,0, 0.7);
+        }
+        100% {
+            background-color: rgba(132, 80, 222, 1);
+            box-shadow: 0 0 5px rgba(0, 174, 113, 0.5);
+        }
+    }
+
+    /* Если нужно добавлять больше стилей, делайте это ниже */
+}
+>>>>>>> bf55dadf37257e0a492a0e90803e9007b1b7a7f1
