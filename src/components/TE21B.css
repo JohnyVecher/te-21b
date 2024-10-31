@@ -846,7 +846,8 @@
   }
 
  .day-button {
-    flex: 0; /* Или flex: 2, в зависимости от желаемой ширины */
+    flex: 2; /* Или flex: 2, в зависимости от желаемой ширины */
+	width: 0%;
     min-width: 10%; /* Минимальная ширина кнопки */
     border: 1px solid #9aacfd;
     background-color: #9aacfd;
