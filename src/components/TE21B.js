@@ -346,7 +346,7 @@ const Calendar = () => {
           </table>
         </div>
       </div>
-      <div className="weekly-calendar">
+      <div className="daun-calendar">
         <div className="week-navigation">
           <button onClick={prevWeek}><img src={arrowLeftWeek} alt="Previous Week" /></button>
           <h2>{weekRange}</h2>

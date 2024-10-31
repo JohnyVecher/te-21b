@@ -590,9 +590,6 @@
   width: 20vh;/* Задаем высоту ячейки для видимости блока */
 }
 
-/*Цвет ячеек чисел в календаре*/
-
-/* Визуальный отступ заголовка от чисел */
 .month-calendar {
   margin-top: 20px;
   width: 100%; /* Явно задаем ширину для календаря */
@@ -619,7 +616,7 @@
 }	
 
 /* Ячейка дня месяца */
-.month-calendar .date-cell-desktop {
+.month-calendar .date-cell{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -651,8 +648,8 @@
   font-weight: bold;
 }
 
-.weekly-calendar {
-  height:0%;
+.daun-calendar {
+  height:100%;
   flex-grow: 1; /* Заполняет оставшееся пространство */
   padding: 10;
   background-color: #fff;
