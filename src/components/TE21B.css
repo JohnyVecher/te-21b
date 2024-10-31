@@ -747,7 +747,7 @@
 }
 	.calendar-container {
     flex-direction: column; /* Вертикальное расположение */
-	font-family: 'Montserrat';
+	font-family: 'Franklin Gothic Medium';
     padding: 0%;
     background-color: #D7E2F1;
 	height:100%;
@@ -769,7 +769,7 @@
 	color: #00000;
 	}	
 	.group-name h2 {
-	font-family: 'Montserrat medium';
+	font-family: 'Franklin Gothic Medium';
     font-weight: 900;
 	padding:10px;
 	font-size: 1.5rem;
@@ -786,7 +786,7 @@
 	color: #7d878f;
 	}
 	.week-navigation-mobile h2 {
-	font-family: 'Montserrat', serif;
+	font-family: 'Franklin Gothic Medium', serif;
     font-weight: 600;
 	padding:10px;
 	}
@@ -802,7 +802,7 @@
 	z-index:1000;
 	}
 	.data-prime h2 {
-	font-family: 'Montserrat';
+	font-family: 'Franklin Gothic Medium';
     font-weight: 600;
 	padding:20px;
 	color:#172a39;
@@ -843,7 +843,6 @@
   }
 
   .day-button {
-	 
     flex: 2;
     border: 1px solid #9aacfd;
     background-color: #9aacfd;
@@ -852,7 +851,7 @@
     cursor: pointer;
 	color: #ffffff;
 	border-radius: 10px 10px 10px 10px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Franklin Gothic Medium', sans-serif;
 	font-weight: 500;
     transition: background-color 0.2s ease, color 0.2s ease;
   }
@@ -905,7 +904,7 @@ background-color: #ffffff;
   padding-top: 4%;
   margin-left:7%;
   font-size: 1rem,;
-  font-family: 'Montserrat';
+  font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: 1000;
 }
 
@@ -916,7 +915,7 @@ background-color: #ffffff;
   margin-top:6%;
   margin-left:7%;
   font-size: 1rem;
-  font-family: 'Montserrat';
+  font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: 500;
 }
 
@@ -928,7 +927,7 @@ background-color: #ffffff;
   margin-left:7%;
   margin-left:7%;
   font-size: 1.2rem;
-  font-family: 'Montserrat';
+  font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: 1000;
 }
 
@@ -943,7 +942,7 @@ background-color: #ffffff;
   width: 100%;
   height: 150px; /* Измените на auto для автоматической подгонки под содержимое */
   box-sizing: border-box;
-  font-family: 'Montserrat';
+  font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: 500;
   color: #4970ff;
   max-width: 100%; 
