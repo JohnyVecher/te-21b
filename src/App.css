@@ -101,49 +101,7 @@
   height: 25vh; /* Высота для полного отображения */
 }
 
-/* Кнопка для открытия шторки */
-.menu-button {
-	
-  width: 32px;
-  height: 30px;
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.line {
-  position: absolute;
-  width: 16px;
-  height:2px;
-  background-color: #333;
-  transition: all 0.2s ease;
-}
-
-.line1 {
-  transform: translateY(-5px);
-}
-
-.line2 {
-  transform: translateY(5px);
-}
-
-/* Состояние "открыто" */
-.menu-button.open .line1,
-.menu-button.open .line2 {
-  transform: translateY(0); /* Линии сходятся в центре */
-}
-
-.menu-button.open .line1.opened {
-	transition: all 0.1s ease;
-  transform: rotate(45deg); /* Первая линия поворачивается для крестика */
-}
-
-.menu-button.open .line2.opened {
-	transition: all 0.1s ease;
-  transform: rotate(-45deg); /* Вторая линия поворачивается для крестика */
-}
 
 
 .header-buttons1 {
@@ -195,6 +153,50 @@
 
 @media (max-width: 896px) {
 	
+	/* Кнопка для открытия шторки */
+.menu-button {
+	
+  width: 32px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  position: absolute;
+  width: 16px;
+  height:2px;
+  background-color: #333;
+  transition: all 0.2s ease;
+}
+
+.line1 {
+  transform: translateY(-5px);
+}
+
+.line2 {
+  transform: translateY(5px);
+}
+
+/* Состояние "открыто" */
+.menu-button.open .line1,
+.menu-button.open .line2 {
+  transform: translateY(0); /* Линии сходятся в центре */
+}
+
+.menu-button.open .line1.opened {
+	transition: all 0.2s ease;
+  transform: rotate(45deg); /* Первая линия поворачивается для крестика */
+}
+
+.menu-button.open .line2.opened {
+	transition: all 0.2s ease;
+  transform: rotate(-45deg); /* Вторая линия поворачивается для крестика */
+}
+	
 .app {
   font-family: Arial, sans-serif;
   padding: 0%;
@@ -243,27 +245,26 @@
   }
 
  .header {
-  position: relative; /* Устанавливаем header как контекст для дочернего элемента drawer */
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 0px 0px 0 0;
-  z-index: 1000;
-  height: 30px;
+    position: sticky;
+    top: 0;
+    background-color: #fff; 
+    z-index: 1000; 
+    padding: 10px;
+	border-radius:0px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
  .drawer {
-  position: absolute; /* Привязываем шторку к header */
-  top:5%; /* Располагаем шторку сразу под header */
+  position: fixed; /* Привязываем шторку к header */
+  top:4.5%; /* Располагаем шторку сразу под header */
   left: 0;
   width: 100%;
   max-height: 0; /* Изначально скрываем */
   overflow: hidden;
   background-color: #fff;
   border-radius: 0px 0px 30px 30px;
-  transition: max-height 0.4s ease; /* Плавное открытие */
-  z-index: 999;
+  transition: max-height 0.5s ease; /* Плавное открытие */
+  z-index: 1000;
 }
 
   .drawer.open {
