@@ -650,14 +650,6 @@
   font-weight: bold;
 }
 
-.weekly-calendar {
-  height:0%;
-  flex-grow: 1; /* Заполняет оставшееся пространство */
-  padding: 10;
-  background-color: #fff;
-  border-radius: 20px;
-  max-height:10%;
-}
 
 .week-table {
   background-color: #Ffffff; /* Фон заголовков */
