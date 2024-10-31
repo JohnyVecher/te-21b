@@ -617,7 +617,7 @@
 }	
 
 /* Ячейка дня месяца */
-.month-calendar .date-cell {
+.month-calendar .date-cell-desktop {
   display: flex;
   justify-content: center;
   align-items: center;
