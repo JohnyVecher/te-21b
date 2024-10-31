@@ -302,7 +302,6 @@ const Calendar = () => {
             <tbody>{renderCells()}</tbody>
           </table>
         </div>
-
         <div className="activity-filter">
           <h2>Тип занятий</h2>
           <ul className="activity-list">

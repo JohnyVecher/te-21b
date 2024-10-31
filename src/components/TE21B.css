@@ -246,6 +246,12 @@
 
 /* Стиль для контейнера календаря */
 .calendar-container {
+	
+    padding: 0%;
+    background-color: #D7E2F1;
+	height:100%;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
   display: flex;
   padding: 20px;
   background-color: #F5F6FA;
@@ -746,6 +752,14 @@
 	flex-direction: column;
     font-family: 'Franklin Gothic Medium', sans-serif;
 }
+	.calendar-container {
+    flex-direction: column; /* Вертикальное расположение */
+    padding: 0%;
+    background-color: #D7E2F1;
+	height:100%;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 	
 	.group-name{
     margin-top:2%;
