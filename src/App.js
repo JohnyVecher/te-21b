@@ -9,13 +9,15 @@ import GroupSelectionTE from './components/GroupSelectionTE';
 import './App.css';
 import logo from './logo.png';
 import night from './night.png';
+import soundFile from './sound.mp3'; // Убедитесь, что путь к звуку указан правильно
 
 const App = () => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isFullyOpened, setIsFullyOpened] = useState(false);
+  const [clickCount, setClickCount] = useState(0); // Состояние для отслеживания нажатий на кнопку
 
- const toggleDrawer = () => {
+  const toggleDrawer = () => {
     if (isDrawerOpen) {
       setIsFullyOpened(false); // Вернем полоски к исходному состоянию
       setTimeout(() => setIsDrawerOpen(false), 300); // Закроем шторку после анимации
@@ -25,12 +27,28 @@ const App = () => {
     }
   };
 
+  const handleLogoClick = () => {
+    const audio = new Audio(soundFile); // Создаем новый объект Audio
+
+    setClickCount((prevCount) => {
+      const newCount = prevCount + 1;
+
+      // Проверяем, достигли ли мы 10 нажатий
+      if (newCount === 10) {
+        audio.play(); // Проигрываем звук
+        return 0; // Сбрасываем счетчик
+      }
+
+      return newCount; // Возвращаем новое значение счетчика
+    });
+  };
+
   return (
     <Router>
       <div className={isDarkMode ? 'app dark-mode' : 'app'} style={{ minHeight: '100vh' }}>
         {/* Верхняя панель с логотипом и кнопками */}
         <div className="header">
-          <button className="logo-button">
+          <button className="logo-button" onClick={handleLogoClick}>
             <img src={logo} alt="Logo" className="logo-image" />
           </button>
           <div className="header-buttons1">
