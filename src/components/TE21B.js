@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './TE21B.css';
 import arrowLeft from './arrow_left.png';
 import { ThemeContext } from './ThemeContext';
+import locations from './locations.png';
+import time from './time.png';
 import arrowRight from './arrow_right.png';
 import arrowLeftWeek from './arrow_left_week.png';
 import arrowRightWeek from './arrow_right_week.png';
@@ -112,32 +114,44 @@ const Calendar = () => {
             cellContent = (
                 <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Физра</div>
-                    <div className="text-place">Спорт зал</div>
-                    <div className="text-time">8:30 - 10:00</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
+                    Спорт зал
+                    </div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
+					8:30 - 10:00
+					</div>
                 </div>
             );
         } else if (filters.lectures && day.getDay() === 5 && index === 1) {
             cellContent = (
                 <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Направляющие системы электросвязи</div>
-                    <div className="text-place">VIII римская</div>
-                    <div className="text-time">10:15 - 11:45</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />VIII римская</div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>10:15 - 11:45</div>
                 </div>
             );
         } else if (filters.lectures && day.getDay() === 5 && index === 2) {
             cellContent = (
                 <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">БЖД</div>
-                    <div className="text-place">I римская</div>
-                    <div className="text-time">12:00 - 13:30</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />I римская</div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>12:00 - 13:30</div>
                 </div>
             );
         } else if (filters.lectures && day.getDay() === 5 && index === 3) {
             cellContent = (
                 <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">БЖД, практика</div>
-                    <div className="text-place">208 УК1</div>
-                    <div className="text-time">14:15 - 15:45</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />208 УК1</div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>14:15 - 15:45</div>
                 </div>
             );
         }
@@ -145,16 +159,20 @@ const Calendar = () => {
             cellContent = (
                 <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Сети связи и системы коммутации</div>
-                    <div className="text-place">VII римская</div>
-                    <div className="text-time">8:30 - 10:00</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />VII римская</div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>8:30 - 10:00</div>
                 </div>
             );
         } else if (filters.lectures && day.getDay() === 6 && index === 1) {
             cellContent = (
                 <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Сети связи и системы коммутации</div>
-                    <div className="text-place">VII римская</div>
-                    <div className="text-time">10:00 - 11:45</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />VII римская</div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>10:00 - 11:45</div>
                 </div>
             );
         } 
@@ -162,16 +180,20 @@ const Calendar = () => {
             cellContent = (
                 <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Направляющие системы электросвязи</div>
-                    <div className="text-place">110 УК3</div>
-                    <div className="text-time">8:30 - 10:00</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />110 УК3</div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>8:30 - 10:00</div>
                 </div>
             );
         } else if (filters.lectures && day.getDay() === 4 && index === 1) {
             cellContent = (
                 <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">БЖД, практика</div>
-                    <div className="text-place">208 УК1</div>
-                    <div className="text-time">10:15 - 11:45</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />208 УК1</div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>10:15 - 11:45</div>
                 </div>
             );
         }
@@ -179,16 +201,20 @@ const Calendar = () => {
             cellContent = (
                 <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Оптоэлектроника и нанофотоника</div>
-                    <div className="text-place">408 УК1</div>
-                    <div className="text-time">12:00 - 13:30</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />408 УК1</div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>12:00 - 13:30</div>
                 </div>
             );
         } else if (filters.lectures && day.getDay() === 4 && index === 3) {
             cellContent = (
                 <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Оптоэлектроника и нанофотоника 1 п/гр</div>
-                    <div className="text-place">403 УК1</div>
-                    <div className="text-time">10:00 - 11:45</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />403 УК1</div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>10:00 - 11:45</div>
                 </div>
             );
         }

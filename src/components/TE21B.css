@@ -794,7 +794,7 @@
     justify-content: left;
     align-items: center;
     color:#172a39;
-	background-color:#e3e8ff;
+	background-color:#94b8ff;
 	height:60px;
 	z-index:1000;
 	}
@@ -813,7 +813,7 @@
 	.day-selector-container {
 	height: 100%;
     border-radius: 20px 20px 0px 0px;
-    background-color: #e3e8ff;
+    background-color: #94b8ff;
   }
 
   .mobile-schedule-container {
@@ -825,7 +825,7 @@
 
   .day-selector {
 	  height:70px;
-	background-color: #9aacfd;
+	background-color: #2b71ff;
 	padding-top:10px;
     display: flex;
     justify-content: space-between;
@@ -838,9 +838,9 @@
     flex: 2; /* Или flex: 2, в зависимости от желаемой ширины */
 	width: 0%;
     min-width: 10%; /* Минимальная ширина кнопки */
-    border: 1px solid #9aacfd;
-    background-color: #9aacfd;
-    font-size: 1.3rem;
+    border: 0px solid #2b71ff;
+    background-color: #2b71ff;
+    font-size: 1.1rem;
     text-align: center;
     cursor: pointer;
     color: #ffffff;
@@ -854,16 +854,16 @@
 }
 
   .day-button.selected {
-    background-color: #9aacfd;
+    background-color: #2b71ff;
     font-weight: 800;
-    border-color: #9aacfd;
+    border-color: #2b71ff;
 	color: #000000;
   }
 
   .mobile-day-schedule {
 
-	  width: 100%;
-
+	width: 100%;
+    height:10%;
     border-radius: 0px;
 	border: 0.1px solid #fffffff;
   }
@@ -885,7 +885,8 @@
 	display:none;
 }
 	
- .date-cell-mobile {
+ .date-cell-mobile  {
+  height:10%;
   display: table-cell; /* Убедитесь, что ячейки отображаются корректно */ 
 }
 
@@ -899,31 +900,47 @@
   display: flex;
   justify-content: left;
   padding-top: 4%;
-  margin-left:7%;
+  margin-left:4%;
   font-size: 1rem,;
   font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: 1000;
+    color: #000000;
+}
+
+.locations {
+    width: 3%;
+    height: 3%;
+	margin-right:0.6%;
+    fill: red; /* Задаёт красный цвет для SVG */
+}
+
+.time {
+	margin-right:1%;
+    width: 2.5%;
+    width: 2.5%;
+    fill: red; /* Задаёт красный цвет для SVG */
 }
 
 .practicals .text-place, .green-block .text-place, .laba .text-place {
    display: flex;
   justify-content: left;
   align-items: center;
-  margin-top:6%;
-  margin-left:7%;
-  font-size: 1rem;
+  padding-top:5%;
+  margin-left:3%;
+  font-size: 0.8rem;
+  color: #a39db3;
   font-family: 'Franklin Gothic Medium', sans-serif;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .practicals .text-time, .green-block .text-time, .laba .text-time  {
    display: flex;
-  justify-content: left;
+  justify-content: right;
   align-items: center;
-  margin-top:10%;
-  margin-left:7%;
-  margin-left:7%;
-  font-size: 1.2rem;
+  margin-bottom:3%;
+  margin-right:3%;
+  font-size: 0.7rem;
+  color: #a39db3;
   font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: 1000;
 }
@@ -931,31 +948,30 @@
 .practicals {
   display: flex;
   flex-direction: column;
-  background-color: rgba(73, 112, 255, 0.2);
+  background-color: rgba(73, 112, 255, 0.1);
   color: white;
   border-radius: 0px 15px 15px 0;
   padding: 0px;
   text-align: center;
   width: 100%;
-  height: 150px; /* Измените на auto для автоматической подгонки под содержимое */
+  height: auto; /* Измените на auto для автоматической подгонки под содержимое */
   box-sizing: border-box;
-
   color: #4970ff;
   max-width: 100%; 
   max-height: 100%;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(73, 112, 255, 0.3);
-  margin-top: 40px;  
-  margin-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(73, 112, 255, 0.0);
+  margin-top: 20px;  
+  margin-bottom: 20px;
   position: relative; /* Добавьте это для позиционирования ::after */
 }
 
 .practicals::after {
   content: '';
   position: absolute ; 
-  top: -17%; 
+   top: -25%; 
   left: 0%; 
-  width: 2%;
+  width: 1.3%;
   height: 100%; 
 }
 
@@ -964,30 +980,29 @@
 .green-block {
   display: flex;
   flex-direction: collumn;
-  background-color: rgba(0, 174, 113, 0.2);
+  background-color: rgba(236, 233, 242, );
   color: white;
   border-radius: 0px 20px 20px 0;
   padding: 0px;
   text-align: center;
   width: 100%;
-  height: 150px; /* Измените на auto для автоматической подгонки под содержимое */
+  height: auto; /* Измените на auto для автоматической подгонки под содержимое */
   box-sizing: border-box;
-  color: #00AE71;
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 174, 113, 0.3);
-  margin-top: 40px;
-  margin-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(0, 174, 113, 0.0);
+  margin-top: 20px;
+  margin-bottom: 20px;
   position: relative; /* Добавьте это для позиционирования ::after */
 }
 
 .green-block::after {
   content: '';
   position: absolute; 
-  top: -17%; 
+  top: -25%;  
   left: 0%; 
-  width: 2%;
+  width: 1.3%;
   height: 170%; 
   background-color: rgba(0, 174, 113, 1);
 }
@@ -996,30 +1011,30 @@
  .laba {
   display: flex;
   flex-direction: collumn;
-  background-color: rgba(160, 51, 255, 0.2);
+  background-color: rgba(160, 51, 255, 0.1);
   color: white;
   border-radius: 0px 20px 20px 0;
   padding: 0px;
   text-align: center;
   width: 100%;
-  height: 150px; /* Измените на auto для автоматической подгонки под содержимое */
+  height: auto; /* Измените на auto для автоматической подгонки под содержимое */
   box-sizing: border-box;
   color: #8450DE;
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(160, 51, 255, 0.3);
-  margin-top: 40px;
-  margin-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(160, 51, 255, 0.0);
+  margin-top: 20px;
+  margin-bottom: 20px;
   position: relative; /* Добавьте это для позиционирования ::after */
 }
 
 .laba::after {
   content: '';
   position: absolute; 
-  top: -17%; 
+  top: -25%; 
   left: 0%; 
-  width: 2%;
+  width: 1.3%;
   height: 170%; 
   background-color: rgba(160, 51, 255, 1);
 } 
