@@ -789,17 +789,21 @@
 	}
 	
 	.data-prime {
-	border-radius:20px 20px 0px 0px;
+     border-radius: 20px 20px 0px 0px;
     display: flex;
     justify-content: left;
     align-items: center;
-    color:#172a39;
-	background-color:#94b8ff;
-	height:60px;
-	z-index:1000;
-	}
+    color: #172a39;
+    background: rgba(255, 255, 255, 0.0); /* Полупрозрачный белый фон */
+    backdrop-filter: blur(10px) saturate(150%); /* Размытие и увеличение насыщенности */
+    -webkit-backdrop-filter: blur(10px) saturate(150%); /* Для поддержки Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.0); /* Лёгкая тень */
+    height: 43px;
+    z-index: 1000;
+}
+
 	.data-prime h2 {
-    font-weight: 600;
+    font-weight: 100;
 	padding:20px;
 	color:#172a39;
 	}
@@ -813,7 +817,7 @@
 	.day-selector-container {
 	height: 100%;
     border-radius: 20px 20px 0px 0px;
-    background-color: #94b8ff;
+    background-color: #c7daff;
   }
 
   .mobile-schedule-container {
@@ -824,8 +828,9 @@
   }
 
   .day-selector {
-	  height:70px;
-	background-color: #2b71ff;
+
+	  height:50px;
+	background-color: #ffffff;
 	padding-top:10px;
     display: flex;
     justify-content: space-between;
@@ -838,14 +843,14 @@
     flex: 2; /* Или flex: 2, в зависимости от желаемой ширины */
 	width: 0%;
     min-width: 10%; /* Минимальная ширина кнопки */
-    border: 0px solid #2b71ff;
-    background-color: #2b71ff;
-    font-size: 1.1rem;
+    border: 0px solid #ffffff;
+    background-color: #ffffff;
+    font-size: 1rem;
     text-align: center;
     cursor: pointer;
-    color: #ffffff;
-    border-radius: 10px;
-    font-weight: 500;
+    color: #000000;
+    border-radius: 50%;
+    font-weight: 100;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -854,7 +859,7 @@
 }
 
   .day-button.selected {
-    background-color: #2b71ff;
+    background-color: #ffffff;
     font-weight: 800;
     border-color: #2b71ff;
 	color: #000000;
@@ -927,7 +932,7 @@
   align-items: center;
   padding-top:5%;
   margin-left:3%;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #a39db3;
   font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: 300;
@@ -939,7 +944,7 @@
   align-items: center;
   margin-bottom:3%;
   margin-right:3%;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #a39db3;
   font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: 1000;
