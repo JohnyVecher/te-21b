@@ -867,15 +867,13 @@
   }
 
   .mobile-day-schedule {
-
 	width: 100%;
     height:10%;
     border-radius: 0px;
 	border: 0.1px solid #fffffff;
   }
 	
-	.mobile-day-schedule table {
-		
+	.mobile-day-schedule table {	
 	font-family: 'Franklin Gothic Medium', sans-serif;
     width: 100%; /* Убедитесь, что таблица занимает всю ширину */
     background-color: #fffff; /* Цвет фона для ячеек таблицы */
