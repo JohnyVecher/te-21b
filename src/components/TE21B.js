@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './TE21B.css';
 import arrowLeft from './arrow_left.png';
 import { ThemeContext } from './ThemeContext';
-import locations from './locations.png';
+import locations from './locationsr.png';
 import time from './time.png';
 import arrowRight from './arrow_right.png';
 import arrowLeftWeek from './arrow_left_week.png';

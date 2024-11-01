@@ -768,7 +768,7 @@
 	color: #00000;
 	}	
 	.group-name h2 {
-    font-weight: 900;
+    font-weight: 100;
 	padding:10px;
 	font-size: 1.5rem;
 	}
@@ -784,7 +784,7 @@
 	color: #7d878f;
 	}
 	.week-navigation-mobile h2 {
-    font-weight: 600;
+    font-weight: 100;
 	padding:10px;
 	}
 	
@@ -794,7 +794,7 @@
     justify-content: left;
     align-items: center;
     color: #172a39;
-    background: rgba(255, 255, 255, 0.0); /* Полупрозрачный белый фон */
+    background: rgba(255, 255, 255, 0.); /* Полупрозрачный белый фон */
     backdrop-filter: blur(10px) saturate(150%); /* Размытие и увеличение насыщенности */
     -webkit-backdrop-filter: blur(10px) saturate(150%); /* Для поддержки Safari */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.0); /* Лёгкая тень */
@@ -805,7 +805,7 @@
 	.data-prime h2 {
     font-weight: 100;
 	padding:20px;
-	color:#172a39;
+	color:#ffffff;
 	}
 	.daun-calendar{
 		display:none;
@@ -815,9 +815,10 @@
 	}
 	
 	.day-selector-container {
-	height: 100%;
+		
+	height: 0%;
     border-radius: 20px 20px 0px 0px;
-    background-color: #c7daff;
+    background-color:   #1E90FF;
   }
 
   .mobile-schedule-container {
@@ -828,7 +829,7 @@
   }
 
   .day-selector {
-
+box-shadow: 0px 10px 10px rgba(255, 255, 255, 1);
 	  height:50px;
 	background-color: #ffffff;
 	padding-top:10px;
@@ -889,6 +890,7 @@
 }
 	
  .date-cell-mobile  {
+	 border-radius:5px;
   height:10%;
   display: table-cell; /* Убедитесь, что ячейки отображаются корректно */ 
 }
@@ -931,34 +933,34 @@
   padding-top:5%;
   margin-left:3%;
   font-size: 1rem;
-  color: #a39db3;
+  color: #ffffff;
   font-family: 'Franklin Gothic Medium', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 .practicals .text-time, .green-block .text-time, .laba .text-time  {
-   display: flex;
+  display: flex;
   justify-content: right;
   align-items: center;
   margin-bottom:3%;
   margin-right:3%;
-  color: #a39db3;
+  color: #ffffff;
   font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: 1000;
+  font-size: 0.9rem;
 }
 
 .practicals {
   display: flex;
   flex-direction: column;
-  background-color: rgba(73, 112, 255, 0.1);
+  background-color: rgba(73, 112, 255, 0.5);
   color: white;
-  border-radius: 0px 15px 15px 0;
+  border-radius: 20px 20px 20px 20px;
   padding: 0px;
   text-align: center;
   width: 100%;
   height: auto; /* Измените на auto для автоматической подгонки под содержимое */
   box-sizing: border-box;
-  color: rgba(73, 112, 255, 1);
   max-width: 100%; 
   max-height: 100%;
   overflow: hidden;
@@ -983,8 +985,8 @@
   display: flex;
   color: #00AE71;
   flex-direction: collumn;
-  background-color: rgba(236, 233, 242, );
-  border-radius: 0px 20px 20px 0;
+  background-color: rgba(0, 174, 113, 0.5);
+  border-radius: 20px 20px 20px 20px;	
   padding: 0px;
   text-align: center;
   width: 100%;
@@ -992,6 +994,7 @@
   box-sizing: border-box;
   max-width: 100%;
   max-height: 100%;
+  color: #ffffff;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 174, 113, 0.0);
   margin-top: 20px;
@@ -1013,15 +1016,14 @@
  .laba {
   display: flex;
   flex-direction: collumn;
-  background-color: rgba(160, 51, 255, 0.1);
+  background-color: rgba( 138,43,226, 0.5);
   color: white;
-  border-radius: 0px 20px 20px 0;
+  border-radius: 20px 20px 20px 20px;
   padding: 0px;
   text-align: center;
   width: 100%;
   height: auto; /* Измените на auto для автоматической подгонки под содержимое */
   box-sizing: border-box;
-  color: #8450DE;
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
