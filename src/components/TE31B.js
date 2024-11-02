@@ -115,7 +115,7 @@ const Calendar = () => {
             cellContent = (
                 <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Основы теории электромагнитных полей и волн 1п/гр 
-					| Теория электрических цепей; лаб.раб. 2 п/гр</div>
+					| Теория электрических цепей 2 п/гр</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
                     107 УК 3 | 208 УК 3 
