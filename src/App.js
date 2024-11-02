@@ -2,10 +2,12 @@ import React, { useState, useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ThemeContext, ThemeProvider } from './components/ThemeContext'; 
 import TE21B from './components/TE21B';
+import TE31B from './components/TE31B';
 import Portfolio from './components/Portfolio';
 import ProfileSelection from './components/ProfileSelection';
 import CourseSelectionTE from './components/CourseSelectionTE';
-import GroupSelectionTE from './components/GroupSelectionTE';
+import GroupSelectionTE3 from './components/GroupSelectionTE3';
+import GroupSelectionTE2 from './components/GroupSelectionTE2';
 import './App.css';
 import logo from './logo.png';
 import night from './night.png';
@@ -87,7 +89,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<ProfileSelection />} />
           <Route path="/course-selectionte" element={<CourseSelectionTE />} />
-          <Route path="/group-selectionte3" element={<GroupSelectionTE />} />
+		  <Route path="/group-selectionte2" element={<GroupSelectionTE2 />} />
+		  <Route path="/TE31B" element={<TE31B />} />
+          <Route path="/group-selectionte3" element={<GroupSelectionTE3 />} />
           <Route path="/TE21B" element={<TE21B />} />
           <Route path="/portfolio" element={<Portfolio />} />
         </Routes>

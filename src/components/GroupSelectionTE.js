@@ -5,7 +5,7 @@ import arrowRightWeek from './arrow_right_week.png';
 import arrowback from './backarrow.png';
 
 
-const GroupSelectionTE = () => {
+const GroupSelectionTE3 = () => {
   const navigate = useNavigate();
 
   return (
@@ -28,4 +28,4 @@ const GroupSelectionTE = () => {
   );
 };
 
-export default GroupSelectionTE;
+export default GroupSelectionTE3;
