@@ -57,6 +57,20 @@
 }
 
 @media (max-width: 768px) {
+	
+		.arrow-container {
+    display: flex;
+    justify-content: flex-start; /* Перемещает содержимое влево */
+   margin-right:80%; /* Дополнительный отступ слева */
+}
+
+.back-arrow {
+    padding: 3px;
+    width: 15px;
+    height: 15px;
+    margin-right: 10%;
+}
+	
   .group-container {
    border-radius: 0% 0% 0px 0px;
     padding-bottom: 20px; /* Уменьшен padding-bottom */

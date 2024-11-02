@@ -342,11 +342,6 @@ const Calendar = () => {
         <div className="day-selector-container">
 		<div className="data-prime">
       <h2>{getCurrentDate()}</h2> {/* Отображение текущей даты */}
-      <table>
-        <tbody>
-          {/* Ваши строки таблицы здесь */}
-        </tbody>
-      </table>
     </div>
           <div className="day-selector">
   {daysOfWeek.map((day, i) => (
