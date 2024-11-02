@@ -6,6 +6,7 @@ import locations from './locationsr.png';
 import time from './time.png';
 import arrowRight from './arrow_right.png';
 import arrowLeftWeek from './arrow_left_week.png';
+import arrowback from './backarrow.png';
 import arrowRightWeek from './arrow_right_week.png';
 import { isWithinInterval } from 'date-fns';
 import {
@@ -146,7 +147,7 @@ const Calendar = () => {
             );
         } else if (filters.lectures && day.getDay() === 5 && index === 3) {
             cellContent = (
-                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
+                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">БЖД, практика</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />208 УК1</div>
@@ -165,17 +166,7 @@ const Calendar = () => {
 					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>8:30 - 10:00</div>
                 </div>
             );
-        } else if (filters.lectures && day.getDay() === 6 && index === 1) {
-            cellContent = (
-                <div className={`green-block ${isCurrent ? 'current-interval' : ''}`}>
-                    <div className="text-task">Сети связи и системы коммутации</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />VII римская</div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>10:00 - 11:45</div>
-                </div>
-            );
-        } 
+        }  
 		else if (filters.lectures && day.getDay() === 4 && index === 0) {
             cellContent = (
                 <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
@@ -336,9 +327,15 @@ const Calendar = () => {
         </div>
       </div>
       <div className="mobile-schedule-container">
-	  <div className="group-name">
-          <h2>TE-21Б</h2>
-        </div>
+	     <div className="header-container">
+    <button className="back-button" onClick={() => window.history.back()}>
+        <img src={arrowback} alt="Back" className="back-arrow" />
+    </button>
+    <div className="group-name">
+        <h2>TE-21Б</h2>
+    </div>
+</div>
+
 	  <div className="week-navigation-mobile">
           <h2>{weekRange}</h2>
         </div>
