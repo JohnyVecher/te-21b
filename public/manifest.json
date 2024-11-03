@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Расписание",
+  "name": "Моё Приложение Расписания",
   "orientation": "portrait",
   "icons": [
     {
@@ -16,6 +16,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#000000",  // Тёмный цвет для чёлки, чтобы она не выделялась
+  "background_color": "#000000" // Цвет, совпадающий с фоном приветственного экрана
 }
