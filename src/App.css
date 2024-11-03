@@ -1,3 +1,12 @@
+	
+body, #root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; 
+}
+
+	
 	.main-content {
   display: none;
 }
@@ -54,12 +63,6 @@
   to {
     background-position: 350% 50%, 350% 50%;
   }
-}
-
-.wrapper {
-  width: 100%;
-  height: auto;
-  position: relative;
 }
 
 .hero {
@@ -205,18 +208,18 @@
 
 @keyframes rotate1 {
   0% {
-    transform: rotate(0deg) scale(1); /* Начинаем с обычного размера */
+    transform: rotate(0deg) scale(1); 
   }
   20% {
-    transform: rotate(0deg) scale(1); /* Начинаем с обычного размера */
+    transform: rotate(0deg) scale(1); 
   }
   
   80% {
-    transform: rotate(360deg) scale(1); /* Начинаем с обычного размера */
+    transform: rotate(360deg) scale(1); 
   }
   
   100% {
-    transform: rotate(360deg) scale(1); /* Вращаем на 180 градусов без изменения размера */
+    transform: rotate(360deg) scale(1); 
   }
 }
 
@@ -236,12 +239,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 1); /* Прозрачный фон */
+  background-color: rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1100;
-  animation: fadeOut 1s 1s forwards; /* Применяем анимацию fadeOut к контейнеру */
+  animation: fadeOut 1s 1s forwards; 
 }
 
 .app {
@@ -295,7 +298,7 @@
   border: none;
   border-radius: 100%;
   cursor: pointer;
-  transition: background-color 0.5s ease; /* Плавный переход для фона */
+  transition: background-color 0.5s ease; 
   margin: 15px auto;
   display: flex;
   align-items: center;
@@ -304,9 +307,8 @@
   font-weight: bold;
 }
 
-/* Анимация вращения при нажатии */
 .theme-toggle:focus {
-  animation: rotate 1s ease forwards; /* Вращение на 1 секунду */
+  animation: rotate 1s ease forwards; 
 }
 
 @keyframes rotate {
@@ -330,21 +332,21 @@
 }
 
 .drawer {
-  position: absolute; /* Привязываем шторку к header */
-  top: 10%; /* Располагаем шторку под header */
+  position: absolute; 
+  top: 10%; 
   left: 10px;
   width: 90%;
   max-height: 0;
   overflow: hidden;
   background-color: #fff;
   border-radius: 0px 0px 30px 30px;
-  transition: max-height 0.4s ease; /* Плавный переход */
+  transition: max-height 0.4s ease; 
   z-index: 999;
 }
 
-/* Состояние шторки "открыто" */
+
 .drawer.open {
-  height: 25vh; /* Высота для полного отображения */
+  height: 25vh; 
 }
 
 
@@ -364,37 +366,36 @@
 .header-button {
   text-decoration: none;
   color: black;
-  width: 50%; /* Фиксированная ширина кнопки */
-  height: 100%; /* Фиксированная высота кнопки для лучшего контроля */
-  color: #000; /* Цвет текста */
-  background-color: #fff; /* Фон */
-  border: none; /* Без границ */
-  border-radius: 30px; /* Более закруглённые углы */
+  width: 50%; 
+  height: 100%; 
+  color: #000; 
+  background-color: #fff; 
+  border: none;
+  border-radius: 30px;
   cursor: pointer;
-  transition: all 0.4s ease; /* Плавные переходы для всех свойств */
+  transition: all 0.4s ease;
   margin-left: 15px;
-  display: flex; /* Используем flexbox для центрирования текста */
-  align-items: center; /* Центрируем текст по вертикали */
-  justify-content: center; /* Центрируем текст по горизонтали */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
 
 
 .header-button:hover {
-  background-color: #f5f5f5; /* Фон при наведении */
-  transform: translateY(-1px) scale(1.05); /* Подъём и увеличение кнопки */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
+  background-color: #f5f5f5;
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Убираем эффект при фокусе */
 .header-button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0); /* Тень при фокусе */
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0);
 }
 
 .header-button:active {
-  transform: translateY(2px) scale(0.98); /* Сжатие и уменьшение при нажатии */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
+  transform: translateY(2px) scale(0.98); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 896px) {
@@ -599,18 +600,18 @@
 
 @keyframes rotate1 {
   0% {
-    transform: rotate(0deg) scale(1); /* Начинаем с обычного размера */
+    transform: rotate(0deg) scale(1); 
   }
   20% {
-    transform: rotate(0deg) scale(1); /* Начинаем с обычного размера */
+    transform: rotate(0deg) scale(1); 
   }
   
   80% {
-    transform: rotate(360deg) scale(1); /* Начинаем с обычного размера */
+    transform: rotate(360deg) scale(1);
   }
   
   100% {
-    transform: rotate(360deg) scale(1); /* Вращаем на 180 градусов без изменения размера */
+    transform: rotate(360deg) scale(1); 
   }
 }
 
@@ -624,7 +625,6 @@
 }
 
 
-/* Стиль для приветственного сообщения, закрывающего чёлку */
 .welcome-message {
   position: fixed;
   top: 0;
@@ -634,17 +634,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff; /* Цвет фона приветствия */
-  z-index: 2000; /* Выше остального контента */
-  padding-top: env(safe-area-inset-top); /* Закрываем чёлку */
-  padding-bottom: env(safe-area-inset-bottom); /* Для нижней панели на iPhone */
+  background-color: #ffffff; 
+  z-index: 2000; 
+  padding-bottom: env(safe-area-inset-bottom); 
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
-  box-sizing: border-box; /* Чтобы отступы не изменяли размер */
+  box-sizing: border-box; 
 }
 
 	
-	/* Кнопка для открытия шторки */
+	
 .menu-button {
 	
   width: 32px;
@@ -672,20 +671,20 @@
   transform: translateY(5px);
 }
 
-/* Состояние "открыто" */
+
 .menu-button.open .line1,
 .menu-button.open .line2 {
-  transform: translateY(0); /* Линии сходятся в центре */
+  transform: translateY(0); 
 }
 
 .menu-button.open .line1.opened {
 	transition: all 0.2s ease;
-  transform: rotate(45deg); /* Первая линия поворачивается для крестика */
+  transform: rotate(45deg); 
 }
 
 .menu-button.open .line2.opened {
 	transition: all 0.2s ease;
-  transform: rotate(-45deg); /* Вторая линия поворачивается для крестика */
+  transform: rotate(-45deg); 
 }
 	
 .app {
@@ -701,11 +700,11 @@
   .header-button {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Размещаем текст слева, а стрелку справа */
-    width: 60%; /* Задайте нужную ширину кнопки */
+    justify-content: space-between; 
+    width: 60%;
     height: 10%;
     padding: 10px 20px;
-    gap: 10px; /* Расстояние между текстом и изображением */
+    gap: 10px; 
     background-color: #fff;
     border: none;
     border-radius: 30px;
@@ -716,14 +715,14 @@
   }
 
   .header-button:hover {
-    background-color: #fff; /* Фон при наведении */
-    transform: translateY(-3px) scale(1.05); /* Подъём и увеличение кнопки */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.0); /* Увеличенная тень */
+    background-color: #fff; 
+    transform: translateY(-3px) scale(1.05); 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.0); 
   }
 
   .header-button:active {
-    transform: translateY(2px) scale(0.98); /* Сжатие и уменьшение при нажатии */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.); /* Уменьшенная тень */
+    transform: translateY(2px) scale(0.98); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.); 
   }
 
   .header-buttons {
@@ -747,20 +746,20 @@
 
  .drawer {
 	 
-  position: fixed; /* Привязываем шторку к header */
-  top:4.8%; /* Располагаем шторку сразу под header */
+  position: fixed; 
+  top:4.8%; 
   left: 0;
   width: 100%;
-  max-height: 0; /* Изначально скрываем */
+  max-height: 0; 
   overflow: hidden;
   background-color: #fff;
   border-radius: 0px 0px 30px 30px;
-  transition: max-height 0.5s ease; /* Плавное открытие */
+  transition: max-height 0.5s ease;
   z-index: 999;
 }
 
   .drawer.open {
-  max-height: 15vh; /* Задаем высоту шторки при открытии */
+  max-height: 15vh; 
 }
 
 .logo-button {
@@ -787,13 +786,13 @@
 }
 
   .header-buttons1 {
-    display: none; /* Прячем кнопки в мобильной версии */
+    display: none; 
   }
 
   
 .theme-toggle  {
  margin-left:70%;
- transition: background-color 0.5s ease; /* Плавный переход для фона */
+ transition: background-color 0.5s ease; 
  width: 30px;
  height: 30px;
  object-fit: contain;
@@ -802,16 +801,15 @@
   
 .theme-toggle img {
  margin-left:0%;
- transition: background-color 0.5s ease; /* Плавный переход для фона */
+ transition: background-color 0.5s ease; 
  width: 30px;
  height: 30px;
  object-fit: contain;
  transform: translate(0px, 0px);
 }
 
-/* Анимация вращения при нажатии */
 .theme-toggle:focus {
-  animation: rotate 1s ease forwards; /* Вращение на 1 секунду */
+  animation: rotate 1s ease forwards; 
 }
 
 @keyframes rotate {

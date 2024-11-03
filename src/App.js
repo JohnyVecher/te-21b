@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ThemeContext, ThemeProvider } from './components/ThemeContext';
 import TE21B from './components/TE21B';
 import TE31B from './components/TE31B';
+import Info from './components/info';
 import Portfolio from './components/Portfolio';
 import ProfileSelection from './components/ProfileSelection';
 import CourseSelectionTE from './components/CourseSelectionTE';
@@ -67,7 +68,6 @@ const App = () => {
   return (
     <Router>
       <div className={isDarkMode ? 'app dark-mode' : 'app'} style={{ minHeight: '100vh' }}>
-        {/* Приветственное сообщение с изображением */}
         {isMessageVisible && (
           <div className="welcome-message">
             <div className="hero"></div>
@@ -77,9 +77,7 @@ const App = () => {
           </div>
         )}
 
-        {/* Основной контент */}
         <div className={`main-content ${isMainContentVisible ? 'visible' : ''}`}>
-          {/* Верхняя панель с логотипом и кнопками */}
           <div className="header">
             <button className="logo-button" onClick={handleLogoClick}>
               <img src={logo} alt="Logo" className="logo-image" />
@@ -100,23 +98,24 @@ const App = () => {
             >
               <img src={night} alt="night" className="logo-image" />
             </button>
-            {/* Кнопка для шторки с анимацией */}
+            {}
             <div className={`menu-button ${isDrawerOpen ? 'open' : ''}`} onClick={toggleDrawer}>
               <span className={`line line1 ${isFullyOpened ? 'opened' : ''}`}></span>
               <span className={`line line2 ${isFullyOpened ? 'opened' : ''}`}></span>
             </div>
           </div>
 
-          {/* Выдвижная шторка */}
+         
           <div className={`drawer ${isDrawerOpen ? 'open' : ''}`}>
             <div className="header-buttons">
               <Link to="/" className="header-button" onClick={toggleDrawer}>Расписание</Link>
               <Link to="/portfolio" className="header-button" onClick={toggleDrawer}>Портфолио</Link>
-              <Link to="/session" className="header-button" onClick={toggleDrawer}>Сессия</Link>
+              <Link to="/info" className="header-button" onClick={toggleDrawer}>Инфо</Link>
+
             </div>
           </div>
 
-          {/* Основные маршруты */}
+         
           <Routes>
             <Route path="/" element={<ProfileSelection />} />
             <Route path="/course-selectionte" element={<CourseSelectionTE />} />
@@ -125,6 +124,7 @@ const App = () => {
             <Route path="/group-selectionte3" element={<GroupSelectionTE3 />} />
             <Route path="/TE21B" element={<TE21B />} />
             <Route path="/portfolio" element={<Portfolio />} />
+			<Route path="/info" element={<Info />} />
           </Routes>
         </div>
       </div>

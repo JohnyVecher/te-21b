@@ -123,10 +123,8 @@ const Calendar = () => {
             end: new Date(day.getFullYear(), day.getMonth(), day.getDate(), parseInt(interval.end.split(":")[0]), parseInt(interval.end.split(":")[1])),
         });
 
-        // Переменная для хранения содержимого ячейки
         let cellContent = null;
 
-        // Проверяем условия для каждой пары
         if (filters.laba && day.getDay() === 2 && index === 0) {
             cellContent = (
                 <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
@@ -328,7 +326,6 @@ const Calendar = () => {
         }
 		
 
-        // Проверяем, есть ли содержимое для рендеринга
         return (
             <tr key={index}>
                 <td className="date-cell-mobile">
@@ -462,7 +459,7 @@ const Calendar = () => {
 
         <div className="day-selector-container">
           <div className="data-prime">
-        <h2>{getSelectedDayDate()}</h2> {/* Отображение даты выбранного дня */}
+        <h2>{getSelectedDayDate()}</h2> {}
       </div>
           <div className="day-selector">
             {daysOfWeek.map((day, i) => (
