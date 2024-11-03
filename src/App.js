@@ -66,7 +66,11 @@ const App = () => {
         {/* Приветственное сообщение с изображением */}
         {isMessageVisible && (
           <div className="welcome-message">
-            <img src={logoImage} alt="Welcome" style={{ width: '150px', height: '150px' }} />
+		  <div class='hero'>
+  <div class='content'>
+    <h1 class='h1--scalingSize' data-text='An awesome title'>Добро пожаловать</h1>
+  </div>
+		  </div>
           </div>
         )}
 
