@@ -624,38 +624,25 @@
 }
 
 
+/* Стиль для приветственного сообщения, закрывающего чёлку */
 .welcome-message {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100vw;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff; /* Задайте нужный цвет фона */
-  z-index: 1000;
-  padding-top: env(safe-area-inset-top); /* Обеспечивает пространство для челки */
-  padding-bottom: env(safe-area-inset-bottom); /* Пространство для нижней части */
+  background-color: #ffffff; /* Цвет фона приветствия */
+  z-index: 1000; /* Выше остального контента */
+  padding-top: env(safe-area-inset-top); /* Закрываем чёлку */
+  padding-bottom: env(safe-area-inset-bottom); /* Для нижней панели на iPhone */
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
-  box-sizing: border-box;
+  box-sizing: border-box; /* Чтобы отступы не изменяли размер */
 }
 
-.welcome-message .content {
-  text-align: center;
-  font-size: 24px;
-  color: #333;
-}
-
-/* Убираем вертикальные и горизонтальные полосы прокрутки */
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
 	
 	/* Кнопка для открытия шторки */
 .menu-button {
