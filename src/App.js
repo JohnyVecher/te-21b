@@ -23,16 +23,13 @@ const App = () => {
 
   // Код для приветственного сообщения
   useEffect(() => {
-    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      setIsMessageVisible(true);
-      const timer = setTimeout(() => {
-        setIsMessageVisible(false);
-      }, 4000); // Убираем сообщение через 4 секунды (2 секунды вращение + 2 секунды исчезновение)
+  setIsMessageVisible(true);
+  const timer = setTimeout(() => {
+    setIsMessageVisible(false);
+  }, 2000); // Убираем сообщение через 4 секунды (2 секунды вращение + 2 секунды исчезновение)
 
-      return () => clearTimeout(timer); // Чистим таймер
-    }
-  }, []); // Пустой массив зависимостей, чтобы код выполнялся только один раз
+  return () => clearTimeout(timer); // Чистим таймер
+}, []);
 
   const toggleDrawer = () => {
     if (isDrawerOpen) {
