@@ -740,7 +740,10 @@
 
 @media (max-width: 768px) {
 	
-	.header-container {
+	
+	
+   .header-container {
+	   margin-top: 00px;
     margin-bottom:15px;
     display: flex;
     align-items: center; 
@@ -754,11 +757,11 @@
     margin-right: 10px;
 }
 
-.back-arrow  {
-	padding:3px;
-	width: 15px;
+.back-arrow {
+    padding: 3px;
+    width: 15px;
     height: 15px;
-	margin-right:0.6%;
+    margin-right: 10%;
 }
 
 	.mobile-schedule-container{
@@ -793,6 +796,18 @@
 	font-size: 1.5rem;
 	}
 	
+	.week-navigation-mobile img {
+	height:15px;
+	color: #7d878f;
+	}
+	
+	.week-navigation-mobile button {
+	background-color: #ffff;
+	border-radius:20px 20px 20px 20px;
+	height:100%;
+	border: 0px solid #ffffff;
+	}
+	
 	.week-navigation-mobile{
 	margin-bottom:8%;
 	background-color: #ffff;
@@ -803,6 +818,7 @@
 	height:50px;
 	color: #7d878f;
 	}
+	
 	.week-navigation-mobile h2 {
     font-weight: 100;
 	padding:10px;
