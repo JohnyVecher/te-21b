@@ -19,18 +19,24 @@ const App = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isFullyOpened, setIsFullyOpened] = useState(false);
   const [clickCount, setClickCount] = useState(0);
-  const [isMessageVisible, setIsMessageVisible] = useState(false);
+  const [isMessageVisible, setIsMessageVisible] = useState(true);
   const [isMainContentVisible, setIsMainContentVisible] = useState(false);
 
-  // Код для приветственного сообщения
   useEffect(() => {
-    setIsMessageVisible(true);
-    const timer = setTimeout(() => {
+    // Скрываем приветствие через 2 секунды
+    const hideMessageTimer = setTimeout(() => {
       setIsMessageVisible(false);
-      setIsMainContentVisible(true); // Показываем основной контент после приветствия
     }, 2000);
 
-    return () => clearTimeout(timer);
+    // Появление основного контента через 1 секунду после загрузки
+    const showMainContentTimer = setTimeout(() => {
+      setIsMainContentVisible(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(hideMessageTimer);
+      clearTimeout(showMainContentTimer);
+    };
   }, []);
 
   const toggleDrawer = () => {
