@@ -26,7 +26,7 @@ import { ru } from 'date-fns/locale';
 
 const getMonthNameInGenitive = (date) => {
   const monthsInGenitive = [
-    'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+    'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
   ];
   const monthIndex = date.getMonth();
   return monthsInGenitive[monthIndex];
@@ -456,7 +456,7 @@ const Calendar = () => {
 
 	  <div className="week-navigation-mobile">
           <button onClick={prevWeek}><img src={arrowLeftWeek} alt="Previous-Week" /></button>
-          <h2>{`Неделя ${currentWeekNumber}: ${weekRange}`}</h2>
+          <h2>{`${weekRange}`}</h2>
           <button onClick={nextWeek}><img src={arrowRightWeek} alt="Next-Week" /></button>
         </div>
 

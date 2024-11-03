@@ -628,31 +628,34 @@
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 1); /* Прозрачный фон */
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1100;
-  animation: fadeOut 1s 1s forwards; /* Применяем анимацию fadeOut к контейнеру */
+  background-color: #ffffff; /* Задайте нужный цвет фона */
+  z-index: 1000;
+  padding-top: env(safe-area-inset-top); /* Обеспечивает пространство для челки */
+  padding-bottom: env(safe-area-inset-bottom); /* Пространство для нижней части */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  box-sizing: border-box;
 }
 
-.welcome-message img {
-  font: bold 3em/2em Arial, sans-serif;
-  color: #000000;
-  text-shadow: 0 0 20px #000000;	
-  width: 100px; /* Задайте желаемую ширину */
-  height: 100px; /* Задайте желаемую высоту */
-  max-width: none; /* Сбросьте максимальную ширину */
-  max-height: none; /* Сбросьте максимальную высоту */
-  animation: rotate1 2.5s ease-in-out forwards, fadeOut 1s 3s forwards; 
+.welcome-message .content {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
 }
 
-
-
-
-
+/* Убираем вертикальные и горизонтальные полосы прокрутки */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 	
 	/* Кнопка для открытия шторки */
 .menu-button {
