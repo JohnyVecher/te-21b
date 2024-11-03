@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ThemeContext, ThemeProvider } from './components/ThemeContext'; 
 import TE21B from './components/TE21B';
@@ -12,12 +12,27 @@ import './App.css';
 import logo from './logo.png';
 import night from './night.png';
 import soundFile from './sound.mp3'; // Убедитесь, что путь к звуку указан правильно
+import logoImage from './logo512.png'; // Импортируем изображение
 
 const App = () => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isFullyOpened, setIsFullyOpened] = useState(false);
   const [clickCount, setClickCount] = useState(0); // Состояние для отслеживания нажатий на кнопку
+  const [isMessageVisible, setIsMessageVisible] = useState(false);
+
+  // Код для приветственного сообщения
+  useEffect(() => {
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      setIsMessageVisible(true);
+      const timer = setTimeout(() => {
+        setIsMessageVisible(false);
+      }, 4000); // Убираем сообщение через 4 секунды (2 секунды вращение + 2 секунды исчезновение)
+
+      return () => clearTimeout(timer); // Чистим таймер
+    }
+  }, []); // Пустой массив зависимостей, чтобы код выполнялся только один раз
 
   const toggleDrawer = () => {
     if (isDrawerOpen) {
@@ -48,6 +63,13 @@ const App = () => {
   return (
     <Router>
       <div className={isDarkMode ? 'app dark-mode' : 'app'} style={{ minHeight: '100vh' }}>
+        {/* Приветственное сообщение с изображением */}
+        {isMessageVisible && (
+          <div className="welcome-message">
+            <img src={logoImage} alt="Welcome" style={{ width: '150px', height: '150px' }} />
+          </div>
+        )}
+
         {/* Верхняя панель с логотипом и кнопками */}
         <div className="header">
           <button className="logo-button" onClick={handleLogoClick}>
@@ -89,8 +111,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<ProfileSelection />} />
           <Route path="/course-selectionte" element={<CourseSelectionTE />} />
-		  <Route path="/group-selectionte2" element={<GroupSelectionTE2 />} />
-		  <Route path="/TE31B" element={<TE31B />} />
+          <Route path="/group-selectionte2" element={<GroupSelectionTE2 />} />
+          <Route path="/TE31B" element={<TE31B />} />
           <Route path="/group-selectionte3" element={<GroupSelectionTE3 />} />
           <Route path="/TE21B" element={<TE21B />} />
           <Route path="/portfolio" element={<Portfolio />} />

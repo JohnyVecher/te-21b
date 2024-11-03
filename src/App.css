@@ -153,6 +153,58 @@
 
 @media (max-width: 896px) {
 	
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(1); /* Начинаем с обычного размера */
+  }
+  50% {
+    transform: rotate(180deg) scale(1); /* Вращаем на 180 градусов без изменения размера */
+  }
+  75% {
+    transform: rotate(270deg) scale(1); /* Вращаем на 270 градусов без изменения размера */
+  }
+  100% {
+    transform: rotate(360deg) scale(2); /* Вращаем до полного оборота и увеличиваем до 2x */
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.welcome-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 1); /* Прозрачный фон */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  animation: fadeOut 1s 2.5s forwards; /* Применяем анимацию fadeOut к контейнеру */
+}
+
+.welcome-message img {
+  width: 100px; /* Задайте желаемую ширину */
+  height: 100px; /* Задайте желаемую высоту */
+  max-width: none; /* Сбросьте максимальную ширину */
+  max-height: none; /* Сбросьте максимальную высоту */
+  animation: rotate 2s ease-out forwards, fadeOut 1s 2s forwards; 
+}
+
+
+
+
+
+	
 	/* Кнопка для открытия шторки */
 .menu-button {
 	
