@@ -982,7 +982,7 @@ border: 0px solid rgba(255, 255, 255, 0.35);
   flex-direction: column; 
   align-items: flex-start; 
   justify-content: flex-start; 
-  background: linear-gradient(90deg, #007FFF, #87CEFA);
+  background: linear-gradient(90deg, #fc4a1a, #f7b733);
   color: white;
   border-radius: 20px 20px 20px 20px;
   padding: 0px;
@@ -1001,12 +1001,12 @@ border: 0px solid rgba(255, 255, 255, 0.35);
 
 .practicals::after {
 
-background: rgba(17, 100, 180, 0.9);
+background: rgba(247, 183, 51, 0.6);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(9.3px);
 -webkit-backdrop-filter: blur(9.3px);
-border: 0px solid rgba(17, 100, 180, 0.35);
+border: 0px solid rgba(17, 100, 180, 1);
   content: '';
   position: absolute ; 
   top: -20%; 

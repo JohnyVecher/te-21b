@@ -8,7 +8,7 @@ const info = () => {
       <p>Пишу для всяких <strong>Максов</strong>.</p>
       <p>
         <span className="lab">Фиолетовый</span> — это лабораторная работа,
-        <span className="practice">Синий</span> — это практическая работа,
+        <span className="practice">Оранжевый</span> — это практическая работа,
         <span className="lecture">Красный</span> — это лекция.
       </p>
     </div>

@@ -200,7 +200,7 @@ const Calendar = () => {
         } if (filters.practicals && day.getDay() === 3 && index === 3) {
             cellContent = (
                 <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
-                    <div className="text-task">Физра</div>
+                    <div className="text-task">Элективные дисциплины по физической культуре и спорту</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
                     Спорт зал
@@ -270,7 +270,7 @@ const Calendar = () => {
         } if (filters.practicals && day.getDay() === 5 && index === 0) {
             cellContent = (
                 <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
-                    <div className="text-task">Физра</div>
+                    <div className="text-task">Элективные дисциплины по физической культуре и спорту</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
                     Спорт зал
