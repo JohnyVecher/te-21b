@@ -125,7 +125,21 @@ const Calendar = () => {
 
         let cellContent = null;
 
-        if (filters.laba && day.getDay() === 2 && index === 0) {
+        if (filters.practicals && day.getDay() === 2 && index === 0) {
+            cellContent = (
+                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
+                    <div className="text-task">Проектная деятельность</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
+                    420 УК 3
+                    </div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
+					8:30 - 10:00
+					</div>
+                </div>
+            );
+        }if (filters.laba && day.getDay() === 2 && index === 1) {
             cellContent = (
                 <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Компьютерное моделирование</div>
@@ -135,11 +149,11 @@ const Calendar = () => {
                     </div>
                     <div className="text-time">
 					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					8:30 - 10:00
+					10:15 - 11:45
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 2 && index === 1) {
+        } if (filters.laba && day.getDay() === 2 && index === 2) {
             cellContent = (
                 <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Обработка экспериментальных данных 1 п/гр</div>
@@ -149,7 +163,7 @@ const Calendar = () => {
                     </div>
                     <div className="text-time">
 					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					10:15 - 11:45
+					12:00 - 13:30
 					</div>
                 </div>
             );
