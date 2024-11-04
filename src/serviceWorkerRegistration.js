@@ -1,5 +1,10 @@
+// src/serviceWorkerRegistration.js
+
+
+// Проверяем, поддерживает ли браузер Service Workers
 export function register(config) {
   if ('serviceWorker' in navigator) {
+    // Ожидаем загрузки окна для регистрации SW
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
@@ -36,7 +41,7 @@ export function register(config) {
   }
 }
 
-
+// Деактивация Service Worker
 export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready
