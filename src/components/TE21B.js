@@ -125,7 +125,7 @@ const Calendar = () => {
 
         let cellContent = null;
 
-        if (filters.practicals && day.getDay() === 2 && index === 0) {
+        if (filters.practicals && day.getDay() === 1 && index === 0) {
             cellContent = (
                 <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Проектная деятельность</div>
