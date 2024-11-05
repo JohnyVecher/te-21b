@@ -55,11 +55,13 @@
 
 @media (max-width: 768px) {
 	
-		.arrow-container {
+	.arrow-container {
     display: flex;
     justify-content: flex-start; 
-   margin-right:80%;
+	margin-top:1%;
+   margin-right:94%;
 }
+
 
 .back-arrow {
     padding: 3px;

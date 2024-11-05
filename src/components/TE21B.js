@@ -6,8 +6,10 @@ import locations from './locationsr.png';
 import time from './time.png';
 import arrowRight from './arrow_right.png';
 import arrowLeftWeek from './arrow_left_week.png';
+import arrowLeftWeekMobile from './arrow_left_week_mobile.png';
 import arrowback from './backarrow.png';
 import arrowRightWeek from './arrow_right_week.png';
+import arrowRightWeekMobile from './arrow_right_week_mobile.png';
 import { isWithinInterval } from 'date-fns';
 import {
   format,
@@ -466,9 +468,9 @@ const Calendar = () => {
 </div>
 
 	  <div className="week-navigation-mobile">
-          <button onClick={prevWeek}><img src={arrowLeftWeek} alt="Previous-Week" /></button>
+          <button onClick={prevWeek}><img src={arrowLeftWeekMobile} alt="Previous-Week" /></button>
           <h2>{`${weekRange}`}</h2>
-          <button onClick={nextWeek}><img src={arrowRightWeek} alt="Next-Week" /></button>
+          <button onClick={nextWeek}><img src={arrowRightWeekMobile} alt="Next-Week" /></button>
         </div>
 
         <div className="day-selector-container">
