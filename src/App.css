@@ -487,6 +487,8 @@ body, html {
   background-image: var(--stripes), var(--rainbow);
   background-size: 300%, 200%;
   background-position: 50% 50%, 50% 50%;
+    filter: blur(2px) invert(100%);
+  
   background-color: white; /* Убедитесь, что основной фон белый */
   mask-image: radial-gradient(ellipse at 60% 0%, white 40%, transparent 90%);
 
@@ -507,7 +509,7 @@ body, html {
 }
 :has(:checked) .hero,
 :has(:checked) .hero::after {
-  filter: blur(10px) opacity(50%) saturate(200%);
+  filter: blur(15px) opacity(50%) saturate(200%);
 }
 
 .content {
