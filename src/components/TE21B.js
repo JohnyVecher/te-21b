@@ -142,7 +142,7 @@ const renderMobileDaySchedule = (day) => {
         const timeRange = `${interval.start} - ${interval.end}`;
         let cellContent = null;
 
-        // Определяем класс блока (например, 'practicals' или 'laba') и используем его для получения типа занятия
+       
         if (filters.practicals && day.getDay() === 2 && index === 0 && currentWeekNumber === 10) {
             const blockClass = 'practicals';
 
