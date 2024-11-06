@@ -56,7 +56,7 @@ const App = () => {
     setClickCount((prevCount) => {
       const newCount = prevCount + 1;
 
-      if (newCount === 10) {
+      if (newCount === 50) {
         audio.play();
         return 0;
       }
@@ -81,9 +81,8 @@ const App = () => {
           <div className="header">
             <button className="logo-button" onClick={handleLogoClick}>
 			  <Link to="/" className="logo-button" onClick={handleLogoClick}>
-  <img src={logo} alt="Logo" className="logo-image" />
-</Link>
-
+             <img src={logo} alt="Logo" className="logo-image" />
+             </Link>
             </button>
             <div className="header-buttons1">
               <Link to="/" className="header-button">Расписание</Link>
