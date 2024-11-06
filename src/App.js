@@ -80,7 +80,10 @@ const App = () => {
         <div className={`main-content ${isMainContentVisible ? 'visible' : ''}`}>
           <div className="header">
             <button className="logo-button" onClick={handleLogoClick}>
-              <img src={logo} alt="Logo" className="logo-image" />
+			  <Link to="/" className="logo-button" onClick={handleLogoClick}>
+  <img src={logo} alt="Logo" className="logo-image" />
+</Link>
+
             </button>
             <div className="header-buttons1">
               <Link to="/" className="header-button">Расписание</Link>
