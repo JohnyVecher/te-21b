@@ -528,10 +528,11 @@ body, html {
 }
 
 .h1--scalingSize {
-  font-size: calc(2rem - -7vw);
-  position: relative;
-  font-family: 'Franklin Gothic Medium', sans-serif;
-  font-weight: 100;
+    font-size: calc(2rem + 7vw); /* Корректный расчет размера */
+    position: relative;
+    font-family: 'Franklin Gothic Medium', sans-serif;
+    font-weight: 100;
+    color: black; /* Временный цвет для отладки */
 }
 
 #switch {
@@ -576,24 +577,14 @@ body, html {
   animation: blink-animation 2s ease-in-out infinite running;
 }
 
-/*challenge*/
 .h1--scalingSize::before {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  background: white;
-  text-shadow: 0 0 1px #ffffff;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-color: white;
-  -webkit-mask: linear-gradient(#000 0 0) luminance;
-  mask: linear-gradient(#000 0 0) luminance, alpha;
-  backdrop-filter: blur(19px) brightness(12.5);
-  -webkit-text-stroke: 1px white;
-  display: flex;
-  margin: auto;
-  z-index: 1;
-  pointer-events: none;
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    font-size: inherit;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: white;
+    z-index: 0; /* Оставляем базовый слой */
 }
 
 
@@ -624,21 +615,19 @@ body, html {
 }
 
 
+
 .welcome-message {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff; 
-  z-index: 2000; 
-  padding-bottom: env(safe-area-inset-bottom); 
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-  box-sizing: border-box; 
+  z-index: 1100;
+  animation: fadeOut 1s 1s forwards; 
 }
 
 	
