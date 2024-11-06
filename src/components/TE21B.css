@@ -845,9 +845,9 @@
 	.day-selector-container {
     height: 100%;
     border-radius: 20px 20px 0px 0px;
-    background: linear-gradient(90deg, #2980B9, #6DD5FA, #3494E6, #77A1D3, #79CBCA, #E684AE,#56B4D3);
-	background-size: 400% 400%;
-	animation: gradient 10s ease infinite;
+    background: linear-gradient(90deg, #2980B9, #6DD5FA, #3494E6, #77A1D3, #79CBCA, #E684AE,#56B4D3,#B24592,#F15F79);
+	background-size: 650% 400%;
+	animation: gradient 60s ease infinite;
 	transform: translate3d(0, 0, 0);
 }
  
