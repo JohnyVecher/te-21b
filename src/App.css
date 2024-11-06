@@ -117,7 +117,7 @@ body, html {
 
 
 .content {
-  margin-bottom:10px;
+  margin-bottom: 10px;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -126,13 +126,24 @@ body, html {
   place-content: center;
   place-items: center;
   flex-flow: column;
-  gap: 100%;
+  gap: 10px;
   text-align: center;
+  z-index: 1;
   mix-blend-mode: difference;
-  -webbkit-mix-blend-mode: difference;
   filter: invert(1);
-  
 }
+
+/* Псевдоэлемент для создания подложки */
+.content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.0);
+  z-index: -1;
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+
 
 .h1--scalingSize {
   font-size: calc(2rem - -5vw);
@@ -408,15 +419,6 @@ body, html {
   initial-value: 1;
 }
 
-/* #fallback @keyframes blink-animation {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}*/
 
 @keyframes blink-animation {
   0%,
@@ -427,9 +429,7 @@ body, html {
     opacity: 0;
   }
 }
-/*houdini*/
 
-/*base*/
 :root {
   font-family: Inter, sans-serif;
 
@@ -465,6 +465,7 @@ body, html {
   display: flex;
   place-content: center;
   place-items: center;
+
   --stripes: repeating-linear-gradient(
     100deg,
     var(--stripe-color) 0%,
@@ -482,23 +483,23 @@ body, html {
     #5eead4 25%,
     #60a5fa 30%
   );
+
   background-image: var(--stripes), var(--rainbow);
   background-size: 300%, 200%;
   background-position: 50% 50%, 50% 50%;
+  background-color: white; /* Убедитесь, что основной фон белый */
+  mask-image: radial-gradient(ellipse at 60% 0%, white 40%, transparent 90%);
 
-  filter: blur(1px) invert(100%);
-
-  mask-image: radial-gradient(ellipse at 60% 0%, black 40%, transparent 90%);
   &::after {
     content: "";
     position: absolute;
     inset: 0;
     background-image: var(--stripes), var(--rainbow);
     background-size: 200%, 100%;
-    animation: smoothBg 60s linear infinite;
+    animation: smoothBg 40s linear infinite;
     background-attachment: fixed;
-    mix-blend-mode: difference;
   }
+
 }
 
 :has(:checked) {
@@ -510,7 +511,7 @@ body, html {
 }
 
 .content {
-	margin-bottom:10px;
+  margin-bottom: 10px;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -519,12 +520,22 @@ body, html {
   place-content: center;
   place-items: center;
   flex-flow: column;
-  gap: 100%;
+  gap: 10px;
   text-align: center;
+  z-index: 1;
   mix-blend-mode: difference;
-  -webbkit-mix-blend-mode: difference;
   filter: invert(1);
-  
+}
+
+/* Псевдоэлемент для создания подложки */
+.content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.0);
+  z-index: -1;
+  mix-blend-mode: lighten;
+  pointer-events: none;
 }
 
 .h1--scalingSize {
