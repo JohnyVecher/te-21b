@@ -957,7 +957,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 .practicals .text-task, .lectures .text-task, .laba .text-task {
     display: block; 
     text-align: left; 
-    padding-top: 10%;
+    padding-top: 11%;
     margin-left: 4%;
 	padding-right:1px;
     font-size: 1.18rem;
@@ -986,7 +986,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   justify-content: left;
   align-items: center;
   padding-top:3%;
-  margin-left:3%;
+  margin-left:4%;
   font-size: 1rem;
   color: #ffffff;
   font-family: 'Franklin Gothic Medium', sans-serif;
@@ -995,11 +995,11 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 .practicals .text-time, .lectures .text-time, .laba .text-time  {
   display: flex;
-  justify-content: right;
+  justify-content: left;
   align-items: center;
   margin-bottom:3%;
   padding-top:3%;
-  margin-right:3%;
+  margin-left:4%;
   color: #ffffff;
   font-family: 'Franklin Gothic Medium', sans-serif;
   font-weight: 100;
