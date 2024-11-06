@@ -72,7 +72,7 @@ const App = () => {
           <div className="welcome-message">
             <div className="hero"></div>
             <div className="content">
-              <h1 className="h1--scalingSize" data-text="An awesome title">Добро пожаловать</h1>
+              <h1 className="h1--scalingSize">Добро пожаловать</h1>
             </div>
           </div>
         )}

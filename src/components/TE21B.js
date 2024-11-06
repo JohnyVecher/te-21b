@@ -110,8 +110,21 @@ const Calendar = () => {
     ));
   };
 
-  const renderMobileDaySchedule = (day) => {
-     const timeIntervals = [
+const getTypeLabel = (className) => {
+    switch (className) {
+        case 'practicals':
+            return 'Практика';
+        case 'laba':
+            return 'Лабораторная';
+        case 'lectures':
+            return 'Лекция';
+        default:
+            return 'Занятие'; // значение по умолчанию
+    }
+};
+
+const renderMobileDaySchedule = (day) => {
+    const timeIntervals = [
         { paranumber: "Первая пара", start: "08:30", end: "10:00" },
         { paranumber: "Вторая пара", start: "10:15", end: "11:45" },
         { paranumber: "Третья пара", start: "12:00", end: "13:30" },
@@ -123,16 +136,19 @@ const Calendar = () => {
     return timeIntervals.map((interval, index) => {
         const isCurrent = isWithinInterval(new Date(), {
             start: new Date(day.getFullYear(), day.getMonth(), day.getDate(), parseInt(interval.start.split(":")[0]), parseInt(interval.start.split(":")[1])),
-            end: new Date(day.getFullYear(), day.getMonth(), day.getDate(), parseInt(interval.end.split(":")[0]), parseInt(interval.end.split(":")[1])),
+            end: new Date(day.getFullYear(), day.getMonth(), day.getDate(), parseInt(interval.end.split(":")[0]), parseInt(interval.end.split(":")[1]))
         });
 
         const timeRange = `${interval.start} - ${interval.end}`;
-
         let cellContent = null;
 
+        // Определяем класс блока (например, 'practicals' или 'laba') и используем его для получения типа занятия
         if (filters.practicals && day.getDay() === 2 && index === 0 && currentWeekNumber === 10) {
+            const blockClass = 'practicals';
+
             cellContent = (
-                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Проектная деятельность</div>
                     <div className="text-place">
                         <img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -145,8 +161,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.laba && day.getDay() === 2 && index === 1 && currentWeekNumber === 10) {
+			const blockClass = 'laba';
+			
             cellContent = (
-                <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Компьютерное моделирование</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -159,8 +178,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.laba && day.getDay() === 2 && index === 2 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
+            const blockClass = 'laba';
+			
+			cellContent = (
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Обработка экспериментальных данных 1 п/гр</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -173,8 +195,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.laba && day.getDay() === 3 && index === 1 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
+           const blockClass = 'laba';
+		   
+		   cellContent = (
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Сети связи и системы коммутации 2 п/гр</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -188,8 +213,11 @@ const Calendar = () => {
             );
         } 
 		if (filters.laba && day.getDay() === 3 && index === 2 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
+            const blockClass = 'laba';
+			
+			cellContent = (
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Сети связи и системы коммутации 1 п/гр | Оптоэлектроника и нанофотоника 2 п/гр</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -203,8 +231,11 @@ const Calendar = () => {
             );
         } 
 		if (filters.practicals && day.getDay() === 3 && index === 3 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
+            const blockClass = 'practicals';
+			
+			cellContent = (
+               <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+			   <div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Сети связи и системы коммутации</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -217,8 +248,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.practicals && day.getDay() === 3 && index === 4 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
+            const blockClass = 'practicals';
+			
+			cellContent = (
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Элективные дисциплины по физической культуре и спорту</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -231,8 +265,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.laba && day.getDay() === 4 && index === 0 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
+           const blockClass = 'laba';
+
+		   cellContent = (
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Направляющие системы электросвязи</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -245,8 +282,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.laba && day.getDay() === 4 && index === 1 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
+            const blockClass = 'practicals';
+			
+			cellContent = (
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Безопасность жизнедеятельностии</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -259,8 +299,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.laba && day.getDay() === 4 && index === 2 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`lectures ${isCurrent ? 'current-interval' : ''}`}>
+            const blockClass = 'lectures';
+			
+			cellContent = (
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Оптоэлектроника и нанофотоника</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -273,8 +316,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.practicals && day.getDay() === 4 && index === 3 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
+            const blockClass = 'practicals';
+			
+			cellContent = (
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Оптоэлектроника и нанофотоника</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -287,8 +333,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.practicals && day.getDay() === 5 && index === 0 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
+            const blockClass = 'practicals';
+			
+			cellContent = (
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Элективные дисциплины по физической культуре и спорту</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -301,8 +350,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.practicals && day.getDay() === 5 && index === 1 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`lectures ${isCurrent ? 'current-interval' : ''}`}>
+            const blockClass = 'lectures';
+			
+			cellContent = (
+             <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+			 <div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Направляющие системы электросвязи</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -315,8 +367,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.practicals && day.getDay() === 5 && index === 2 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`lectures ${isCurrent ? 'current-interval' : ''}`}>
+           const blockClass = 'lectures';
+
+		   cellContent = (
+                    <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+					<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Безопасность жизнедеятельности</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
@@ -329,8 +384,11 @@ const Calendar = () => {
                 </div>
             );
         } if (filters.practicals && day.getDay() === 5 && index === 3 && currentWeekNumber === 10) {
-            cellContent = (
-                <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
+            const blockClass = 'practicals';    
+			
+			cellContent = (
+                    <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+					<div className="type-label">{getTypeLabel(blockClass)}</div>
                     <div className="text-task">Безопасность жизнедеятельности</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
