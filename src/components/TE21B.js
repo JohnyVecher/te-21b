@@ -332,7 +332,24 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 5 && index === 0 && currentWeekNumber === 10) {
+        } if (filters.practicals && day.getDay() === 4 && index === 4 && currentWeekNumber === 10) {
+            const blockClass = 'laba';
+			
+			cellContent = (
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
+                    <div className="text-task">Оптоэлектроника и нанофотоника 2 п/гр</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
+                    403 УК 1
+                    </div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
+					{timeRange}
+					</div>
+                </div>
+            );
+        }if (filters.practicals && day.getDay() === 5 && index === 0 && currentWeekNumber === 10) {
             const blockClass = 'practicals';
 			
 			cellContent = (
