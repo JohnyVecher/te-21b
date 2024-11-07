@@ -752,7 +752,6 @@ border: 1px solid rgba(255, 255, 255, 0.0);
   transition: opacity 0.3s ease, visibility 0.3s ease; 
 }
 
-/* Стили самого drawer */
 .drawer {
   position: fixed;
   top: 5.2%;
@@ -762,15 +761,17 @@ border: 1px solid rgba(255, 255, 255, 0.0);
   overflow: hidden;
   background-color: #fff;
   border-radius: 0px 0px 30px 30px;
-  transition: max-height 0.4s ease-in-out; /* Убираем padding-top из анимации */
+  transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out;
   z-index: 999;
-  padding-top: 4%; /* Устанавливаем фиксированное значение */
+  padding-top: 0;
   background: rgba(255, 255, 255, 1);
+ 
 }
 
 /* Drawer открыт */
 .drawer.open {
-  max-height: 14vh;
+  padding-top: 4%;
+  max-height: 16vh;
 }
 
 .logo-button {
