@@ -641,6 +641,7 @@ body, html {
   justify-content: center;
   z-index: 2000;
   animation: fadeOut 1s 1s forwards; 
+  
 }
 
 	
@@ -706,13 +707,16 @@ body, html {
     height: 10%;
     padding: 10px 20px;
     gap: 10px; 
-    background-color: #fff;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.4s ease;
     font-family: 'Franklin Gothic Medium', sans-serif;
     font-weight: 100;
+	  background: rgba(255, 255, 255, 0.0);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.0);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.0);
   }
 
   .header-button:hover {
@@ -726,15 +730,6 @@ body, html {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.); 
   }
 
-  .header-buttons {
-    margin-left: 0px;
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
-    font-family: 'Franklin Gothic Medium', sans-serif;
-    font-weight: 100;
-  }
-
  .header {
     position: sticky;
     top: 0;
@@ -743,11 +738,17 @@ body, html {
     padding: 10px;
 	padding: 10px;
 	border-radius:0px;
+	/* From https://css.glass */
+  background: rgba(255,255,255, 0.8);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.0);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .drawer {
   position: fixed; 
-  top: 4.8%; 
+  top: 5.4%; 
   left: 0;
   width: 100%;
   max-height: 0; 
@@ -757,6 +758,11 @@ body, html {
   transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out; /* Добавляем плавный переход для padding-top */
   z-index: 999;
   padding-top: 0; /* Сбрасываем padding-top для закрытого состояния */
+  background: rgba(255,255,255, 0.8);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .drawer.open {
@@ -780,6 +786,7 @@ body, html {
   }
 
 .menu-button {
+	margin-left:83%;
   width: 32px;
   height: 30px;
   cursor: pointer;
@@ -791,7 +798,10 @@ body, html {
   .header-buttons1 {
     display: none; 
   }
-
+  
+.theme-toggle  {
+display:none;
+}
   
 .theme-toggle  {
  margin-left:70%;
