@@ -696,7 +696,10 @@ body, html {
   width: 100%;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
- 
+ .header-buttons {
+  position: relative; 
+  top: -10px; 
+}
  
 
   .header-button {
@@ -704,18 +707,13 @@ body, html {
     align-items: center;
     justify-content: space-between; 
     width: 60%;
-    height: 10%;
-    padding: 10px 20px;
-    gap: 10px; 
+    padding: 9px 20px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.4s ease;
     font-family: 'Franklin Gothic Medium', sans-serif;
     font-weight: 100;
-	  background: rgba(255, 255, 255, 0.0);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.0);
--webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.0);
   }
 
@@ -739,37 +737,41 @@ border: 1px solid rgba(255, 255, 255, 0.0);
 	padding: 10px;
 	border-radius:0px;
 	/* From https://css.glass */
-  background: rgba(255,255,255, 0.8);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.0);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255,255,255, 1);
 }
 
+.drawer .header-button {
+  opacity: 0; 
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer.open .header-button {
+  opacity: 1; 
+  visibility: visible; 
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+/* Стили самого drawer */
 .drawer {
-  position: fixed; 
-  top: 5.4%; 
+  position: fixed;
+  top: 5.2%;
   left: 0;
   width: 100%;
-  max-height: 0; 
+  max-height: 0;
   overflow: hidden;
   background-color: #fff;
   border-radius: 0px 0px 30px 30px;
-  transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out; /* Добавляем плавный переход для padding-top */
+  transition: max-height 0.4s ease-in-out; /* Убираем padding-top из анимации */
   z-index: 999;
-  padding-top: 0; /* Сбрасываем padding-top для закрытого состояния */
-  background: rgba(255,255,255, 0.8);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 4%; /* Устанавливаем фиксированное значение */
+  background: rgba(255, 255, 255, 1);
 }
 
+/* Drawer открыт */
 .drawer.open {
-  padding-top: 4%; /* Устанавливаем padding-top только в открытом состоянии */
-  max-height: 18vh; 
+  max-height: 14vh;
 }
-
 
 .logo-button {
 	  margin-left:0%;
