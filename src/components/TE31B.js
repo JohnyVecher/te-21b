@@ -234,7 +234,7 @@ const Calendar = () => {
                 </div>
             );
         
-        }if (filters.practicals && day.getDay() === 5 && index === 0 && currentWeekNumber === 10)  {
+        }if (filters.practicals && day.getDay() === 5 && index === 1 && currentWeekNumber === 10)  {
             cellContent = (
                 <div className={`practicals ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Элективные дисциплины по физической культуре и спорту</div>
@@ -247,7 +247,7 @@ const Calendar = () => {
                 </div>
             );
         }
-		if (filters.laba && day.getDay() === 5 && index === 1 && currentWeekNumber === 10)  {
+		if (filters.laba && day.getDay() === 5 && index === 2 && currentWeekNumber === 10)  {
             cellContent = (
                 <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Пакеты прикладных программ</div>
@@ -260,7 +260,7 @@ const Calendar = () => {
                 </div>
             );
         }
-		if (filters.lectures && day.getDay() === 5 && index === 2 && currentWeekNumber === 10) {
+		if (filters.lectures && day.getDay() === 5 && index === 3 && currentWeekNumber === 10) {
             cellContent = (
                 <div className={`lectures ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Основы построения инфокоммуникационных систем и сетей</div>
@@ -273,7 +273,7 @@ const Calendar = () => {
                 </div>
             );
         }
-		if (filters.lectures && day.getDay() === 5 && index === 3 && currentWeekNumber === 10) {
+		if (filters.lectures && day.getDay() === 5 && index === 4 && currentWeekNumber === 10) {
             cellContent = (
                 <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
                     <div className="text-task">Теория электрических цепей 1 п/гр</div>
