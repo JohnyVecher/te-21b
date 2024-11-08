@@ -96,27 +96,27 @@
 }
 
 .lectures.current-interval::after {
-  animation: glowGreenafter 3s infinite;
+  animation: glowGreenafter 2s infinite;
 }
 
 .laba.current-interval::after {
-  animation: glowlabaafter 3s infinite; 
+  animation: glowlabaafter 2s infinite; 
 }
 
 .practicals.current-interval::after {
-  animation: glowpracticalsafter 3s infinite; 
+  animation: glowpracticalsafter 2s infinite; 
 }
 
 .lectures.current-interval {
-  animation: glowGreen 3s infinite;
+  animation: glowGreen 2s infinite;
 }
 
 .laba.current-interval {
-  animation: glowlaba 3s infinite;
+  animation: glowlaba 2s infinite;
 }
 
 .practicals.current-interval {
-  animation: glowpracticals 3s infinite;
+  animation: glowpracticals 2s infinite;
 }
 
 .lectures .text-top, .laba .text-top, .practicals .text-top  {
@@ -1156,7 +1156,7 @@ border: 0px solid rgba(160, 51, 255, 0.35);
   }
   50% {
     background: linear-gradient(90deg, #e61c66, #ed77a2);
-    box-shadow: 0 0 60px rgba(181, 24, 81, 1);
+    box-shadow: 0 0 30px rgba(181, 24, 81, 1);
     color: rgba(0, 0, 0, 0.7);
     transform: scale(1.05);
   }
@@ -1176,7 +1176,7 @@ border: 0px solid rgba(160, 51, 255, 0.35);
   }
   50% {
     background: linear-gradient(90deg, #8B00FF,   #cf99ff);
-    box-shadow: 0 0 60px rgba(139,0,255, 1);
+    box-shadow: 0 0 30px rgba(139,0,255, 1);
     color: rgba(0, 0, 0, 0.7);
 	transform: scale(1.05);
   }
@@ -1197,7 +1197,7 @@ border: 0px solid rgba(160, 51, 255, 0.35);
   }
   50% {
     background: linear-gradient(90deg, #fc4a1a, #f7b733);
-    box-shadow: 0 0 60px rgba( 237,118,14, 1);
+    box-shadow: 0 0 30px rgba( 237,118,14, 1);
 	color: rgba(0,0,0, 0.7);
 	transform: scale(1.05);
   }
