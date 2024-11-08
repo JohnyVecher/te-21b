@@ -887,7 +887,7 @@ border: 0px solid rgba(255, 255, 255, 0.35);
 }
 
 .day-button:hover {
-    background-color: #ffffff; 
+    background: rgba(255, 255, 255, 0.0); 
 }
 
   .day-button.selected {
