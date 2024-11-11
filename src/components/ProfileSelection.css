@@ -73,7 +73,7 @@ width:0
     margin-bottom: 30px;
     display: flex;
     flex-direction: row;
-    background: linear-gradient(90deg, #2980B9,   #6DD5FA);
+    background: #ffffff;
     border-radius: 30px;
     align-items: center; 
     justify-content: center; 
@@ -82,7 +82,7 @@ width:0
 .level2 {
     font-size: 1rem;
     font-weight: 100;
-    color: #ffffff;
+    color: #9ba3ab;
     text-align: center;
 	font-family: 'Franklin Gothic Medium', sans-serif;
 }
@@ -98,21 +98,22 @@ width:0
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
   
-  .level {
-  display:flex;
-  flex-direction:row;
-  margin-top:10px;
-  padding-right: 35%;
+
+.level  {
+	margin-right:33%;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 30px;
   font-size: 1.5rem;
   font-weight: bold;
   color: #9ba3ab;
-  margin-bottom: 30px;
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
 
+
 .profile-header {
 	padding-bottom:-100px;
-  padding-right: 17%;
+  margin-right:10%;
   font-size: 2rem;
   font-weight: bold;
   color: #333;

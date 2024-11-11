@@ -473,7 +473,24 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        }  if (filters.laba && day.getDay() === 2 && index === 1 && currentWeekNumber === 11) {
+        }  if (filters.laba && day.getDay() === 2 && index === 0 && currentWeekNumber === 11) {
+			const blockClass = 'laba';
+			
+            cellContent = (
+                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+				<div className="type-label">{getTypeLabel(blockClass)}</div>
+                    <div className="text-task">Сети связи и системы коммутации 2 п/гр </div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
+                    406 УК 3
+                    </div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
+					{timeRange}
+					</div>
+                </div>
+            );
+        }if (filters.laba && day.getDay() === 2 && index === 1 && currentWeekNumber === 11) {
 			const blockClass = 'laba';
 			
             cellContent = (
@@ -496,10 +513,10 @@ const renderMobileDaySchedule = (day) => {
 			cellContent = (
                 <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
 				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Обработка экспериментальных данных 1 п/гр</div>
+                    <div className="text-task">Обработка экспериментальных данных 1 п/гр / Многоканальные телекоммуникационные системы 2 п/гр</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    403 УК 1
+                    403 УК 1 / 301 УК 3
                     </div>
                     <div className="text-time">
 					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
@@ -544,15 +561,15 @@ const renderMobileDaySchedule = (day) => {
             );
         } 
 		if (filters.practicals && day.getDay() === 3 && index === 3 && currentWeekNumber === 11) {
-            const blockClass = 'practicals';
+            const blockClass = 'laba';
 			
 			cellContent = (
                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
 			   <div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Сети связи и системы коммутации</div>
+                    <div className="text-task">Сети связи и системы коммутации 1 п/гр / Многоканальные телекоммуникационные системы 2 п/гр</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    209 УК 3
+                    209 УК 3 / 301 УК 3
                     </div>
                     <div className="text-time">
 					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
@@ -561,15 +578,15 @@ const renderMobileDaySchedule = (day) => {
                 </div>
             );
         } if (filters.practicals && day.getDay() === 3 && index === 4 && currentWeekNumber === 11) {
-            const blockClass = 'practicals';
+            const blockClass = 'laba';
 			
 			cellContent = (
                 <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
 				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Элективные дисциплины по физической культуре и спорту</div>
+                    <div className="text-task">Перспективные технологии</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    Спорт зал
+                    202 УК 3
                     </div>
                     <div className="text-time">
 					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
