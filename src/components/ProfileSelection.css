@@ -1,4 +1,48 @@
+	.otsosi-container{
+	display:flex;
+    flex-direction:column;	
+	}
+	.daun {
+	display:flex;
+    flex-direction:column;	
+	padding:
+	}
+	
+  .profile-container {
+	border-radius: 0% 0% 0px 0px;
+    padding-bottom: 20px; 
+    min-height:100vh; 
+  }
+  
+.tablica {
+  display:none;
+}
 
+.level2 {
+    font-size: 1rem;
+    font-weight: 100;
+    color: #9ba3ab;
+    text-align: center;
+	font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+  
+    .level1 {
+ display:none;
+}
+  
+
+.level  {
+	justify-content: left; 
+   display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #9ba3ab;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
 
 .profile-container {
   min-height: 86vh; 
@@ -10,9 +54,6 @@
   border-radius: 0% 0% 20px 20px;
   padding: 20px;
 }
- .level{
-font-size: 0rem;	 
- }
 .profile-header {
   font-size: 2.5rem;
   font-weight: bold;
@@ -20,8 +61,13 @@ font-size: 0rem;
   margin-bottom: 30px;
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
-.arrow-icon { 
-width:0
+
+.profile-header h1 {
+  color:#fffffff;
+}
+
+.arrow-icon {
+ 
 }
 
 .profile-button {
@@ -62,10 +108,19 @@ width:0
 
 
 @media (max-width: 768px) {
+	.otsosi-container{
+	display:flex;
+    flex-direction:column;	
+	}
+	.daun {
+	display:flex;
+    flex-direction:column;	
+	}
+	
   .profile-container {
 	border-radius: 0% 0% 0px 0px;
     padding-bottom: 20px; 
-    min-height: 90vh; 
+    min-height:100vh; 
   }
   
 .tablica {
@@ -80,6 +135,7 @@ width:0
 }
 
 .level2 {
+	
     font-size: 1rem;
     font-weight: 100;
     color: #9ba3ab;
@@ -89,8 +145,8 @@ width:0
 
   
     .level1 {
+		justify-content: left; 
    display: flex;
-  justify-content: left;
   align-items: center;
   font-size: 1rem;
   font-weight: 100;
@@ -100,8 +156,9 @@ width:0
   
 
 .level  {
-	margin-right:33%;
-  text-align: left;
+	justify-content: left; 
+   display: flex;
+  align-items: center;
   margin-top: 10px;
   margin-bottom: 30px;
   font-size: 1.5rem;
@@ -111,15 +168,18 @@ width:0
 }
 
 
+
 .profile-header {
-	padding-bottom:-100px;
-  margin-right:10%;
-  font-size: 2rem;
+	justify-content: left; 
+   display: flex;
+  align-items: left;
+  font-size: 1.9rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 30px;
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
+
 
 .profile-button {
   width: 100%; 
@@ -141,4 +201,9 @@ width:0
   height: auto;
 }
 
+}
+@media (min-width: 768px) {
+	.arrow-icon {
+  display:none;
+}
 }

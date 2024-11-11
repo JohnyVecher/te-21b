@@ -81,7 +81,7 @@
 
 .course-header {
   	padding-bottom:-100px;
-  padding-right: 26%;
+  padding-right: 36%;
   font-size: 2rem;
   font-weight: bold;
   color: #333;
@@ -109,4 +109,12 @@
   height: auto;
 }
 
+}
+@media (min-width: 768px) {
+	.arrow-icon {
+  display:none;
+	}
+  .back-arrow{
+	  display:none;
+  }
 }
