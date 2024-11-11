@@ -67,12 +67,45 @@ width:0
     padding-bottom: 20px; 
     min-height: 90vh; 
   }
+  
+.tablica {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(90deg, #2980B9,   #6DD5FA);
+    border-radius: 30px;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.level2 {
+    font-size: 1rem;
+    font-weight: 100;
+    color: #ffffff;
+    text-align: center;
+	font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+  
+    .level1 {
+   display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 100;
+  color: #9ba3ab;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+  
   .level {
+  display:flex;
+  flex-direction:row;
   margin-top:10px;
   padding-right: 35%;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #8f8f8f;
+  color: #9ba3ab;
   margin-bottom: 30px;
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
