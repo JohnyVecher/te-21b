@@ -36,7 +36,7 @@ const PortfoliosList = () => {
                     Портфолио
                   </a>
                 ) : (
-                  portfolio.email // Если email - это номер телефона или пустое поле
+                  portfolio.email 
                 )}
               </td>
             </tr>

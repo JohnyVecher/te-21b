@@ -34,15 +34,14 @@
   color: #4a5568;
   margin: 10px 0;
   font-weight: 400;
-  padding-left: 20px; /* Отступ для точек */
-  position: relative; /* Позиционирование для точки */
+  padding-left: 20px; 
+  position: relative; 
 }
 
-/* Стили для точек рядом с h3 */
 .info-page h3::before {
-  content: "•"; /* Символ точки */
+  content: "•"; 
   position: absolute;
-  left: 0; /* Расположение точки */
+  left: 0; 
   color: #2d3748;
   font-size: 1.2rem;
 }

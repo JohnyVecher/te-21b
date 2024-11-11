@@ -24,12 +24,10 @@ const App = () => {
   const [isMainContentVisible, setIsMainContentVisible] = useState(false);
 
   useEffect(() => {
-    // Скрываем приветствие через 2 секунды
     const hideMessageTimer = setTimeout(() => {
       setIsMessageVisible(false);
     }, 2000);
 
-    // Появление основного контента через 1 секунду после загрузки
     const showMainContentTimer = setTimeout(() => {
       setIsMainContentVisible(true);
     }, 1000);

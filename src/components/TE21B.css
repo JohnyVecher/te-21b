@@ -947,8 +947,8 @@ border: 0px solid rgba(255, 255, 255, 0.35);
 .practicals .type-label, 
 .lectures .type-label, 
 .laba .type-label {
-    position: absolute; /* Позволяет располагать текст относительно правого края блока */
-    right: 10px; /* Отступ от правого края блока */
+    position: absolute; 
+    right: 10px; 
     padding: 5px;
 	top:6px;
     color: #ffffff;
@@ -1051,8 +1051,8 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     position: absolute; 
     top: -11%;
     left: 0; 
-    bottom: 0; /* Заполнение блока снизу */
-    width: 2%; /* Ширина полосы */
+    bottom: 0; 
+    width: 2%; 
 	border-radius: 16px;
 background: rgba(247, 183, 51, 0.5);
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -1093,8 +1093,8 @@ border: 0px solid rgba(17, 100, 180, 1);
     position: absolute; 
     top: -10%;
     left: 0; 
-    bottom: 0; /* Заполнение блока снизу */
-    width: 2%; /* Ширина полосы */
+    bottom: 0; 
+    width: 2%; 
     background: rgba(181, 24, 81, 1);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -1131,8 +1131,8 @@ border: 0px solid rgba(17, 100, 180, 1);
     position: absolute; 
     top: -11%;
     left: 0; 
-    bottom: 0; /* Заполнение блока снизу */
-    width: 2%; /* Ширина полосы */
+    bottom: 0; 
+    width: 2%; 
 	border-radius: 16px;
 background: rgba(160, 51, 255, 1);
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
