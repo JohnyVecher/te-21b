@@ -817,6 +817,12 @@
 	padding:10px;
 	}
 	
+	.dark-mode  .data-prime h2 {
+    font-weight: 100;
+	padding:20px;
+	color:#000000;
+	}
+	
 	.data-prime {
      border-radius: 20px 20px 0px 0px;
     display: flex;
@@ -854,9 +860,9 @@
  .dark-mode .day-selector-container {
     height: 100%;
     border-radius: 20px 20px 0px 0px;
-    background: linear-gradient(90deg, #1f3b4d, #2d4f5e, #3e5f71, #485e7f, #5a7196, #465d78, #3b5065, #283d53);
+    background: linear-gradient(90deg, #E2E2E2 , #F2F2F2, #DBDBDB, #EAEAEA, #eef2f3);
 	background-size: 650% 400%;
-	animation: gradient 30s ease infinite;
+	animation: gradient 10s ease infinite;
 	transform: translate3d(0, 0, 0);
 }
  
@@ -876,6 +882,21 @@
     padding: 12px;
     border-radius: 0px;
     background-color: #F5F6FA;
+  }
+
+.dark-mode .day-selector {
+    box-shadow: 0px 10px 10px rgba(255, 255, 255, 1);
+	  height:50px;
+background: rgba(255, 255, 255, 0.5);
+border-radius: 16px;
+box-shadow: 0px 3px 3px rgba(255, 255, 255, 0.0);
+border: 0px solid rgba(255, 255, 255, 0.35);
+	padding-top:10px;
+    display: flex;
+    justify-content: space-between;
+	border-radius: 20px 20px 0px 0px;
+    gap: 4px;
+    margin-bottom: 0px;
   }
 
   .day-selector {
@@ -1039,7 +1060,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     align-items: flex-start;
     justify-content: flex-start;
     color: #ffffff;
-    background: linear-gradient(90deg, #141E30,  #243B55);
+    background: linear-gradient(90deg, #232526,  #414345);
     border-radius: 20px;
     padding: 0px;
     text-align: center;
@@ -1079,19 +1100,19 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 .dark-mode .practicals::after
 {
 	
-background: rgba(36, 59, 85, 0.9);	
+background: rgba(65, 67, 69, 0.9);
 }
 
 .dark-mode .laba::after
 {
 	
-background: rgba(36, 59, 85, 0.9);	
+background: rgba(65, 67, 69, 0.9);	
 }
 
 .dark-mode .lectures::after
 {
 	
-background: rgba(36, 59, 85, 0.9);	
+background: rgba(65, 67, 69, 0.9);	
 }
 
 .practicals::after {
@@ -1117,7 +1138,7 @@ border: 0px solid rgba(17, 100, 180, 1);
     align-items: flex-start;
     justify-content: flex-start;
     color: #ffffff;
-   background: linear-gradient(90deg, #141E30,  #243B55);
+   background: linear-gradient(90deg, #232526,  #414345);
     border-radius: 20px;
     padding: 0px;
     text-align: center;
@@ -1178,7 +1199,7 @@ border: 0px solid rgba(17, 100, 180, 1);
     align-items: flex-start;
     justify-content: flex-start;
     color: #ffffff;
-    background: linear-gradient(90deg, #141E30,  #243B55);
+    background: linear-gradient(90deg, #232526,  #414345);
     border-radius: 20px;
     padding: 0px;
     text-align: center;

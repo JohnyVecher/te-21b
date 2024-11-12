@@ -286,7 +286,7 @@ body, html {
 }
 
 .dark-mode .header {
-  background-color: #272f38;
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -842,8 +842,8 @@ border: 1px solid rgba(255, 255, 255, 0.0);
 
 
 .dark-mode .tablica{
-	border: 1px solid rgba(105, 105, 105, 1);
-  background-color: #272f38;
+	border: 0px solid rgba(105, 105, 105, 1);
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
@@ -869,31 +869,31 @@ border: 1px solid rgba(255, 255, 255, 0.0);
 }
 
 .dark-mode .week-navigation-mobile button{
-  background-color: #272f38;
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
 }
 
 .dark-mode .week-navigation-mobile{
-	border: 1px solid rgba(105, 105, 105, 1);
-  background-color: #272f38;
+	border: 0px solid rgba(105, 105, 105, 1);
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
 }
 
 .dark-mode .group-name{
-	border: 1px solid rgba(105, 105, 105, 1);
-  background-color: #272f38;
+	border: 0px solid rgba(105, 105, 105, 1);
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
 }
 
 .dark-mode .profile-button{
-	border: 1px solid rgba(105, 105, 105, 1);
-  background-color: #272f38;
+	border: 0px solid rgba(105, 105, 105, 1);
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
@@ -901,31 +901,31 @@ border: 1px solid rgba(255, 255, 255, 0.0);
 
 
 .dark-mode .back-button{
-  border:solid #272f38;
-  background-color: #272f38;
+  border:solid #131313;
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
 }
 
 .dark-mode .course-button{
-	border: 1px solid rgba(105, 105, 105, 1);
-  background-color: #272f38;
+	border: 0px solid rgba(105, 105, 105, 1);
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
 }
 
 .dark-mode .group-button{
-	border: 1px solid rgba(105, 105, 105, 1);
-  background-color: #272f38;
+	border: 0px solid rgba(105, 105, 105, 1);
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
 }
 
 .dark-mode .header-button{
-  background-color: #272f38;
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out;
@@ -933,14 +933,14 @@ border: 1px solid rgba(255, 255, 255, 0.0);
 }
 
 .dark-mode .drawer.open{
-  background-color: #272f38;
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out;
 }
 
 .dark-mode .drawer{
-  background-color: #272f38;
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out;
@@ -948,35 +948,35 @@ border: 1px solid rgba(255, 255, 255, 0.0);
 
 
 .dark-mode .date-cell-mobile{
-  background-color: #272f38;
+  background-color: #131313;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
 }
 
 .dark-mode .mobile-schedule-container{
-  background-color: #14181d;
+  background-color: #090a0a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
 }
 
 .dark-mode .group-container{
-  background-color: #14181d;
+  background-color: #090a0a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
 }
 
 .dark-mode .course-container{
-  background-color: #14181d;
+  background-color: #090a0a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
 }
 
 .dark-mode .profile-container{
-  background-color: #14181d;
+  background-color: #090a0a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: all 0.2s ease;
@@ -985,7 +985,7 @@ border: 1px solid rgba(255, 255, 255, 0.0);
 .dark-mode.app {
   font-family: Arial, sans-serif;
   padding: 0%;
-  background-color: #14181d;
+  background-color: #090a0a;
   width: 100%;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
