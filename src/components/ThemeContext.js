@@ -8,6 +8,7 @@ export const ThemeProvider = ({ children }) => {
   const toggleTheme = () => {
     setIsDarkMode(prevMode => !prevMode);
   };
+
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -17,6 +18,12 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
+    // Меняем цвет "челки" на iPhone в зависимости от темы
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute('content', isDarkMode ? '#272f38' : '#ffffff');
+    }
   }, [isDarkMode]);
 
   return (

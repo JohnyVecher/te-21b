@@ -851,6 +851,15 @@
 	transform: translate3d(0, 0, 0);
 }
  
+ .dark-mode .day-selector-container {
+    height: 100%;
+    border-radius: 20px 20px 0px 0px;
+    background: linear-gradient(90deg, #1f3b4d, #2d4f5e, #3e5f71, #485e7f, #5a7196, #465d78, #3b5065, #283d53);
+	background-size: 650% 400%;
+	animation: gradient 30s ease infinite;
+	transform: translate3d(0, 0, 0);
+}
+ 
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -874,7 +883,7 @@
 	  height:50px;
 background: rgba(255, 255, 255, 0.55);
 border-radius: 16px;
-box-shadow: 0px 3px 3px rgba(255, 255, 255, 0.9);
+box-shadow: 0px 3px 3px rgba(255, 255, 255, 0.0);
 border: 0px solid rgba(255, 255, 255, 0.35);
 	padding-top:10px;
     display: flex;
@@ -1024,6 +1033,27 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 0.9rem;
 }
 
+.dark-mode .practicals {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #ffffff;
+    background: linear-gradient(90deg, #141E30,  #243B55);
+    border-radius: 20px;
+    padding: 0px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
 .practicals {
   display: flex;
   flex-direction: column; 
@@ -1046,6 +1076,24 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative; 
 }
 
+.dark-mode .practicals::after
+{
+	
+background: rgba(36, 59, 85, 0.9);	
+}
+
+.dark-mode .laba::after
+{
+	
+background: rgba(36, 59, 85, 0.9);	
+}
+
+.dark-mode .lectures::after
+{
+	
+background: rgba(36, 59, 85, 0.9);	
+}
+
 .practicals::after {
     content: '';
     position: absolute; 
@@ -1063,6 +1111,26 @@ border: 0px solid rgba(17, 100, 180, 1);
 }
 
 
+.dark-mode .lectures {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #ffffff;
+   background: linear-gradient(90deg, #141E30,  #243B55);
+    border-radius: 20px;
+    padding: 0px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
 
 .lectures {
 	 display: flex;
@@ -1103,6 +1171,27 @@ border: 0px solid rgba(17, 100, 180, 1);
     border: 0px solid rgba(160, 51, 255, 0.35);
 }
   
+  
+ .dark-mode .laba {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #ffffff;
+    background: linear-gradient(90deg, #141E30,  #243B55);
+    border-radius: 20px;
+    padding: 0px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
   
  .laba {
    display: flex;

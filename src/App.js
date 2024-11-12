@@ -92,7 +92,7 @@ const App = () => {
               onClick={toggleTheme}
               className="theme-toggle"
               style={{
-                backgroundColor: isDarkMode ? '#cccccc' : '#fff',
+                backgroundColor: isDarkMode ? '#272f38' : '#fff',
                 color: isDarkMode ? '#fff' : '#fff'
               }}
             >
