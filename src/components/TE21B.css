@@ -800,10 +800,8 @@ filter: brightness(0) invert(1);
 	}
 	
 .dark-mode	.week-navigation-mobile img {
-    padding: 3px;
-    width: 15px;
-    height: 15px;
-    margin-right: 10%;
+    padding-top:25%;
+	height:15px;
     filter: brightness(0) invert(1);
 	}
 	
