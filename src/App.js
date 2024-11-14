@@ -92,11 +92,11 @@ const App = () => {
               onClick={toggleTheme}
               className="theme-toggle"
               style={{
-                backgroundColor: isDarkMode ? '#131313' : '#fff',
+                backgroundColor: isDarkMode ? '#1a1a1a' : '#fff',
                 color: isDarkMode ? '#fff' : '#fff'
               }}
             >
-              <img src={night} alt="night" className="logo-image" />
+              <img src={night} alt="night" className="logo-imageN" />
             </button>
             {}
             <div className={`menu-button ${isDrawerOpen ? 'open' : ''}`} onClick={toggleDrawer}>

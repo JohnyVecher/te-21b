@@ -676,7 +676,6 @@
   font-weight: bold; 
 }
 
-
 .pair-name {
   flex: 1; 
   display: flex; 
@@ -741,15 +740,28 @@
 
 .back-button {
     background: #ffffff;
-	border:solid #ffffff;
+	border: 1px solid rgba(255, 255, 255, 1);
     border-radius: 10px; 
     cursor: pointer;
 }
 
+.dark-mode .arrow-icon{
+filter: brightness(0) invert(1); 	
+}
+
+.dark-mode .back-arrow {
+    padding: 3px;
+    width: 19px;
+    height: 19px;
+    margin-right: 10%;
+    filter: brightness(0) invert(1); 
+}
+
+
 .back-arrow {
     padding: 3px;
-    width: 15px;
-    height: 15px;
+    width: 19px;
+    height: 19px;
     margin-right: 10%;
 }
 
@@ -767,6 +779,7 @@
     width: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+ 
 	
 	.group-name{
     display: flex;
@@ -784,6 +797,14 @@
     font-weight: 100;
 	padding:0px;
 	font-size: 1.5rem;
+	}
+	
+.dark-mode	.week-navigation-mobile img {
+    padding: 3px;
+    width: 15px;
+    height: 15px;
+    margin-right: 10%;
+    filter: brightness(0) invert(1);
 	}
 	
 	.week-navigation-mobile img {
@@ -820,7 +841,7 @@
 	.dark-mode  .data-prime h2 {
     font-weight: 100;
 	padding:20px;
-	color:#000000;
+	color:#ffffff;
 	}
 	
 	.data-prime {
@@ -851,16 +872,16 @@
 	.day-selector-container {
     height: 100%;
     border-radius: 20px 20px 0px 0px;
-    background: linear-gradient(90deg, #2980B9, #6DD5FA, #3494E6, #77A1D3, #79CBCA, #E684AE,#56B4D3,#B24592,#F15F79);
+    background: linear-gradient(90deg, #2980B9, #6DD5FA,  #77A1D3, #79CBCA, #E684AE,#56B4D3);
 	background-size: 650% 400%;
-	animation: gradient 60s ease infinite;
+	animation: gradient 30s ease infinite;
 	transform: translate3d(0, 0, 0);
 }
  
  .dark-mode .day-selector-container {
     height: 100%;
     border-radius: 20px 20px 0px 0px;
-    background: linear-gradient(90deg, #E2E2E2 , #F2F2F2, #DBDBDB, #EAEAEA, #eef2f3);
+    background: linear-gradient(90deg, #808080,#4d4d4d, #333333, #1a1a1a);
 	background-size: 650% 400%;
 	animation: gradient 10s ease infinite;
 	transform: translate3d(0, 0, 0);
@@ -887,7 +908,7 @@
 .dark-mode .day-selector {
     box-shadow: 0px 10px 10px rgba(255, 255, 255, 1);
 	  height:50px;
-background: rgba(255, 255, 255, 0.5);
+background: rgba(255, 255, 255, 0.65);
 border-radius: 16px;
 box-shadow: 0px 3px 3px rgba(255, 255, 255, 0.0);
 border: 0px solid rgba(255, 255, 255, 0.35);
@@ -1192,6 +1213,14 @@ border: 0px solid rgba(17, 100, 180, 1);
     border: 0px solid rgba(160, 51, 255, 0.35);
 }
   
+  .dark-mode .Previous-Week
+{
+	padding: 3px;
+    width: 15px;
+    height: 15px;
+    margin-right: 10%;
+    filter: brightness(0) invert(1);
+}
   
  .dark-mode .laba {
     display: flex;

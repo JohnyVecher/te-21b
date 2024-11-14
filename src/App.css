@@ -286,7 +286,7 @@ body, html {
 }
 
 .dark-mode .header {
-  background-color: #131313;
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -295,6 +295,8 @@ body, html {
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+
 
 .theme-toggle {
   width: 3vh;
@@ -808,6 +810,16 @@ border: 1px solid rgba(255, 255, 255, 0.0);
     display: none; 
   }
   
+ .dark-mode .theme-toggle {
+  filter: brightness(9) invert(1);
+  margin-left: 70%;
+  transition: background-color 0.5s ease;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transform: translate(0px, 0px);
+  transition: all 0.2s ease;
+}
   
 .theme-toggle {
   margin-left: 70%;
@@ -842,105 +854,93 @@ border: 1px solid rgba(255, 255, 255, 0.0);
 
 
 .dark-mode .tablica{
-	border: 0px solid rgba(105, 105, 105, 1);
-  background-color: #131313;
+	border: 1px solid rgba(105, 105, 105, 1);
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .group-header{
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 
 .dark-mode .course-header{
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .profile-header{
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .week-navigation-mobile button{
-  background-color: #131313;
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .week-navigation-mobile{
-	border: 0px solid rgba(105, 105, 105, 1);
-  background-color: #131313;
+	border: 1px solid rgba(105, 105, 105, 1);
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .group-name{
-	border: 0px solid rgba(105, 105, 105, 1);
-  background-color: #131313;
+	border: 1px solid rgba(105, 105, 105, 1);
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .profile-button{
-	border: 0px solid rgba(105, 105, 105, 1);
-  background-color: #131313;
+	border: 1px solid rgba(105, 105, 105, 1);
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 
 .dark-mode .back-button{
-  border:solid #131313;
-  background-color: #131313;
+  border: 1px solid rgba(105, 105, 105, 1);
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .course-button{
-	border: 0px solid rgba(105, 105, 105, 1);
-  background-color: #131313;
+	border: 1px solid rgba(105, 105, 105, 1);
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .group-button{
-	border: 0px solid rgba(105, 105, 105, 1);
-  background-color: #131313;
+	border: 1px solid rgba(105, 105, 105, 1);
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .header-button{
-  background-color: #131313;
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 .dark-mode .drawer.open{
-  background-color: #131313;
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out;
 }
 
 .dark-mode .drawer{
-  background-color: #131313;
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
   transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out;
@@ -948,38 +948,33 @@ border: 1px solid rgba(255, 255, 255, 0.0);
 
 
 .dark-mode .date-cell-mobile{
-  background-color: #131313;
+  background-color: #1a1a1a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .mobile-schedule-container{
   background-color: #090a0a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .group-container{
   background-color: #090a0a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .course-container{
   background-color: #090a0a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode .profile-container{
   background-color: #090a0a;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
-  transition: all 0.2s ease;
 }
 
 .dark-mode.app {

@@ -22,7 +22,7 @@ export const ThemeProvider = ({ children }) => {
     // Меняем цвет "челки" на iPhone в зависимости от темы
     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
     if (themeColorMeta) {
-      themeColorMeta.setAttribute('content', isDarkMode ? '#131313' : '#ffffff');
+      themeColorMeta.setAttribute('content', isDarkMode ? '#1a1a1a' : '#ffffff');
     }
   }, [isDarkMode]);
 
