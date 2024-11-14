@@ -317,6 +317,12 @@ body, html {
   font-weight: bold;
 }
 
+.theme-toggle img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
 .theme-toggle:focus {
   animation: rotate 1s ease forwards; 
 }
