@@ -215,7 +215,9 @@ body{background:#000}
 
 figure{margin:0;transform:translate(-50%,-50%) rotate(0deg) scale(1.4,1.4);position:absolute;left:50%;top:50%;border-radius:150px;box-sizing:border-box;animation:rotation 20s infinite linear;}
 
-figure div:after{content:"";width:20px;height:20px;border:1px solid #fff;box-sizing:border-box;position:absolute;left:20px;top:20px;animation:shuffle 2s infinite;}
+.dark-mode figure div:after{content:"";width:20px;height:20px;border:1px solid #fff;box-sizing:border-box;position:absolute;left:20px;top:20px;animation:shuffle 2s infinite;}
+
+figure div:after{content:"";width:20px;height:20px;border:1px solid #000;box-sizing:border-box;position:absolute;left:20px;top:20px;animation:shuffle 2s infinite;}
 
 figure div:nth-child(1){transform:rotate(0deg)}
 figure div:nth-child(1):after{animation-delay:-0.5s;}
@@ -269,20 +271,33 @@ figure div:nth-child(8):after{animation-delay:-4;}
   }
 }
 
-
-
 .welcome-message {
-  position: fixed; /* Фиксированное позиционирование для покрытия всего экрана */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Покрываем всю высоту видимого экрана */
-  background-color: #14181d; /* Цвет фона для темной темы */
-  z-index: 9999; /* Поверх всего остального контента */
+  height: 100vh; 
+  background-color: #ffffff; 
+  z-index: 9999; 
   display: flex;
-  align-items: center; /* Центровка содержимого по вертикали */
-  justify-content: center; /* Центровка содержимого по горизонтали */
-  overflow: hidden; /* Отключение прокрутки */
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+  animation: fadeOut 1s 1.3s forwards; 
+}
+
+.dark-mode .welcome-message {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; 
+  background-color: #090a0a; 
+  z-index: 9999; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
   animation: fadeOut 1s 1.3s forwards; 
 }
 

@@ -1011,14 +1011,17 @@ border: 0px solid rgba(255, 255, 255, 0.35);
 
 .dark-mode .lectures .type-label{
     color: #e61c66;
+	font-weight: 600;
 }
 
 .dark-mode .practicals .type-label{
     color: #ffa500;
+	font-weight: 600;
 }
 
 .dark-mode .laba .type-label{
-	color: #8B00FF
+	color: #b866ff;
+	font-weight: 600;
 }
 
 .practicals .type-label, 
@@ -1071,6 +1074,12 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 	margin-right:0.6%;
 }
 
+.time img {
+    width: 100%; 
+    height: auto;
+}
+
+
 .time {
 	margin-right:1%;
     width: 4%;
@@ -1090,15 +1099,17 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 .dark-mode .lectures .text-time{
 	color: #e61c66;
+	font-weight: 600;
 }
 .dark-mode .practicals .text-time{
 	color: #ffa500;
+	font-weight: 600;
 }
 
 .dark-mode .laba .text-time{
-	color: #8B00FF
+	color: #b866ff;
+	font-weight: 600;
 }
-
 
 
 .practicals .text-time, .lectures .text-time, .laba .text-time  {
