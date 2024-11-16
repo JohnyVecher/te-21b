@@ -26,7 +26,7 @@ const App = () => {
   useEffect(() => {
     const hideMessageTimer = setTimeout(() => {
       setIsMessageVisible(false);
-    }, 2000);
+    }, 3000);
 
     const showMainContentTimer = setTimeout(() => {
       setIsMainContentVisible(true);
@@ -68,10 +68,12 @@ const App = () => {
       <div className={isDarkMode ? 'app dark-mode' : 'app'} style={{ minHeight: '100vh' }}>
         {isMessageVisible && (
           <div className="welcome-message">
-            <div className="hero"></div>
-            <div className="content">
-              <h1 className="h1--scalingSize">Добро пожаловать</h1>
-            </div>
+           <figure>
+  <div></div><div></div>
+  <div></div><div></div>
+  <div></div><div></div>
+  <div></div><div></div>
+</figure>
           </div>
         )}
 

@@ -12,233 +12,7 @@ body, html {
 .main-content.visible {
   display: block;
 }
-	
-/*houdini*/
-@property --blink-opacity {
-  syntax: "<number>";
-  inherits: false;
-  initial-value: 1;
-}
 
-/* #fallback @keyframes blink-animation {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}*/
-
-@keyframes blink-animation {
-  0%,
-  100% {
-    opacity: var(--blink-opacity, 1);
-  }
-  50% {
-    opacity: 0;
-  }
-}
-/*houdini*/
-
-/*base*/
-:root {
-  font-family: Inter, sans-serif;
-
-  --stripe-color: #fff;
-  --bg: var(--stripe-color);
-  --maincolor: var(--bg);
-}
-
-
-
-/*custom*/
-
-@keyframes smoothBg {
-  from {
-    background-position: 50% 50%, 50% 50%;
-  }
-  to {
-    background-position: 350% 50%, 350% 50%;
-  }
-}
-
-.hero {
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  place-content: center;
-  place-items: center;
-  --stripes: repeating-linear-gradient(
-    100deg,
-    var(--stripe-color) 0%,
-    var(--stripe-color) 7%,
-    transparent 10%,
-    transparent 12%,
-    var(--stripe-color) 16%
-  );
-
-  --rainbow: repeating-linear-gradient(
-    100deg,
-    #60a5fa 10%,
-    #e879f9 15%,
-    #60a5fa 20%,
-    #5eead4 25%,
-    #60a5fa 30%
-  );
-  background-image: var(--stripes), var(--rainbow);
-  background-size: 300%, 200%;
-  background-position: 50% 50%, 50% 50%;
-
-  filter: blur(10px) invert(100%);
-
-  mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: var(--stripes), var(--rainbow);
-    background-size: 200%, 100%;
-    animation: smoothBg 60s linear infinite;
-    background-attachment: fixed;
-    mix-blend-mode: difference;
-  }
-}
-
-:has(:checked) {
-  --stripe-color: #000;
-}
-:has(:checked) .hero,
-:has(:checked) .hero::after {
-  filter: blur(10px) opacity(50%) saturate(200%);
-}
-
-
-.content {
-  margin-bottom: 10px;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 50%;
-  display: flex;
-  place-content: center;
-  place-items: center;
-  flex-flow: column;
-  gap: 10px;
-  text-align: center;
-  z-index: 1;
-  mix-blend-mode: difference;
-  filter: invert(1);
-}
-
-.content::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.0);
-  z-index: -1;
-  mix-blend-mode: lighten;
-  pointer-events: none;
-}
-
-
-.h1--scalingSize {
-  font-size: calc(2rem - -5vw);
-  position: relative;
-  font-family: 'Franklin Gothic Medium', sans-serif;
-    font-weight: 100;
-}
-
-#switch {
-  appearance: none;
-  -webkit-appearance: none;
-  opacity: 0;
-}
-
-[for="switch"] {
-  cursor: pointer;
-  transition: 0.15s linear(0 0%, 0.16 16.85%, 0.32 31.73%, 1 100%);
-  will-change: transform, font-weight;
-  padding: 0.5rem;
-}
-
-[for="switch"]:where(:hover, :active, :focus-within) {
-  /*transform: scale(1.2);
-  font-weight: 900;*/
-  transition: 0.3s ease;
-  animation: animSwitch 0.2s alternate;
-  & .icon {
-    animation-play-state: paused;
-  }
-}
-
-@keyframes animSwitch {
-  50% {
-    transform: scale(1.2);
-    font-weight: 900;
-  }
-}
-
-/*icon houdini*/
-.icon {
-  width: 1lh;
-  height: 1lh;
-  aspect-ratio: 1/1;
-  padding: 0.25em 0.35rem;
-  border-radius: calc(1px / 0);
-  border: 1px dashed;
-  --blink-opacity: 1;
-  animation: blink-animation 2s ease-in-out infinite running;
-}
-
-/*challenge*/
-.h1--scalingSize::before {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  background: white;
-  text-shadow: 0 0 1px #ffffff;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-color: white;
-  -webkit-mask: linear-gradient(#000 0 0) luminance;
-  mask: linear-gradient(#000 0 0) luminance, alpha;
-  backdrop-filter: blur(19px) brightness(12.5);
-  -webkit-text-stroke: 1px white;
-  display: flex;
-  margin: auto;
-  z-index: 1;
-  pointer-events: none;
-}
-
-
-@keyframes rotate1 {
-  0% {
-    transform: rotate(0deg) scale(1); 
-  }
-  20% {
-    transform: rotate(0deg) scale(1); 
-  }
-  
-  80% {
-    transform: rotate(360deg) scale(1); 
-  }
-  
-  100% {
-    transform: rotate(360deg) scale(1); 
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
 
 .welcome-message {
@@ -436,194 +210,37 @@ body, html {
 @media (max-width: 896px) {
 	
 
-	
-/*houdini*/
-@property --blink-opacity {
-  syntax: "<number>";
-  inherits: false;
-  initial-value: 1;
+
+body{background:#000}
+
+figure{margin:0;transform:translate(-50%,-50%) rotate(0deg) scale(1.4,1.4);position:absolute;left:50%;top:50%;border-radius:150px;box-sizing:border-box;animation:rotation 20s infinite linear;}
+
+figure div:after{content:"";width:20px;height:20px;border:1px solid #fff;box-sizing:border-box;position:absolute;left:20px;top:20px;animation:shuffle 2s infinite;}
+
+figure div:nth-child(1){transform:rotate(0deg)}
+figure div:nth-child(1):after{animation-delay:-0.5s;}
+figure div:nth-child(2){transform:rotate(45deg)}
+figure div:nth-child(2):after{animation-delay:-1s;}
+figure div:nth-child(3){transform:rotate(90deg)}
+figure div:nth-child(3):after{animation-delay:-1.5s;}
+figure div:nth-child(4){transform:rotate(135deg)}
+figure div:nth-child(4):after{animation-delay:-2s;}
+figure div:nth-child(5){transform:rotate(180deg)}
+figure div:nth-child(5):after{animation-delay:-2.5s;}
+figure div:nth-child(6){transform:rotate(225deg)}
+figure div:nth-child(6):after{animation-delay:-3s;}
+figure div:nth-child(7){transform:rotate(270deg)}
+figure div:nth-child(7):after{animation-delay:-3.5s;}
+figure div:nth-child(8){transform:rotate(315deg)}
+figure div:nth-child(8):after{animation-delay:-4;}
+
+@keyframes rotation{
+  100%{transform:translate(-50%,-50%) rotate(-360deg) scale(1.4,1.4);}
+}
+@keyframes shuffle{
+  50%{transform:scale(0.4,0.4) rotate(-90deg);border-radius:50%;}
 }
 
-
-@keyframes blink-animation {
-  0%,
-  100% {
-    opacity: var(--blink-opacity, 1);
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-:root {
-  font-family: Inter, sans-serif;
-
-  --stripe-color: #fff;
-  --bg: var(--stripe-color);
-  --maincolor: var(--bg);
-}
-
-
-
-/*custom*/
-
-@keyframes smoothBg {
-  from {
-    background-position: 50% 50%, 50% 50%;
-  }
-  to {
-    background-position: 350% 50%, 350% 50%;
-  }
-}
-
-.wrapper {
-  width: 100%;
-  height: auto;
-  position: relative;
-}
-
-.hero {
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  place-content: center;
-  place-items: center;
-
-  --stripes: repeating-linear-gradient(
-    100deg,
-    var(--stripe-color) 0%,
-    var(--stripe-color) 7%,
-    transparent 10%,
-    transparent 10%,
-    var(--stripe-color) 16%
-  );
-
-  --rainbow: repeating-linear-gradient(
-    100deg,
-    #60a5fa 10%,
-    #e879f9 15%,
-    #60a5fa 20%,
-    #5eead4 25%,
-    #60a5fa 30%
-  );
-
-  background-image: var(--stripes), var(--rainbow);
-  background-size: 300%, 200%;
-  background-position: 50% 50%, 50% 50%;
-    filter: blur(2px) invert(100%);
-  
-  background-color: white; 
-  mask-image: radial-gradient(ellipse at 60% 0%, white 40%, transparent 90%);
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: var(--stripes), var(--rainbow);
-    background-size: 200%, 100%;
-    animation: smoothBg 40s linear infinite;
-    background-attachment: fixed;
-  }
-
-}
-
-:has(:checked) {
-  --stripe-color: #000;
-}
-:has(:checked) .hero,
-:has(:checked) .hero::after {
-  filter: blur(15px) opacity(50%) saturate(200%);
-}
-
-.content {
-  margin-bottom: 10px;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 50%;
-  display: flex;
-  place-content: center;
-  place-items: center;
-  flex-flow: column;
-  gap: 10px;
-  text-align: center;
-  z-index: 1;
-  mix-blend-mode: difference;
-  filter: invert(1);
-}
-
-
-.content::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.0);
-  z-index: -1;
-  mix-blend-mode: lighten;
-  pointer-events: none;
-}
-
-.h1--scalingSize {
-    font-size: calc(2rem + 7vw); 
-    position: relative;
-    font-family: 'Franklin Gothic Medium', sans-serif;
-    font-weight: 100;
-    color: black; 
-}
-
-#switch {
-  appearance: none;
-  -webkit-appearance: none;
-  opacity: 0;
-}
-
-[for="switch"] {
-  cursor: pointer;
-  transition: 0.15s linear(0 0%, 0.16 16.85%, 0.32 31.73%, 1 100%);
-  will-change: transform, font-weight;
-  padding: 0.5rem;
-}
-
-[for="switch"]:where(:hover, :active, :focus-within) {
-  /*transform: scale(1.2);
-  font-weight: 900;*/
-  transition: 0.3s ease;
-  animation: animSwitch 0.2s alternate;
-  & .icon {
-    animation-play-state: paused;
-  }
-}
-
-@keyframes animSwitch {
-  50% {
-    transform: scale(1.2);
-    font-weight: 900;
-  }
-}
-
-/*icon houdini*/
-.icon {
-  width: 1lh;
-  height: 1lh;
-  aspect-ratio: 1/1;
-  padding: 0.25em 0.35rem;
-  border-radius: calc(1px / 0);
-  border: 1px dashed;
-  --blink-opacity: 1;
-  animation: blink-animation 2s ease-in-out infinite running;
-}
-
-.h1--scalingSize::before {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-    font-size: inherit;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    color: white;
-    z-index: 0; 
-}
 
 
 @keyframes rotate1 {
@@ -655,19 +272,44 @@ body, html {
 
 
 .welcome-message {
-  position: fixed;
+  position: fixed; /* Фиксированное позиционирование для покрытия всего экрана */
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 1);
+  width: 100%;
+  height: 100vh; /* Покрываем всю высоту видимого экрана */
+  background-color: #14181d; /* Цвет фона для темной темы */
+  z-index: 9999; /* Поверх всего остального контента */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  animation: fadeOut 1s 1s forwards; 
-  
+  align-items: center; /* Центровка содержимого по вертикали */
+  justify-content: center; /* Центровка содержимого по горизонтали */
+  overflow: hidden; /* Отключение прокрутки */
+  animation: fadeOut 1s 1.3s forwards; 
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+}
+
+body {
+  overscroll-behavior: none;
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none; 
+}
+
+
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
 
 	
 	

@@ -885,7 +885,7 @@ filter: brightness(0) invert(1);
  .dark-mode .day-selector-container {
     height: 100%;
     border-radius: 20px 20px 0px 0px;
-    background: linear-gradient(90deg, #808080,#4d4d4d, #333333, #1a1a1a);
+    background: #232526;
 	background-size: 650% 400%;
 	animation: gradient 10s ease infinite;
 	transform: translate3d(0, 0, 0);
@@ -912,7 +912,7 @@ filter: brightness(0) invert(1);
 .dark-mode .day-selector {
     box-shadow: 0px 10px 10px rgba(255, 255, 255, 1);
 	  height:50px;
-background: rgba(255, 255, 255, 0.65);
+background: rgba(0, 0, 0, 0.7);
 border-radius: 16px;
 box-shadow: 0px 3px 3px rgba(255, 255, 255, 0.0);
 border: 0px solid rgba(255, 255, 255, 0.35);
@@ -939,6 +939,10 @@ border: 0px solid rgba(255, 255, 255, 0.35);
     margin-bottom: 0px;
   }
 
+.dark-mode  .day-button {
+    color: #ffffff; 
+}
+
  .day-button {
     flex: 2; 
 	width: 0%;
@@ -957,6 +961,13 @@ border: 0px solid rgba(255, 255, 255, 0.35);
 .day-button:hover {
     background: rgba(255, 255, 255, 0.0); 
 }
+
+.dark-mode .day-button.selected {
+   background: rgba(255, 255, 255, 0.0);
+    font-weight: 800;
+    border-color: #2b71ff;
+	color: #ffffff;
+  }
 
   .day-button.selected {
    background: rgba(255, 255, 255, 0.0);
@@ -998,6 +1009,17 @@ border: 0px solid rgba(255, 255, 255, 0.35);
   display: none;
 }
 
+.dark-mode .lectures .type-label{
+    color: #e61c66;
+}
+
+.dark-mode .practicals .type-label{
+    color: #ffa500;
+}
+
+.dark-mode .laba .type-label{
+	color: #8B00FF
+}
 
 .practicals .type-label, 
 .lectures .type-label, 
@@ -1066,6 +1088,19 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   font-weight: 100;
 }
 
+.dark-mode .lectures .text-time{
+	color: #e61c66;
+}
+.dark-mode .practicals .text-time{
+	color: #ffa500;
+}
+
+.dark-mode .laba .text-time{
+	color: #8B00FF
+}
+
+
+
 .practicals .text-time, .lectures .text-time, .laba .text-time  {
   display: flex;
   justify-content: left;
@@ -1080,12 +1115,13 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .dark-mode .practicals {
+	border: 1px solid rgba(105, 105, 105, 1);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     color: #ffffff;
-    background: linear-gradient(90deg, #232526,  #414345);
+    background: #232526;
     border-radius: 20px;
     padding: 0px;
     text-align: center;
@@ -1158,12 +1194,13 @@ border: 0px solid rgba(17, 100, 180, 1);
 
 
 .dark-mode .lectures {
+	border: 1px solid rgba(105, 105, 105, 1);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     color: #ffffff;
-   background: linear-gradient(90deg, #232526,  #414345);
+  background: #232526;
     border-radius: 20px;
     padding: 0px;
     text-align: center;
@@ -1227,12 +1264,13 @@ border: 0px solid rgba(17, 100, 180, 1);
 }
   
  .dark-mode .laba {
+	 border: 1px solid rgba(105, 105, 105, 1);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     color: #ffffff;
-    background: linear-gradient(90deg, #232526,  #414345);
+    background: #232526;
     border-radius: 20px;
     padding: 0px;
     text-align: center;
