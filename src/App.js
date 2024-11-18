@@ -54,7 +54,7 @@ const App = () => {
     setClickCount((prevCount) => {
       const newCount = prevCount + 1;
 
-      if (newCount === 50) {
+      if (newCount === 30) {
         audio.play();
         return 0;
       }
