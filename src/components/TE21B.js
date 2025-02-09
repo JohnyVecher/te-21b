@@ -148,7 +148,7 @@ const renderMobileDaySchedule = (day) => {
         let cellContent = null;
 
        
-        if (filters.practicals && day.getDay() === 2 && index === 0 && currentWeekNumber === 10) {
+        if (filters.practicals && day.getDay() === 2 && index === 0 && currentWeekNumber === 23) {
             const blockClass = 'practicals';
 
             cellContent = (
@@ -165,7 +165,7 @@ const renderMobileDaySchedule = (day) => {
                     </div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 2 && index === 1 && currentWeekNumber === 10) {
+        } if (filters.laba && day.getDay() === 2 && index === 1 && currentWeekNumber === 23) {
 			const blockClass = 'laba';
 			
             cellContent = (
@@ -182,7 +182,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 2 && index === 2 && currentWeekNumber === 10) {
+        } if (filters.laba && day.getDay() === 2 && index === 2 && currentWeekNumber === 23) {
             const blockClass = 'laba';
 			
 			cellContent = (
@@ -199,7 +199,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 3 && index === 1 && currentWeekNumber === 10) {
+        } if (filters.laba && day.getDay() === 3 && index === 1 && currentWeekNumber === 23) {
            const blockClass = 'laba';
 		   
 		   cellContent = (
@@ -217,7 +217,7 @@ const renderMobileDaySchedule = (day) => {
                 </div>
             );
         } 
-		if (filters.laba && day.getDay() === 3 && index === 2 && currentWeekNumber === 10) {
+		if (filters.laba && day.getDay() === 3 && index === 2 && currentWeekNumber === 23) {
             const blockClass = 'laba';
 			
 			cellContent = (
@@ -235,7 +235,7 @@ const renderMobileDaySchedule = (day) => {
                 </div>
             );
         } 
-		if (filters.practicals && day.getDay() === 3 && index === 3 && currentWeekNumber === 10) {
+		if (filters.practicals && day.getDay() === 3 && index === 3 && currentWeekNumber === 23) {
             const blockClass = 'practicals';
 			
 			cellContent = (
@@ -252,7 +252,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 3 && index === 4 && currentWeekNumber === 10) {
+        } if (filters.practicals && day.getDay() === 3 && index === 4 && currentWeekNumber === 23) {
             const blockClass = 'practicals';
 			
 			cellContent = (
@@ -269,7 +269,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 4 && index === 0 && currentWeekNumber === 10) {
+        } if (filters.laba && day.getDay() === 4 && index === 0 && currentWeekNumber === 23) {
            const blockClass = 'laba';
 
 		   cellContent = (
@@ -286,7 +286,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 4 && index === 1 && currentWeekNumber === 10) {
+        } if (filters.laba && day.getDay() === 4 && index === 1 && currentWeekNumber === 23) {
             const blockClass = 'practicals';
 			
 			cellContent = (
@@ -303,7 +303,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 4 && index === 2 && currentWeekNumber === 10) {
+        } if (filters.laba && day.getDay() === 4 && index === 2 && currentWeekNumber === 23) {
             const blockClass = 'lectures';
 			
 			cellContent = (
@@ -320,7 +320,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 4 && index === 3 && currentWeekNumber === 10) {
+        } if (filters.practicals && day.getDay() === 4 && index === 3 && currentWeekNumber === 23) {
             const blockClass = 'practicals';
 			
 			cellContent = (
@@ -337,7 +337,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 4 && index === 4 && currentWeekNumber === 10) {
+        } if (filters.practicals && day.getDay() === 4 && index === 4 && currentWeekNumber === 23) {
             const blockClass = 'laba';
 			
 			cellContent = (
@@ -354,7 +354,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        }if (filters.practicals && day.getDay() === 5 && index === 0 && currentWeekNumber === 10) {
+        }if (filters.practicals && day.getDay() === 5 && index === 0 && currentWeekNumber === 23) {
             const blockClass = 'practicals';
 			
 			cellContent = (
@@ -371,7 +371,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 5 && index === 1 && currentWeekNumber === 10) {
+        } if (filters.practicals && day.getDay() === 5 && index === 1 && currentWeekNumber === 23) {
             const blockClass = 'lectures';
 			
 			cellContent = (
@@ -388,7 +388,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 5 && index === 2 && currentWeekNumber === 10) {
+        } if (filters.practicals && day.getDay() === 5 && index === 2 && currentWeekNumber === 23) {
            const blockClass = 'lectures';
 
 		   cellContent = (
@@ -405,7 +405,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 5 && index === 3 && currentWeekNumber === 10) {
+        } if (filters.practicals && day.getDay() === 5 && index === 3 && currentWeekNumber === 23) {
             const blockClass = 'practicals';    
 			
 			cellContent = (
@@ -422,7 +422,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-			} if (filters.practicals && day.getDay() === 1 && index === 0 && currentWeekNumber === 11) {
+			} if (filters.practicals && day.getDay() === 1 && index === 0 && currentWeekNumber === 24) {
             const blockClass = 'lectures';
 
             cellContent = (
@@ -439,7 +439,7 @@ const renderMobileDaySchedule = (day) => {
                     </div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 1 && index === 1 && currentWeekNumber === 11) {
+        } if (filters.laba && day.getDay() === 1 && index === 1 && currentWeekNumber === 24) {
 			const blockClass = 'lectures';
 			
             cellContent = (
@@ -456,7 +456,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 1 && index === 2 && currentWeekNumber === 11) {
+        } if (filters.laba && day.getDay() === 1 && index === 2 && currentWeekNumber === 24) {
             const blockClass = 'practicals';
 			
 			cellContent = (
@@ -473,7 +473,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        }  if (filters.laba && day.getDay() === 2 && index === 0 && currentWeekNumber === 11) {
+        }  if (filters.laba && day.getDay() === 2 && index === 0 && currentWeekNumber === 24) {
 			const blockClass = 'laba';
 			
             cellContent = (
@@ -490,7 +490,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        }if (filters.laba && day.getDay() === 2 && index === 1 && currentWeekNumber === 11) {
+        }if (filters.laba && day.getDay() === 2 && index === 1 && currentWeekNumber === 24) {
 			const blockClass = 'laba';
 			
             cellContent = (
@@ -507,7 +507,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 2 && index === 2 && currentWeekNumber === 11) {
+        } if (filters.laba && day.getDay() === 2 && index === 2 && currentWeekNumber === 24) {
             const blockClass = 'laba';
 			
 			cellContent = (
@@ -524,7 +524,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 3 && index === 1 && currentWeekNumber === 11) {
+        } if (filters.laba && day.getDay() === 3 && index === 1 && currentWeekNumber === 24) {
            const blockClass = 'laba';
 		   
 		   cellContent = (
@@ -542,7 +542,7 @@ const renderMobileDaySchedule = (day) => {
                 </div>
             );
         } 
-		if (filters.laba && day.getDay() === 3 && index === 2 && currentWeekNumber === 11) {
+		if (filters.laba && day.getDay() === 3 && index === 2 && currentWeekNumber === 24) {
             const blockClass = 'laba';
 			
 			cellContent = (
@@ -560,7 +560,7 @@ const renderMobileDaySchedule = (day) => {
                 </div>
             );
         } 
-		if (filters.practicals && day.getDay() === 3 && index === 3 && currentWeekNumber === 11) {
+		if (filters.practicals && day.getDay() === 3 && index === 3 && currentWeekNumber === 24) {
             const blockClass = 'laba';
 			
 			cellContent = (
@@ -577,7 +577,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 3 && index === 4 && currentWeekNumber === 11) {
+        } if (filters.practicals && day.getDay() === 3 && index === 4 && currentWeekNumber === 24) {
             const blockClass = 'laba';
 			
 			cellContent = (
@@ -594,7 +594,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 4 && index === 0 && currentWeekNumber === 11) {
+        } if (filters.laba && day.getDay() === 4 && index === 0 && currentWeekNumber === 24) {
            const blockClass = 'laba';
 
 		   cellContent = (
@@ -603,7 +603,7 @@ const renderMobileDaySchedule = (day) => {
                     <div className="text-task">Направляющие системы электросвязи</div>
                     <div className="text-place">
 					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    110 УК 3
+                    240 УК 3
                     </div>
                     <div className="text-time">
 					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
@@ -611,7 +611,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 4 && index === 1 && currentWeekNumber === 11) {
+        } if (filters.laba && day.getDay() === 4 && index === 1 && currentWeekNumber === 24) {
             const blockClass = 'practicals';
 			
 			cellContent = (
@@ -628,7 +628,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.laba && day.getDay() === 4 && index === 2 && currentWeekNumber === 11) {
+        } if (filters.laba && day.getDay() === 4 && index === 2 && currentWeekNumber === 24) {
             const blockClass = 'lectures';
 			
 			cellContent = (
@@ -645,7 +645,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 4 && index === 3 && currentWeekNumber === 11) {
+        } if (filters.practicals && day.getDay() === 4 && index === 3 && currentWeekNumber === 24) {
             const blockClass = 'practicals';
 			
 			cellContent = (
@@ -662,7 +662,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 4 && index === 4 && currentWeekNumber === 11) {
+        } if (filters.practicals && day.getDay() === 4 && index === 4 && currentWeekNumber === 24) {
             const blockClass = 'laba';
 			
 			cellContent = (
@@ -679,7 +679,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        }if (filters.practicals && day.getDay() === 5 && index === 0 && currentWeekNumber === 11) {
+        }if (filters.practicals && day.getDay() === 5 && index === 0 && currentWeekNumber === 24) {
             const blockClass = 'practicals';
 			
 			cellContent = (
@@ -696,7 +696,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 5 && index === 1 && currentWeekNumber === 11) {
+        } if (filters.practicals && day.getDay() === 5 && index === 1 && currentWeekNumber === 24) {
             const blockClass = 'lectures';
 			
 			cellContent = (
@@ -713,7 +713,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 5 && index === 2 && currentWeekNumber === 11) {
+        } if (filters.practicals && day.getDay() === 5 && index === 2 && currentWeekNumber === 24) {
            const blockClass = 'lectures';
 
 		   cellContent = (
@@ -730,7 +730,7 @@ const renderMobileDaySchedule = (day) => {
 					</div>
                 </div>
             );
-        } if (filters.practicals && day.getDay() === 5 && index === 3 && currentWeekNumber === 11) {
+        } if (filters.practicals && day.getDay() === 5 && index === 3 && currentWeekNumber === 24) {
             const blockClass = 'practicals';    
 			
 			cellContent = (
