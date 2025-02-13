@@ -1082,8 +1082,10 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 
 .time {
-	margin-right:1%;
-    width: 4%;
+margin-right:1%;
+width: 4%;
+height: 4%;
+	
 }
 
 .practicals .text-place, .lectures .text-place, .laba .text-place {
