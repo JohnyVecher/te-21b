@@ -307,9 +307,6 @@ const renderMobileDaySchedule = (day) => {
     ));
 };
 
-
-<<<<<<< HEAD
-=======
   const renderWeek = () => {
     const startDate = startOfWeek(currentWeek, { locale: ru, weekStartsOn: 1 });
     const days = [];

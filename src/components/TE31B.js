@@ -194,9 +194,6 @@ const renderMobileDaySchedule = (day) => {
     return Object.keys(lessonTimes).map((key) => {
         const lessonIndex = parseInt(key);
         const timeRange = `${lessonTimes[lessonIndex].start} - ${lessonTimes[lessonIndex].end}`;
-
-<<<<<<< HEAD
-        // Находим занятие, соответствующее этому lesson_index
         const lesson = lessons.find((l) => l.lesson_index === lessonIndex);
 =======
         const timeRange = `${interval.start} - ${interval.end}`;
