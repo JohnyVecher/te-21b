@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './TE21B.css';
 import arrowLeft from './arrow_left.png';
 import { ThemeContext } from './ThemeContext';
@@ -25,6 +26,8 @@ import {
   differenceInWeeks
 } from 'date-fns';
 import { ru } from 'date-fns/locale';
+
+
 
 const getMonthNameInGenitive = (date) => {
   const monthsInGenitive = [
@@ -56,14 +59,64 @@ const Calendar = () => {
 
   const getSelectedDayDate = () => {
     if (!selectedMobileDay) return 'Выберите день';
-
-    // Форматируем выбранную дату в строку вида "5.11.2024"
+	
     return format(selectedMobileDay, 'd.MM.yyyy', { locale: ru });
 };
 
+const [lessons, setLessons] = useState([]);
+
 useEffect(() => {
-    setSelectedMobileDay(addDays(currentWeek, selectedMobileDay.getDay() - 1));
-  }, [currentWeek]);
+  if (currentWeekNumber === undefined) return; // Останавливаем, если не установлен
+
+  const isMobile = window.innerWidth <= 768; // Проверяем, мобильная версия или нет
+
+  if (isMobile) {
+      // 🔹 Запрос только для выбранного дня (как раньше)
+      console.log("Мобильный запрос:", { week: currentWeekNumber, day: selectedMobileDay?.getDay() || 7 });
+
+      const fetchMobileLessons = async () => {
+          try {
+              const dayOfWeek = selectedMobileDay ? selectedMobileDay.getDay() || 7 : 1;
+              const response = await axios.get('http://localhost:3001/api/lessons', {
+                  params: { week: currentWeekNumber, day: dayOfWeek }
+              });
+
+              console.log("Данные с сервера (мобильная версия):", response.data);
+              setLessons(response.data);
+          } catch (error) {
+              console.error('Ошибка загрузки занятий (мобильная версия):', error);
+          }
+      };
+
+      fetchMobileLessons();
+  } else {
+      // 🔹 Запрос сразу на всю неделю (как сейчас для ПК)
+      console.log("ПК-запрос на всю неделю:", { week: currentWeekNumber });
+
+      const fetchLessonsForAllDays = async () => {
+          try {
+              const allDays = [1, 2, 3, 4, 5, 6, 7];
+              const requests = allDays.map(day =>
+                  axios.get('http://localhost:3001/api/lessons', {
+                      params: { week: currentWeekNumber, day }
+                  })
+              );
+
+              const responses = await Promise.all(requests);
+              const allLessons = responses.flatMap(response => response.data);
+
+              console.log("Данные с сервера (ПК, вся неделя):", allLessons);
+              setLessons(allLessons);
+          } catch (error) {
+              console.error('Ошибка загрузки занятий (ПК):', error);
+          }
+      };
+
+      fetchLessonsForAllDays();
+  }
+}, [currentWeekNumber, selectedMobileDay]); // Теперь `selectedMobileDay` нужен только для мобильной версии
+
+
 
 
 
@@ -129,327 +182,39 @@ const getTypeLabel = (className) => {
 };
 
 const renderMobileDaySchedule = (day) => {
-    const timeIntervals = [
-        { paranumber: "Первая пара", start: "08:30", end: "10:00" },
-        { paranumber: "Вторая пара", start: "10:15", end: "11:45" },
-        { paranumber: "Третья пара", start: "12:00", end: "13:30" },
-        { paranumber: "Четвертая пара", start: "14:15", end: "15:45" },
-        { paranumber: "Пятая пара", start: "16:00", end: "17:30" },
-        { paranumber: "Шестая пара", start: "18:00", end: "19:30" },
-    ];
+    const lessonTimes = {
+        1: { paranumber: "Первая пара", start: "08:30", end: "10:00" },
+        2: { paranumber: "Вторая пара", start: "10:15", end: "11:45" },
+        3: { paranumber: "Третья пара", start: "12:00", end: "13:30" },
+        4: { paranumber: "Четвертая пара", start: "14:15", end: "15:45" },
+        5: { paranumber: "Пятая пара", start: "16:00", end: "17:30" },
+        6: { paranumber: "Шестая пара", start: "18:00", end: "19:30" }
+    };
 
-    return timeIntervals.map((interval, index) => {
-        const isCurrent = isWithinInterval(new Date(), {
-            start: new Date(day.getFullYear(), day.getMonth(), day.getDate(), parseInt(interval.start.split(":")[0]), parseInt(interval.start.split(":")[1])),
-            end: new Date(day.getFullYear(), day.getMonth(), day.getDate(), parseInt(interval.end.split(":")[0]), parseInt(interval.end.split(":")[1]))
-        });
+    return Object.keys(lessonTimes).map((key) => {
+        const lessonIndex = parseInt(key);
+        const timeRange = `${lessonTimes[lessonIndex].start} - ${lessonTimes[lessonIndex].end}`;
 
-        const timeRange = `${interval.start} - ${interval.end}`;
-        let cellContent = null;
-
-       
-         
-        if (filters.laba && day.getDay() === 1 && index === 3 && currentWeekNumber === 23) {
-			const blockClass = 'laba';
-			
-            cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Языки программирования</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    402 УК 3
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        } if (filters.laba && day.getDay() === 1 && index === 4 && currentWeekNumber === 23) {
-            const blockClass = 'practicals';
-			
-			cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Теория вероятностей и математическая статистика</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    405 УК 1
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        }  if (filters.laba && day.getDay() === 2 && index === 1 && currentWeekNumber === 23) {
-			const blockClass = 'practicals';
-			
-            cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Социология и право</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    206 УК 1
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        } if (filters.laba && day.getDay() === 2 && index === 2 && currentWeekNumber === 23) {
-            const blockClass = 'lectures';
-			
-			cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Теория электрических цепей</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    IV римская
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-		}	if (filters.laba && day.getDay() === 2 && index === 3 && currentWeekNumber === 23) {
-            const blockClass = 'laba';
-			
-			cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Элементная база телекоммуникационных систем</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    202 УК 3
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        } if (filters.laba && day.getDay() === 2 && index === 4 && currentWeekNumber === 23) {
-            const blockClass = 'laba';
-			
-			cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Элементная база телекоммуникационных систем</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    202 УК 3
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        } 
-		if (filters.laba && day.getDay() === 3 && index === 1 && currentWeekNumber === 23) {
-            const blockClass = 'laba';
-			
-			cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Основы теории электромагнитных полей и волн 1п/гр</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    107 УК 3
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        } if (filters.laba && day.getDay() === 3 && index === 2 && currentWeekNumber === 23) {
-            const blockClass = 'practicals';
-			
-			cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Теория вероятностей и математическая статистика</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    407 УК 1
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        } if (filters.laba && day.getDay() === 3 && index === 3 && currentWeekNumber === 23) {
-            const blockClass = 'laba';
-			
-			cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Введение во операционную систему UNIX</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    402 УК 3
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        }
-		  if (filters.laba && day.getDay() === 4 && index === 0 && currentWeekNumber === 23) {
-           const blockClass = 'lectures';
-
-		   cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Теория вероятностей и математическая статистика</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    III римская
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        } if (filters.laba && day.getDay() === 4 && index === 1 && currentWeekNumber === 23) {
-            const blockClass = 'lectures';
-			
-			cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Элементная база телекоммуникационных систем</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    II римская
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        } if (filters.laba && day.getDay() === 4 && index === 2 && currentWeekNumber === 23) {
-            const blockClass = 'laba';
-			
-			cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Теория электрических цепей 2 п/гр</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
-                    208 УК 3
-                    </div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        } if (filters.practicals && day.getDay() === 5 && index === 1 && currentWeekNumber === 23)  {
-           const blockClass = 'practicals';
-
-            cellContent = (
-                <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Элективные дисциплины по физической культуре и спорту</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />Спорт зал</div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time"/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        }
-		if (filters.laba && day.getDay() === 5 && index === 2 && currentWeekNumber === 23)  {
-           const blockClass = 'laba';
-			cellContent = (
-                <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Основы теории электромагнитных полей и волн 1 п/гр</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />107 УК 3</div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time"/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        }
-		if (filters.lectures && day.getDay() === 5 && index === 3 && currentWeekNumber === 23) {
-            const blockClass = 'lectures';
-			cellContent = (
-                <div className={`lectures ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Основы построения инфокоммуникационных систем и сетей</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />VII римская</div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time"/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        }
-		if (filters.lectures && day.getDay() === 5 && index === 4 && currentWeekNumber === 23) {
-            const blockClass = 'laba';
-			cellContent = (
-                <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Теория электрических цепей 1 п/гр</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />208 УК 3</div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time"/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        }if (filters.lectures && day.getDay() === 6 && index === 2 && currentWeekNumber === 23) {
-            const blockClass = 'laba';
-			cellContent = (
-                <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Основы построения инфокоммуникационных систем и сетей 2 п/гр</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />302 УК 3</div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time"/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        }if (filters.lectures && day.getDay() === 6 && index === 3 && currentWeekNumber === 23) {
-            const blockClass = 'laba';
-			cellContent = (
-                <div className={`laba ${isCurrent ? 'current-interval' : ''}`}>
-				<div className="type-label">{getTypeLabel(blockClass)}</div>
-                    <div className="text-task">Основы построения инфокоммуникационных систем и сетей 2 п/гр</div>
-                    <div className="text-place">
-					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />302 УК 3</div>
-                    <div className="text-time">
-					<img src={time} alt="time" className="time"/>
-					{timeRange}
-					</div>
-                </div>
-            );
-        }
-		
+        // Находим занятие, соответствующее этому lesson_index
+        const lesson = lessons.find((l) => l.lesson_index === lessonIndex);
 
         return (
-            <tr key={index}>
+            <tr key={lessonIndex}>
                 <td className="date-cell-mobile">
-                    {cellContent ? cellContent : null}
+                    {lesson ? (
+                        <div className={`${lesson.lesson_type} ${lesson.isCurrent ? 'current-interval' : ''}`}>
+                            <div className="type-label">{getTypeLabel(lesson.lesson_type)}</div>
+                            <div className="text-task">{lesson.subject}</div>
+                            <div className="text-place">
+                                <img src={locations} alt="locations" className="locations" />
+                                {lesson.location}
+                            </div>
+                            <div className="text-time">
+                                <img src={time} alt="time" className="time" />
+                                {timeRange}
+                            </div>
+                        </div>
+                    ) : null}
                 </td>
             </tr>
         );
@@ -463,41 +228,67 @@ const renderMobileDaySchedule = (day) => {
     let day = startDate;
 
     for (let i = 0; i < 7; i++) {
-      days.push(day);
-      day = addDays(day, 1);
+        days.push(day);
+        day = addDays(day, 1);
     }
 
     const timeIntervals = [
-      { paranumber: "Первая пара", start: "08:30", end: "10:00" },
-      { paranumber: "Вторая пара", start: "10:15", end: "11:45" },
-      { paranumber: "Третья пара", start: "12:00", end: "13:30" },
-      { paranumber: "Четвертая пара", start: "14:15", end: "15:45" },
-      { paranumber: "Пятая пара", start: "16:00", end: "17:30" },
-      { paranumber: "Шестая пара", start: "18:00", end: "19:30" },
+        { paranumber: "Первая пара", start: "08:30", end: "10:00" },
+        { paranumber: "Вторая пара", start: "10:15", end: "11:45" },
+        { paranumber: "Третья пара", start: "12:00", end: "13:30" },
+        { paranumber: "Четвертая пара", start: "14:15", end: "15:45" },
+        { paranumber: "Пятая пара", start: "16:00", end: "17:30" },
+        { paranumber: "Шестая пара", start: "18:00", end: "19:30" },
     ];
 
     return timeIntervals.map((interval, index) => (
-      <React.Fragment key={index}>
-        <tr>
-          <td className="time-cell">
-            <div className="pair-name">{interval.paranumber}</div>
-          </td>
-          {days.map((day, dayIndex) => {
-            const isCurrent = isWithinInterval(new Date(), {
-              start: new Date(day.getFullYear(), day.getMonth(), day.getDate(), parseInt(interval.start.split(":")[0]), parseInt(interval.start.split(":")[1])),
-              end: new Date(day.getFullYear(), day.getMonth(), day.getDate(), parseInt(interval.end.split(":")[0]), parseInt(interval.end.split(":")[1]))
-            });
+        <React.Fragment key={index}>
+            <tr>
+                <td className="time-cell">
+                    <div className="pair-name">{interval.paranumber}</div>
+                </td>
+                {days.map((day, dayIndex) => {
+                    const isCurrent = isWithinInterval(new Date(), {
+                        start: new Date(day.getFullYear(), day.getMonth(), day.getDate(),
+                            parseInt(interval.start.split(":")[0]), 
+                            parseInt(interval.start.split(":")[1])),
+                        end: new Date(day.getFullYear(), day.getMonth(), day.getDate(),
+                            parseInt(interval.end.split(":")[0]), 
+                            parseInt(interval.end.split(":")[1]))
+                    });
 
-            return (
-              <td key={dayIndex} className="date-cell-desktop">
-                
-              </td>
+                    const timeRange = `${interval.start} - ${interval.end}`;
+                    let cellContent = null;
+
+                     if (filters.practicals && day.getDay() === 1 && index === 1 && currentWeekNumber === 25) {
+            const blockClass = 'practicals';    
+			
+			cellContent = (
+                    <div className={`${blockClass} ${isCurrent ? 'current-interval' : ''}`}>
+					<div className="type-label">{getTypeLabel(blockClass)}</div>
+                    <div className="text-task">Безопасность жизнедеятельности</div>
+                    <div className="text-place">
+					<img src={locations} alt="locations" className="locations" style={{ fill: '#ece9f2' }} />
+                    213 УК 1
+                    </div>
+                    <div className="text-time">
+					<img src={time} alt="time" className="time" style={{ fill: '#ece9f2' }}/>
+					{timeRange}
+					</div>
+                </div>
             );
-          })}
-        </tr>
-      </React.Fragment>
+                    }
+
+                    return (
+                        <td key={dayIndex} className="date-cell-desktop">
+                            {cellContent}
+                        </td>
+                    );
+                })}
+            </tr>
+        </React.Fragment>
     ));
-  };
+};
 
   const renderCells = () => {
     const monthStart = startOfMonth(currentMonth);
