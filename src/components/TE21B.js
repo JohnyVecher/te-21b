@@ -49,8 +49,6 @@ const getMonthNameInNominative = (date) => {
 const Calendar = () => {
 	
 
-// Теперь lessonHours доступен в JSX
-
   const startDate = new Date(2024, 8, 2);
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [currentWeek, setCurrentWeek] = useState(startOfWeek(new Date(), { locale: ru }));
