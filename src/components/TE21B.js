@@ -208,7 +208,8 @@ const renderMobileDaySchedule = (day) => {
     return Object.keys(lessonTimes).map((key) => {
         const lessonIndex = parseInt(key);
         const timeRange = `${lessonTimes[lessonIndex].start} - ${lessonTimes[lessonIndex].end}`;
-        const lesson = lessons.find((l) => l.lesson_index === lessonIndex);
+        const lesson = lessons.find((l) => Number(l.lesson_index) === lessonIndex);
+
 
         return (
             <tr key={lessonIndex}>
@@ -268,10 +269,11 @@ const renderMobileDaySchedule = (day) => {
 
             
                     const lesson = lessons.find(l => 
-                        l.day_of_week === (day.getDay() || 7) &&
-                        l.lesson_index === lessonIndex + 1 && // +1, т.к. индексы начинаются с 0
-                        l.week_number === currentWeekNumber
-                    );
+    Number(l.day_of_week) === (day.getDay() || 7) &&
+    Number(l.lesson_index) === lessonIndex + 1 && 
+    Number(l.week_number) === currentWeekNumber
+);
+
 
                     let cellContent = null;
 
