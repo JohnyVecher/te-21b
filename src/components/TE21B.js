@@ -96,7 +96,7 @@ useEffect(() => {
         const fetchMobileLessons = async () => {
             try {
                 const dayOfWeek = selectedMobileDay ? selectedMobileDay.getDay() || 7 : 1;
-                const response = await axios.get('http://localhost:3001/api/lessons', {
+                const response = await axios.get('https://backend-schedule-b6vy.onrender.com', {
                     params: { week: currentWeekNumber, day: dayOfWeek }
                 });
 
@@ -115,7 +115,7 @@ useEffect(() => {
             try {
                 const allDays = [1, 2, 3, 4, 5, 6, 7];
                 const requests = allDays.map(day =>
-                    axios.get('http://localhost:3001/api/lessons', {
+                    axios.get('https://backend-schedule-b6vy.onrender.com', {
                         params: { week: currentWeekNumber, day }
                     })
                 );
