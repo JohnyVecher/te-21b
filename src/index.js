@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { Analytics } from '@vercel/analytics/react';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration'; // Изменили импорт
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
