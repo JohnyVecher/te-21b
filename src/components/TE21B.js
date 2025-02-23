@@ -64,13 +64,14 @@ const Calendar = () => {
     const hours = { lectures: 0, practicals: 0, laba: 0 };
 
     lessons.forEach((lesson) => {
-        if (lesson.week_number === currentWeekNumber) {
+        if (Number(lesson.week_number) === currentWeekNumber) {
             hours[lesson.lesson_type] += 1; 
         }
     });
 
     return hours;
 }, [lessons, currentWeekNumber]);
+
 const lessonHours = countLessonHours;
   const daysOfWeek = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
 
