@@ -762,6 +762,15 @@ border: 1px solid rgba(255, 255, 255, 0.0);
 
 }
 
+@media (max-width: 769px) {
+
+.dark-mode .header {
+  background-color: #232526;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+}
 @media (min-width: 769px) {
   .menu-button {
     display: none;
