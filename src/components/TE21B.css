@@ -768,7 +768,9 @@
 }
 @media (max-width: 768px) {
 	
-	
+	.activity-filter {
+		display:none;
+	}
 	
    .header-container {
 	padding-bottom:10px;
