@@ -386,7 +386,7 @@ const renderMobileDaySchedule = (day) => {
         <img src={arrowback} alt="Back" className="back-arrow" />
     </button>
     <div className="group-name">
-        <h2>TE-21Б</h2>
+        <h2>TE-31Б</h2>
     </div>
 </div>
 
