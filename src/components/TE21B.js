@@ -81,6 +81,55 @@ const lessonHours = countLessonHours;
     return format(selectedMobileDay, 'd.MM.yyyy', { locale: ru });
 };
 
+const [currentLesson, setCurrentLesson] = useState(null);
+const [showNotification, setShowNotification] = useState(false);
+
+useEffect(() => {
+    const checkCurrentLesson = () => {
+        const now = new Date();
+        const currentDayOfWeek = now.getDay() || 7;
+
+        const lessonTimes = [
+            { start: "08:30", end: "10:00" },
+            { start: "10:15", end: "11:45" },
+            { start: "12:00", end: "13:30" },
+            { start: "14:15", end: "15:45" },
+            { start: "16:00", end: "17:30" },
+            { start: "18:00", end: "19:30" },
+            { start: "19:45", end: "21:00" }
+        ];
+
+        const lesson = lessons.find(lesson => {
+            const lessonIndex = Number(lesson.lesson_index) - 1;
+            if (lessonIndex < 0 || lessonIndex >= lessonTimes.length) return false;
+
+            if (Number(lesson.day_of_week) !== currentDayOfWeek) return false; // Проверка дня
+
+            const { start, end } = lessonTimes[lessonIndex];
+
+            return isWithinInterval(now, {
+                start: new Date(now.getFullYear(), now.getMonth(), now.getDate(),
+                    parseInt(start.split(':')[0]), parseInt(start.split(':')[1])),
+                end: new Date(now.getFullYear(), now.getMonth(), now.getDate(),
+                    parseInt(end.split(':')[0]), parseInt(end.split(':')[1]))
+            });
+        });
+
+        if (lesson) {
+            setCurrentLesson(lesson);
+            setShowNotification(true);
+            setTimeout(() => setShowNotification(false), 5000);
+        } else {
+            setShowNotification(false);
+        }
+    };
+
+    const interval = setInterval(checkCurrentLesson, 10000);
+    checkCurrentLesson();
+
+    return () => clearInterval(interval);
+}, [lessons]);
+
 
 
 useEffect(() => {
@@ -201,20 +250,33 @@ const renderMobileDaySchedule = (day) => {
         3: { paranumber: "Третья пара", start: "12:00", end: "13:30" },
         4: { paranumber: "Четвертая пара", start: "14:15", end: "15:45" },
         5: { paranumber: "Пятая пара", start: "16:00", end: "17:30" },
-        6: { paranumber: "Шестая пара", start: "18:00", end: "19:30" }
+        6: { paranumber: "Шестая пара", start: "18:00", end: "19:30" },
+        7: { paranumber: "Седьмая пара", start: "19:45", end: "21:00" }
     };
 
     return Object.keys(lessonTimes).map((key) => {
         const lessonIndex = parseInt(key);
         const timeRange = `${lessonTimes[lessonIndex].start} - ${lessonTimes[lessonIndex].end}`;
-        const lesson = lessons.find((l) => Number(l.lesson_index) === lessonIndex);
+        const lesson = lessons.find((l) => 
+            Number(l.lesson_index) === lessonIndex &&
+            Number(l.day_of_week) === (day.getDay() || 7) // Проверяем день недели
+        );
 
+        const now = new Date();
+        const isCurrent = lesson && isWithinInterval(now, {
+            start: new Date(day.getFullYear(), day.getMonth(), day.getDate(),
+                parseInt(lessonTimes[lessonIndex].start.split(":")[0]), 
+                parseInt(lessonTimes[lessonIndex].start.split(":")[1])),
+            end: new Date(day.getFullYear(), day.getMonth(), day.getDate(),
+                parseInt(lessonTimes[lessonIndex].end.split(":")[0]), 
+                parseInt(lessonTimes[lessonIndex].end.split(":")[1]))
+        });
 
         return (
             <tr key={lessonIndex}>
                 <td className="date-cell-mobile">
                     {lesson ? (
-                        <div className={`${lesson.lesson_type} ${lesson.isCurrent ? 'current-interval' : ''}`}>
+                        <div className={`${lesson.lesson_type} ${isCurrent ? 'current-interval' : ''}`}>
                             <div className="type-label">{getTypeLabel(lesson.lesson_type)}</div>
                             <div className="text-task">{lesson.subject}</div>
                             <div className="text-place">
@@ -232,6 +294,7 @@ const renderMobileDaySchedule = (day) => {
         );
     });
 };
+
 
 
   const renderWeek = (lessons = [], currentWeekNumber) => {
@@ -425,6 +488,9 @@ const renderMobileDaySchedule = (day) => {
           <button onClick={prevWeek}><img src={arrowLeftWeek} alt="Previous Week" /></button>
           <h2>{weekRange}</h2>
           <button onClick={nextWeek}><img src={arrowRightWeek} alt="Next Week" /></button>
+		  <div className="group-name">
+        <h2>TE-21Б</h2>
+         </div>
         </div>
         <table className="week-table">
           <thead>
@@ -438,6 +504,11 @@ const renderMobileDaySchedule = (day) => {
           </tbody>
         </table>
       </div>
+	  {currentLesson && (
+    <div className={`current-lesson-notification ${showNotification ? 'show' : 'hide'}`}>
+    У тебя сейчас пара: <strong>{currentLesson?.subject}</strong>
+    </div>
+)}
     </div>
   );
 };

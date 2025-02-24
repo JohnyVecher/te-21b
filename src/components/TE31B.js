@@ -202,20 +202,32 @@ const renderMobileDaySchedule = (day) => {
         4: { paranumber: "Четвертая пара", start: "14:15", end: "15:45" },
         5: { paranumber: "Пятая пара", start: "16:00", end: "17:30" },
         6: { paranumber: "Шестая пара", start: "18:00", end: "19:30" },
-		7: { paranumber: "Седьмая пара", start: "19:45", end: "21:00" }
+        7: { paranumber: "Седьмая пара", start: "19:45", end: "21:00" }
     };
 
     return Object.keys(lessonTimes).map((key) => {
         const lessonIndex = parseInt(key);
         const timeRange = `${lessonTimes[lessonIndex].start} - ${lessonTimes[lessonIndex].end}`;
-        const lesson = lessons.find((l) => Number(l.lesson_index) === lessonIndex);
+        const lesson = lessons.find((l) => 
+            Number(l.lesson_index) === lessonIndex &&
+            Number(l.day_of_week) === (day.getDay() || 7) // Проверяем день недели
+        );
 
+        const now = new Date();
+        const isCurrent = lesson && isWithinInterval(now, {
+            start: new Date(day.getFullYear(), day.getMonth(), day.getDate(),
+                parseInt(lessonTimes[lessonIndex].start.split(":")[0]), 
+                parseInt(lessonTimes[lessonIndex].start.split(":")[1])),
+            end: new Date(day.getFullYear(), day.getMonth(), day.getDate(),
+                parseInt(lessonTimes[lessonIndex].end.split(":")[0]), 
+                parseInt(lessonTimes[lessonIndex].end.split(":")[1]))
+        });
 
         return (
             <tr key={lessonIndex}>
                 <td className="date-cell-mobile">
                     {lesson ? (
-                        <div className={`${lesson.lesson_type} ${lesson.isCurrent ? 'current-interval' : ''}`}>
+                        <div className={`${lesson.lesson_type} ${isCurrent ? 'current-interval' : ''}`}>
                             <div className="type-label">{getTypeLabel(lesson.lesson_type)}</div>
                             <div className="text-task">{lesson.subject}</div>
                             <div className="text-place">
@@ -233,6 +245,7 @@ const renderMobileDaySchedule = (day) => {
         );
     });
 };
+
 
 
   const renderWeek = (lessons = [], currentWeekNumber) => {
@@ -395,7 +408,6 @@ const renderMobileDaySchedule = (day) => {
           <h2>{`${weekRange}`}</h2>
           <button onClick={nextWeek}><img src={arrowRightWeekMobile} alt="Next-Week" /></button>
         </div>
-
         <div className="day-selector-container">
           <div className="data-prime">
         <h2>{getSelectedDayDate()}</h2> {}
@@ -426,7 +438,11 @@ const renderMobileDaySchedule = (day) => {
           <button onClick={prevWeek}><img src={arrowLeftWeek} alt="Previous Week" /></button>
           <h2>{weekRange}</h2>
           <button onClick={nextWeek}><img src={arrowRightWeek} alt="Next Week" /></button>
+		  <div className="group-name">
+        <h2>TE-31Б</h2>
+          </div>
         </div>
+		
         <table className="week-table">
           <thead>
             <tr>
