@@ -805,6 +805,29 @@ div.group-name {
 }
 }
 @media (max-width: 768px) {
+.dark-mode .lectures.current-interval::after {
+  animation: darkglowGreenafter 2s infinite;
+}
+
+.dark-mode .laba.current-interval::after {
+  animation: darkglowlabaafter 2s infinite; 
+}
+
+.dark-mode .practicals.current-interval::after {
+  animation: darkglowpracticalsafter 2s infinite; 
+}
+
+.dark-mode .lectures.current-interval {
+  animation: darkglowGreen 2s infinite;
+}
+
+.dark-mode .laba.current-interval {
+  animation: darkglowlaba 2s infinite;
+}
+
+.dark-mode .practicals.current-interval {
+  animation: darkglowpracticals 2s infinite;
+}
 	.lectures.current-interval::after {
   animation: glowGreenafter 2s infinite;
 }
@@ -894,7 +917,7 @@ filter: brightness(0) invert(1);
  
 	.group-name{
     display: flex;
-	margin-left:23%;
+	margin-left:25%;
     align-items: center; 
 	width: 28%;
 	background-color: #ffff;
@@ -1128,18 +1151,39 @@ border: 0px solid rgba(255, 255, 255, 0.35);
 }
 
 .dark-mode .lectures .type-label{
-    color: #e61c66;
+   	font-weight: 600;
+	background: linear-gradient(90deg, #e61c66,  #ed77a2);
+	background-size: 300%;
 	font-weight: 600;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animated_text 10s ease-in-out infinite;
+	-moz-animation: animated_text 10s ease-in-out infinite;
+	-webkit-animation: animated_text 10s ease-in-out infinite;
 }
 
 .dark-mode .practicals .type-label{
-    color: #ffa500;
+   	font-weight: 600;
+	background: linear-gradient(90deg, #fc4a1a, #f7b733);
+	background-size: 300%;
 	font-weight: 600;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animated_text 10s ease-in-out infinite;
+	-moz-animation: animated_text 10s ease-in-out infinite;
+	-webkit-animation: animated_text 10s ease-in-out infinite;
 }
 
 .dark-mode .laba .type-label{
-	color: #b866ff;
+		font-weight: 600;
+	background: linear-gradient(90deg, #8B00FF,   #cf99ff);
+	background-size: 300%;
 	font-weight: 600;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animated_text 10s ease-in-out infinite;
+	-moz-animation: animated_text 10s ease-in-out infinite;
+	-webkit-animation: animated_text 10s ease-in-out infinite;
 }
 
 .practicals .type-label, 
@@ -1217,17 +1261,45 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .dark-mode .lectures .text-time{
-	color: #e61c66;
+		font-weight: 600;
+	background: linear-gradient(90deg, #e61c66,  #ed77a2);
+	background-size: 300%;
+	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 600;
+	text-transform: uppercase;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animated_text 10s ease-in-out infinite;
+	-moz-animation: animated_text 10s ease-in-out infinite;
+	-webkit-animation: animated_text 10s ease-in-out infinite;
 }
+
 .dark-mode .practicals .text-time{
-	color: #ffa500;
 	font-weight: 600;
+	background: linear-gradient(90deg, #fc4a1a, #f7b733);
+	background-size: 300%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animated_text 10s ease-in-out infinite;
+	-moz-animation: animated_text 10s ease-in-out infinite;
+	-webkit-animation: animated_text 10s ease-in-out infinite;
 }
 
 .dark-mode .laba .text-time{
-	color: #b866ff;
+		font-weight: 600;
+	background: linear-gradient(90deg, #8B00FF,   #cf99ff);
+	background-size: 300%;
+	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 600;
+	text-transform: uppercase;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animated_text 10s ease-in-out infinite;
+	-moz-animation: animated_text 10s ease-in-out infinite;
+	-webkit-animation: animated_text 10s ease-in-out infinite;
 }
 
 
@@ -1245,6 +1317,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .dark-mode .practicals {
+	box-shadow: 0 0 4px rgba( 237,118,14, 1);
 	border: 1px solid rgba(105, 105, 105, 1);
     display: flex;
     flex-direction: column;
@@ -1324,6 +1397,7 @@ border: 0px solid rgba(17, 100, 180, 1);
 
 
 .dark-mode .lectures {
+	box-shadow: 0 0 5px rgba(181, 24, 81, 0.5);
 	border: 1px solid rgba(105, 105, 105, 1);
     display: flex;
     flex-direction: column;
@@ -1394,6 +1468,7 @@ border: 0px solid rgba(17, 100, 180, 1);
 }
   
  .dark-mode .laba {
+	 box-shadow: 0 0 10px rgba(139,0,255, 0.5);
 	 border: 1px solid rgba(105, 105, 105, 1);
     display: flex;
     flex-direction: column;
@@ -1500,6 +1575,25 @@ border: 0px solid rgba(160, 51, 255, 0.35);
   }
 }
 
+@keyframes darkglowGreen {
+  0% {
+    background: #232526;
+    box-shadow: 0 0 5px rgba(181, 24, 81, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    background: #232526;
+    box-shadow: 0 0 30px rgba(181, 24, 81, 1);
+    color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+  }
+  100% {
+    background: #232526;
+    box-shadow: 0 0 5px rgba(181, 24, 81, 0.5);
+    transform: scale(1);
+  }
+}
+
 @keyframes glowGreen {
   0% {
     background: linear-gradient(90deg, #e61c66, #ed77a2);
@@ -1539,6 +1633,24 @@ border: 0px solid rgba(160, 51, 255, 0.35);
   }
 }
 
+@keyframes darkglowlaba {
+  0% {
+    background: #232526;
+    box-shadow: 0 0 5px rgba(139,0,255, 0.5);
+	transform: scale(1);
+  }
+  50% {
+    background: #232526;
+    box-shadow: 0 0 30px rgba(139,0,255, 1);
+    color: rgba(0, 0, 0, 0.7);
+	transform: scale(1.05);
+  }
+  100% {
+    background: #232526;
+    box-shadow: 0 0 5px rgba(139,0,255, 0.5);
+	transform: scale(1);
+  }
+}
 
 
 @keyframes glowpracticals {
@@ -1548,13 +1660,33 @@ border: 0px solid rgba(160, 51, 255, 0.35);
 	transform: scale(1);
   }
   50% {
-    background: linear-gradient(90deg, #fc4a1a, #f7b733);
+        background: linear-gradient(90deg, #fc4a1a, #f7b733);
     box-shadow: 0 0 30px rgba( 237,118,14, 1);
 	color: rgba(0,0,0, 0.7);
 	transform: scale(1.05);
   }
   100% {
-    background: linear-gradient(90deg, #fc4a1a, #f7b733);
+        background: linear-gradient(90deg, #fc4a1a, #f7b733);
+
+    box-shadow: 0 0 5px rgba( 237,118,14, 0.5);
+	transform: scale(1);
+  }
+}
+
+@keyframes darkglowpracticals {
+  0% {
+    background: #232526;
+    box-shadow: 0 0 5px rgba( 237,118,14, 0.5);
+	transform: scale(1);
+  }
+  50% {
+    background: #232526;
+    box-shadow: 0 0 30px rgba( 237,118,14, 1);
+	color: rgba(0,0,0, 0.7);
+	transform: scale(1.05);
+  }
+  100% {
+    background: #232526;
     box-shadow: 0 0 5px rgba( 237,118,14, 0.5);
 	transform: scale(1);
   }
