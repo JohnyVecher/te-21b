@@ -458,14 +458,6 @@
   transform: translate(-50%, -50%);
   font-size: 1.7vh;
 }
-.week-navigation h3 { 
-  padding: 1%;
-  font-size: 3vh;
-  margin: 0;
-  text-transform: capitalize;
-  text-align: center;
-  font-family: 'Franklin Gothic Medium', sans-serif;
-}
 
 .month-navigation h3 { 
   font-size: 1.9vh;
@@ -511,20 +503,34 @@
   color: #5AAC74;
 }
 
+.dark-mode .buttons_week {
+  transform: translateX(0%);
+  border-radius: 10px 10px 0 0;
+  background-color: #181C3A;
+  display: flex;
+  justify-content: flex-start;
+transition: background-color 0.3s ease, color 0.3s ease;  
+}
+.buttons_week {
+	
+  transform: translateX(0%);
+  border-radius: 10px 10px 0 0;
+  background-color: #F8F9FF;
+  display: flex;
+  justify-content: flex-start; 
+}
 
 .week-navigation {
   background-color: #F8F9FF;
   display: flex;
-  align-items: center;
   justify-content: flex-start; 
-  padding: 0 px;
   border-radius: 10px 10px 0 0;
 }
 
 
 .week-navigation h2 {
   margin: 10px 0; 
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   text-transform: capitalize;
   text-align: left;
   font-family: 'Franklin Gothic Medium', sans-serif;
@@ -538,7 +544,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 5px 5px;
   font-size: 0.8vw;
   margin-bottom: -5px; 
 }
@@ -546,7 +552,7 @@
 .week-navigation button:hover {
   background-color: #dcdcdc; 
   border-color: #aaa; 
-  width: 30px; 
+
 }
 
 .week-navigation img {
@@ -782,7 +788,7 @@
 
 
 div.group-name {
-	background: linear-gradient(-45deg, #e61c66, #fc4a1a, #8450DE);
+	background: linear-gradient(90deg, #0061ff, #60efff,  #ff1b6b, #45caff,#56B4D3);
 	background-size: 300%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 900;

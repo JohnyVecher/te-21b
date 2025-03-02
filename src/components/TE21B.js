@@ -485,9 +485,11 @@ const renderMobileDaySchedule = (day) => {
       </div>
       <div className="daun-calendar">
         <div className="week-navigation">
+		 <div className="buttons_week">
           <button onClick={prevWeek}><img src={arrowLeftWeek} alt="Previous Week" /></button>
           <h2>{weekRange}</h2>
           <button onClick={nextWeek}><img src={arrowRightWeek} alt="Next Week" /></button>
+		  </div>
 		  <div className="group-name">
         <h2>TE-21Б</h2>
          </div>
