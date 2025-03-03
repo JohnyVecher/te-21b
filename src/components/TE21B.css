@@ -860,9 +860,41 @@ div.group-name {
 .current-lesson-notification {
   display:none;
 }
-	.activity-filter {
-		display:none;
-	}
+
+.activity-list {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+    padding: 0;
+    list-style: none;
+}
+
+.activity-list li {
+    display: flex;
+	  margin-bottom: 0px;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+}
+
+.activity-list img {
+    width: 40%; 
+    height: 100%;
+}
+
+.activity-list span {
+
+}
+
+
+	.activity-daun {
+  margin: 10px;
+  padding: 2%;
+  background-color: #fff;
+  border-radius: 20px;
+  height: auto;
+  width: 90%;
+}
 	
    .header-container {
 	padding-bottom:10px;
@@ -973,7 +1005,6 @@ filter: brightness(0) invert(1);
 	
 	.week-navigation-mobile{
     width:95%;
-	margin-bottom:8%;
 	margin-left:3%;
 	background-color: #ffff;
 	border-radius:20px 20px 20px 20px;

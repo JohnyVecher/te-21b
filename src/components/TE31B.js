@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './TE21B.css';
 import { useMemo } from 'react';
+import laba_png from './laba.png'
+import practicals_png from './practicals.png'
+import lectures_png from './lectures.png'
 import arrowLeft from './arrow_left.png';
 import { ThemeContext } from './ThemeContext';
 import locations from './locationsr.png';
@@ -408,6 +411,22 @@ const renderMobileDaySchedule = (day) => {
           <h2>{`${weekRange}`}</h2>
           <button onClick={nextWeek}><img src={arrowRightWeekMobile} alt="Next-Week" /></button>
         </div>
+		<div className="activity-daun">
+    <ul className="activity-list">
+        <li>
+            <img src={lectures_png} alt="Лекции" />
+            <span style={{ color: '#e61c66', fontWeight: 'bold' }}>{lessonHours.lectures} пар</span>
+        </li>
+        <li>
+            <img src={practicals_png} alt="Практика" />
+            <span style={{ color: '#fc4a1a', fontWeight: 'bold' }}>{lessonHours.practicals} пар</span>
+        </li>
+        <li>
+            <img src={laba_png} alt="Лабораторные" />
+            <span style={{ color: '#8450DE', fontWeight: 'bold' }}>{lessonHours.laba} пар</span>
+        </li>
+    </ul>
+</div>
         <div className="day-selector-container">
           <div className="data-prime">
         <h2>{getSelectedDayDate()}</h2> {}

@@ -669,6 +669,13 @@ border: 1px solid rgba(255, 255, 255, 0.0);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.dark-mode .activity-daun{
+	border: 1px solid rgba(105, 105, 105, 1);
+  background-color: #1a1a1a;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .dark-mode .profile-button{
 	border: 1px solid rgba(105, 105, 105, 1);
   background-color: #1a1a1a;
