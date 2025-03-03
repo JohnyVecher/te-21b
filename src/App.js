@@ -93,10 +93,6 @@ const App = () => {
             <button
               onClick={toggleTheme}
               className="theme-toggle"
-              style={{
-                backgroundColor: isDarkMode ? '#181C3A' : '#fff',
-                color: isDarkMode ? '#fff' : '#fff'
-              }}
             >
               <img src={night} alt="night" className="logo-imageN" />
             </button>
