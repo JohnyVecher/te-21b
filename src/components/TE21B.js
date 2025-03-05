@@ -491,10 +491,7 @@ const renderMobileDaySchedule = (day) => {
             ))}
           </div>
         </div>
-
         <div className="mobile-day-schedule">
-	
-
           <table>
             <tbody>
               {renderMobileDaySchedule(selectedMobileDay)}

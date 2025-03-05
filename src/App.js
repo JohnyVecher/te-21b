@@ -5,6 +5,7 @@ import TE21B from './components/TE21B';
 import TE31B from './components/TE31B';
 import Info from './components/info';
 import Portfolio from './components/Portfolio';
+import BottomNav from "./components/BottomNav";
 import ProfileSelection from './components/ProfileSelection';
 import CourseSelectionTE from './components/CourseSelectionTE';
 import GroupSelectionTE3 from './components/GroupSelectionTE3';
@@ -113,7 +114,7 @@ const App = () => {
             </div>
           </div>
 
-         
+      
           <Routes>
             <Route path="/" element={<ProfileSelection />} />
             <Route path="/course-selectionte" element={<CourseSelectionTE />} />
@@ -124,11 +125,15 @@ const App = () => {
             <Route path="/portfolio" element={<Portfolio />} />
 			<Route path="/info" element={<Info />} />
           </Routes>
+		  <BottomNav /> {/* Добавляем нижнюю навигацию */}
+		  
         </div>
       </div>
     </Router>
   );
 };
+
+
 
 export default function WrappedApp() {
   return (

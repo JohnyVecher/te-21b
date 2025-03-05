@@ -1,4 +1,5 @@
-.portfolios-container {
+@media (min-width: 768px) {
+	.portfolios-container {
   padding: 30px;
   border-radius: 0 0 30px 30px;
   background-color: #F5F6FA;
@@ -38,4 +39,86 @@
   background-color: #fff;
   border-right: none; /* Граница слева для первого столбца */
   border-bottom: none;
+}
+}
+@media (max-width: 768px) {
+	.portfolios-container {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.portfolios-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.portfolios-table th, .portfolios-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.portfolios-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.portfolios-table td a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.portfolios-table td a:hover {
+  text-decoration: underline;
+}
+
+/* Адаптивный режим: превращаем таблицу в карточки */
+@media (max-width: 600px) {
+  .portfolios-table thead {
+    display: none; /* Убираем заголовки */
+  }
+
+  .portfolios-table, .portfolios-table tbody, .portfolios-table tr, .portfolios-table td {
+    display: block;
+    width: 100%;
+  }
+.dark-mode .portfolios-table tr {
+	border: 1px solid rgba(105, 105, 105, 1);
+    background-color: #1a1a1a;
+    margin-bottom: 2%;
+    border-radius: 8px;
+	font-family: 'Franklin Gothic Medium', sans-serif;
+	
+  }
+  
+  .portfolios-table tr {
+    margin-bottom: 2%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+	font-family: 'Franklin Gothic Medium', sans-serif;
+  }
+.dark-mode .portfolios-table td {
+    color: #ffffff;
+  }
+
+  .portfolios-table td {
+    border: none;
+    padding: 8px;
+    text-align: left;
+    position: relative;
+  }
+
+  .portfolios-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    color: #333;
+	font-family: 'Franklin Gothic Medium', sans-serif;
+  }
+}
+
 }
