@@ -811,6 +811,7 @@ div.group-name {
 }
 }
 @media (max-width: 768px) {
+	
 .dark-mode .lectures.current-interval::after {
   animation: darkglowGreenafter 2s infinite;
 }
@@ -944,13 +945,25 @@ filter: brightness(0) invert(1);
 	flex-direction: column;
     font-family: 'Franklin Gothic Medium', sans-serif;
 }
-	.calendar-container {
+
+.dark-mode .calendar-container {
     flex-direction: column; 
-    padding: 0%;
-    background-color: #D7E2F1;
+    padding: 0px;
+    background-color: #090a0a;
 	height:100%;
     width: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
+	 padding-bottom: 15%;
+  }
+
+	.calendar-container {
+    flex-direction: column; 
+    padding: 0px;
+    background-color: #f5f6fa;
+	height:100%;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+	 padding-bottom: 15%;
   }
  
 	.group-name{

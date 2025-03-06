@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ThemeContext, ThemeProvider } from './components/ThemeContext';
 import TE21B from './components/TE21B';
 import TE31B from './components/TE31B';
-import Info from './components/info';
 import Portfolio from './components/Portfolio';
+import Profile from "./components/Profile";
+import RedirectToSchedule from "./RedirectToSchedule";
 import BottomNav from "./components/BottomNav";
 import ProfileSelection from './components/ProfileSelection';
 import CourseSelectionTE from './components/CourseSelectionTE';
@@ -89,7 +90,6 @@ const App = () => {
               <Link to="/" className="header-button">Расписание</Link>
               <Link to="/portfolio" className="header-button">Портфолио</Link>
               <Link to="/session" className="header-button">Сессия</Link>
-              <Link to="/info" className="header-button">Инфо</Link>
             </div>
             <button
               onClick={toggleTheme}
@@ -109,7 +109,6 @@ const App = () => {
             <div className="header-buttons">
               <Link to="/" className="header-button" onClick={toggleDrawer}>Расписание</Link>
               <Link to="/portfolio" className="header-button" onClick={toggleDrawer}>Портфолио</Link>
-              <Link to="/info" className="header-button" onClick={toggleDrawer}>Инфо</Link>
 
             </div>
           </div>
@@ -123,7 +122,8 @@ const App = () => {
             <Route path="/group-selectionte3" element={<GroupSelectionTE3 />} />
             <Route path="/TE21B" element={<TE21B />} />
             <Route path="/portfolio" element={<Portfolio />} />
-			<Route path="/info" element={<Info />} />
+			<Route path="/Profile" element={<Profile />} />
+			<Route path="/RedirectToSchedule" element={<RedirectToSchedule />} />
           </Routes>
 		  <BottomNav /> {/* Добавляем нижнюю навигацию */}
 		  

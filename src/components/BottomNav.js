@@ -1,15 +1,29 @@
 import React from "react";
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import scheduleIcon from "./schedule.png";
 import portfolioIcon from "./portfolio.png";
 import infoIcon from "./info.png";
 import groupIcon from "./group.png";
+import ProfileIcon from "./Profile.png";
+
 
 import "./BottomNav.css";
 
 const BottomNav = () => {
   const location = useLocation();
+const adjustPadding = () => {
+  const nav = document.querySelector(".bottom-nav");
+  if (nav) {
+    document.body.style.paddingBottom = `${nav.offsetHeight}px`;
+  }
+};
 
+useEffect(() => {
+  adjustPadding();
+  window.addEventListener("resize", adjustPadding);
+  return () => window.removeEventListener("resize", adjustPadding);
+}, []);
   return (
     <nav className="bottom-nav">
       <Link to="/portfolio" className={location.pathname === "/portfolio" ? "active" : ""}>
@@ -28,21 +42,21 @@ const BottomNav = () => {
         />
         <span>Домой</span>
       </Link>
-      <Link to="/info" className={location.pathname === "/info" ? "active" : ""}>
-        <img
-          src={infoIcon}
-          alt="Инфо"
-          style={{ filter: location.pathname === "/info" ? "brightness(0) saturate(100%) invert(33%) sepia(92%) saturate(1984%) hue-rotate(196deg) brightness(99%) contrast(104%)" : "none" }}
-        />
-        <span>Инфо</span>
-      </Link>
-	  <Link to="/SelectGroup" className={location.pathname === "/SelectGroup" ? "active" : ""}>
+	  <Link to="/RedirectToSchedule" className={location.pathname === "/RedirectToSchedule" ? "active" : ""}>
         <img
           src={groupIcon}
           alt="Моё расписание"
-          style={{ filter: location.pathname === "/SelectGroup" ? "brightness(0) saturate(100%) invert(33%) sepia(92%) saturate(1984%) hue-rotate(196deg) brightness(99%) contrast(104%)" : "none" }}
+          style={{ filter: location.pathname === "/RedirectToSchedule" ? "brightness(0) saturate(100%) invert(33%) sepia(92%) saturate(1984%) hue-rotate(196deg) brightness(99%) contrast(104%)" : "none" }}
         />
         <span>Моё расписание</span>
+      </Link>
+	  <Link to="/Profile" className={location.pathname === "/Profile" ? "active" : ""}>
+        <img
+          src={ProfileIcon}
+          alt="Личный кабинет"
+          style={{ filter: location.pathname === "/Profile" ? "brightness(0) saturate(100%) invert(33%) sepia(92%) saturate(1984%) hue-rotate(196deg) brightness(99%) contrast(104%)" : "none" }}
+        />
+        <span>Личный кабинет</span>
       </Link>
     </nav>
   );
