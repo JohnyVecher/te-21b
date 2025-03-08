@@ -43,8 +43,9 @@
 }
 @media (max-width: 768px) {
 	.portfolios-container {
-  width: 100%;
-  padding: 15px;
+  padding-top: 3%;
+  width: 99%;
+  padding-bottom: 20%;
   box-sizing: border-box;
   overflow-x: auto;
 }
