@@ -18,8 +18,8 @@
   padding: 20px;
   text-align: left;
   font-size: 1.2vw;
-  font-weight: bold;
   font-family: 'Franklin Gothic Medium', sans-serif;
+  font-weight: bold;
 }
 
 .portfolios-table th {
@@ -96,11 +96,15 @@
   }
   
   .portfolios-table tr {
+	  margin-left: 2%;
+    width: 94%;
+	padding-left:2%;
     margin-bottom: 2%;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #ffffff;
 	font-family: 'Franklin Gothic Medium', sans-serif;
+    font-weight: bold;
   }
 .dark-mode .portfolios-table td {
     color: #ffffff;

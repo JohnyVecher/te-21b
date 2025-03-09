@@ -38,7 +38,7 @@ const Profile = () => {
         return;
       }
 
-      // Отправка токена на сервер
+     
       await fetch("https://backend-schedule-b6vy.onrender.com/api/subscribe", {
         method: "POST",
         headers: {
@@ -55,7 +55,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="profile-container">
+    <div className="profile-container1">
       <div className="profile-header1">
         <div className="profile-circle"></div>
         <img src={studentImage} alt="User" className="profile-image" />
