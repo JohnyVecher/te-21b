@@ -1,7 +1,8 @@
 // src/service-worker.js
 
-/* eslint-disable no-restricted-globals */  
+/* eslint-disable no-restricted-globals */  // Отключение правила для всего файла
 
+// Импорт Workbox для управления кешем и маршрутизацией
 import { clientsClaim } from 'workbox-core';
 import { precacheAndRoute, cleanupOutdatedCaches } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
@@ -32,16 +33,16 @@ messaging.onBackgroundMessage((payload) => {
   });
 });
 
-// Принудительная активация нового Service Worker
+// Принудительная активация нового Service Worker сразу после установки
 clientsClaim();
 
-// Заранее кешируем ресурсы
+// Заранее кешируем ресурсы, перечисленные Workbox (все найденные файлы автоматически добавятся в этот манифест при сборке)
 precacheAndRoute(self.__WB_MANIFEST || []);
 
-// Очищаем старые кеши
+// Очищаем устаревшие кеши, когда обновляются файлы
 cleanupOutdatedCaches();
 
-// Кешируем JS и CSS
+// Кеширование JS и CSS файлов для офлайн-работы с помощью стратегии StaleWhileRevalidate
 registerRoute(
   ({ request }) => request.destination === 'style' || request.destination === 'script',
   new StaleWhileRevalidate({
@@ -49,7 +50,7 @@ registerRoute(
   })
 );
 
-// Кешируем изображения
+// Кеширование изображений с использованием стратегии CacheFirst
 registerRoute(
   ({ request }) => request.destination === 'image',
   new CacheFirst({
@@ -57,14 +58,13 @@ registerRoute(
   })
 );
 
-// Обрабатываем сообщения для немедленной активации нового SW
+// Обработка сообщений для немедленной активации нового SW
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });
 
-// Устанавливаем SW и кешируем ресурсы
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open('static-cache-v1').then((cache) => {
@@ -79,7 +79,6 @@ self.addEventListener('install', (event) => {
   self.skipWaiting();
 });
 
-// Обрабатываем запросы
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
