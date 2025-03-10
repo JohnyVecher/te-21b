@@ -47,8 +47,5 @@ export const requestPermission = async () => {
 
 // Обработчик входящих уведомлений
 onMessage(messaging, (payload) => {
-  console.log("Получено уведомление:", payload);
-  new Notification(payload.notification.title, {
-    body: payload.notification.body
-  });
+  console.log("🔔 Получено уведомление:", payload);
 });
