@@ -12,6 +12,7 @@ firebase.initializeApp({
 
 const messaging = firebase.messaging();
 
+// Убираем вызов showNotification, если вкладка активна
 messaging.onBackgroundMessage((payload) => {
   console.log("🔔 Фоновое уведомление получено:", payload);
   self.registration.showNotification(payload.notification.title, {
