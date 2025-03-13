@@ -29,9 +29,8 @@ export const requestPermission = async () => {
 
     console.log("Получаем токен FCM...");
     const token = await getToken(messaging, {
-      vapidKey: "BAh362wLjn4_Mnek4jSgBN9kZ4Stvw72n__bkvlW2GYRt4aawGFS4oLiYrbuSi7B8az87OA874nyj0IWlwQj79w"
+      vapidKey: "BAh362wLjn4_Mnek4jSgBN9kZ4Stvw72n__bkvlW2GYRt4aawGFS4oLiYrbuSi7B8az87OA874nyj0IWlwQj79w",
 	  serviceWorkerRegistration: await navigator.serviceWorker.register("/service-worker.js")
-
     });
 
     if (!token) {
