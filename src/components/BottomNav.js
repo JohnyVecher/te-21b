@@ -23,7 +23,7 @@ const BottomNav = () => {
 
   const isActive = (path) => activeButton === path;
 
-  const getFilterStyle = (path) => {
+  const getMaksStyle = (path) => {
     return isActive(path)
       ? "brightness(0) saturate(100%) invert(33%) sepia(92%) saturate(1984%) hue-rotate(196deg) brightness(99%) contrast(104%)"
       : "none";
@@ -39,7 +39,7 @@ const BottomNav = () => {
         <img
           src={portfolioIcon}
           alt="Портфолио"
-          style={{ filter: getFilterStyle("/portfolio") }}
+          style={{ filter: getMaksStyle("/portfolio") }}
           className={clicked === "portfolio" ? "maksimka" : ""}
         />
         <span>Портфолио</span>
@@ -53,7 +53,7 @@ const BottomNav = () => {
         <img
           src={scheduleIcon}
           alt="Домой"
-          style={{ filter: getFilterStyle("/") }}
+          style={{ filter: getMaksStyle("/") }}
           className={clicked === "home" ? "maksimka" : ""}
         />
         <span>Домой</span>
@@ -67,7 +67,7 @@ const BottomNav = () => {
         <img
           src={groupIcon}
           alt="Расписание"
-          style={{ filter: getFilterStyle("/RedirectToSchedule") }}
+          style={{ filter: getMaksStyle("/RedirectToSchedule") }}
           className={clicked === "group" ? "maksimka" : ""}
         />
         <span>Расписание</span>
@@ -81,7 +81,7 @@ const BottomNav = () => {
         <img
           src={ProfileIcon}
           alt="Профиль"
-          style={{ filter: getFilterStyle("/Profile") }}
+          style={{ filter: getMaksStyle("/Profile") }}
           className={clicked === "profile" ? "maksimka" : ""}
         />
         <span>Профиль</span>
