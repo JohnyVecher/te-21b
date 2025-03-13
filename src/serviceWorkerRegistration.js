@@ -1,55 +1,52 @@
-// src/serviceWorkerRegistration.js
-
-
-// Проверяем, поддерживает ли браузер Service Workers
 export function register(config) {
-  if ('serviceWorker' in navigator) {
-    // Ожидаем загрузки окна для регистрации SW
-    window.addEventListener('load', () => {
-      const swUrl = '/service-worker.js';
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      const swUrl = "/service-worker.js";
 
       navigator.serviceWorker
         .register(swUrl)
         .then((registration) => {
+          console.log("✅ Service Worker зарегистрирован:", registration);
+
+          // Проверка на обновление
           registration.onupdatefound = () => {
+            console.log("🔄 Найдено обновление Service Worker...");
             const installingWorker = registration.installing;
-            if (installingWorker == null) return;
-            installingWorker.onstatechange = () => {
-              if (installingWorker.state === 'installed') {
-                if (navigator.serviceWorker.controller) {
-                  console.log(
-                    'New content is available and will be used when all ' +
-                      'tabs for this page are closed.'
-                  );
-                  if (config && config.onUpdate) {
-                    config.onUpdate(registration);
-                  }
-                } else {
-                  console.log('Content is cached for offline use.');
-                  if (config && config.onSuccess) {
-                    config.onSuccess(registration);
+
+            if (installingWorker) {
+              installingWorker.onstatechange = () => {
+                if (installingWorker.state === "installed") {
+                  if (navigator.serviceWorker.controller) {
+                    console.log("⚡ Новый Service Worker активен, обновляем страницу...");
+                    window.location.reload(); // 🔥 Перезагрузка страницы
+                  } else {
+                    console.log("✨ Контент теперь доступен офлайн.");
+                    if (config && config.onSuccess) {
+                      config.onSuccess(registration);
+                    }
                   }
                 }
-              }
-            };
+              };
+            }
           };
         })
         .catch((error) => {
-          console.error('Error during service worker registration:', error);
+          console.error("❌ Ошибка при регистрации Service Worker:", error);
         });
     });
   }
 }
 
-// Деактивация Service Worker
+// Удаление Service Worker
 export function unregister() {
-  if ('serviceWorker' in navigator) {
+  if ("serviceWorker" in navigator) {
     navigator.serviceWorker.ready
       .then((registration) => {
+        console.log("⏳ Удаление старого Service Worker...");
         registration.unregister();
       })
       .catch((error) => {
-        console.error(error.message);
+        console.error("❌ Ошибка удаления SW:", error);
       });
   }
 }
