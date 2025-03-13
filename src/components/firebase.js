@@ -30,6 +30,8 @@ export const requestPermission = async () => {
     console.log("Получаем токен FCM...");
     const token = await getToken(messaging, {
       vapidKey: "BAh362wLjn4_Mnek4jSgBN9kZ4Stvw72n__bkvlW2GYRt4aawGFS4oLiYrbuSi7B8az87OA874nyj0IWlwQj79w"
+	  serviceWorkerRegistration: await navigator.serviceWorker.register("/service-worker.js")
+
     });
 
     if (!token) {
@@ -46,15 +48,4 @@ export const requestPermission = async () => {
 };
 
 // Обработчик входящих уведомлений, только если вкладка активна
-onMessage(messaging, (payload) => {
-  console.log("🔔 Получено уведомление:", payload);
 
-  if (document.visibilityState === "visible") {
-    // Показываем уведомление только если вкладка активна
-    new Notification(payload.notification.title, {
-      body: payload.notification.body,
-    });
-  } else {
-    console.log("❌ Вкладка не активна, уведомление не показываем (Service Worker сам покажет).");
-  }
-});
