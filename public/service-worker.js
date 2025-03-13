@@ -7,30 +7,39 @@ import { precacheAndRoute, cleanupOutdatedCaches } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
 
-// Подключаем Firebase Messaging
+// Загружаем Firebase SDK
 importScripts("https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js");
 importScripts("https://www.gstatic.com/firebasejs/10.8.1/firebase-messaging-compat.js");
 
 // Инициализируем Firebase
 firebase.initializeApp({
-  apiKey: "AIzaSyAVj8WCWud9YOQ7yebR7WQOZHhjFmze_-Q",
+  apiKey: "AIzaSy...",
   authDomain: "schedulenotifications-a7f31.firebaseapp.com",
   projectId: "schedulenotifications-a7f31",
   storageBucket: "schedulenotifications-a7f31.firebasestorage.app",
   messagingSenderId: "1089118341502",
-  appId: "1:1089118341502:web:2aaced60550327826e8b2f"
+  appId: "1:1089118341502:web:2aaced60550327826e8b2f",
 });
 
 const messaging = firebase.messaging();
 
-// Обработчик входящих push-уведомлений в фоне
+self.addEventListener("install", (event) => {
+  console.log("📦 Service Worker устанавливается...");
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", (event) => {
+  console.log("🚀 Service Worker активирован!");
+  event.waitUntil(self.clients.claim());
+});
+
 messaging.onBackgroundMessage((payload) => {
-  console.log("🔔 Фоновое уведомление получено:", payload);
+  console.log("📩 Получено фоновое уведомление:", payload);
   self.registration.showNotification(payload.notification.title, {
     body: payload.notification.body,
-    icon: "/icons/icon-192x192.png",
   });
 });
+
 
 // Принудительная активация нового Service Worker
 clientsClaim();
