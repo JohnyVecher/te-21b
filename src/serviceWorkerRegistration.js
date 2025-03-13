@@ -6,7 +6,7 @@ export function register(config) {
   if ('serviceWorker' in navigator) {
     // Ожидаем загрузки окна для регистрации SW
     window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+      const swUrl = '/service-worker.js';
 
       navigator.serviceWorker
         .register(swUrl)
