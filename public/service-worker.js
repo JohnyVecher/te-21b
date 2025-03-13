@@ -1,11 +1,6 @@
-// src/service-worker.js
-
 /* eslint-disable no-restricted-globals */  
 
-import { clientsClaim } from 'workbox-core';
-import { precacheAndRoute, cleanupOutdatedCaches } from 'workbox-precaching';
-import { registerRoute } from 'workbox-routing';
-import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+console.log("🔧 Service Worker загружен!");
 
 // Загружаем Firebase SDK
 importScripts("https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js");
@@ -33,66 +28,24 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(self.clients.claim());
 });
 
+// Убираем дублирование уведомлений
+messaging.onMessage(() => {
+  console.log("🔔 Получено foreground уведомление (вкладка активна)");
+});
+
 messaging.onBackgroundMessage((payload) => {
   console.log("📩 Получено фоновое уведомление:", payload);
-  self.registration.showNotification(payload.notification.title, {
-    body: payload.notification.body,
+
+  // Проверяем, есть ли уже уведомление с таким текстом
+  self.registration.getNotifications().then((existingNotifications) => {
+    const duplicate = existingNotifications.some((n) => n.body === payload.notification.body);
+    
+    if (!duplicate) {
+      self.registration.showNotification(payload.notification.title, {
+        body: payload.notification.body,
+      });
+    } else {
+      console.log("⚠️ Дубликат уведомления, пропускаем...");
+    }
   });
-});
-
-
-// Принудительная активация нового Service Worker
-clientsClaim();
-
-// Заранее кешируем ресурсы
-precacheAndRoute(self.__WB_MANIFEST || []);
-
-// Очищаем старые кеши
-cleanupOutdatedCaches();
-
-// Кешируем JS и CSS
-registerRoute(
-  ({ request }) => request.destination === 'style' || request.destination === 'script',
-  new StaleWhileRevalidate({
-    cacheName: 'static-resources',
-  })
-);
-
-// Кешируем изображения
-registerRoute(
-  ({ request }) => request.destination === 'image',
-  new CacheFirst({
-    cacheName: 'images',
-  })
-);
-
-// Обрабатываем сообщения для немедленной активации нового SW
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-});
-
-// Устанавливаем SW и кешируем ресурсы
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open('static-cache-v1').then((cache) => {
-      return cache.addAll([
-        '/',
-        '/index.html',
-        '/icons/icon-192x192.png',
-        '/icons/icon-512x512.png'
-      ]);
-    })
-  );
-  self.skipWaiting();
-});
-
-// Обрабатываем запросы
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      return cachedResponse || fetch(event.request);
-    })
-  );
 });
