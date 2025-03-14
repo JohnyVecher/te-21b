@@ -56,7 +56,7 @@ const Calendar = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [currentWeek, setCurrentWeek] = useState(startOfWeek(new Date(), { locale: ru }));
   const [selectedDay, setSelectedDay] = useState(null);
-  const [selectedMobileDay, setSelectedMobileDay] = useState(currentWeek);
+  const [selectedMobileDay, setSelectedMobileDay] = useState(new Date());
   const [currentWeekNumber, setCurrentWeekNumber] = useState(
     differenceInWeeks(currentWeek, startDate) + 1
   );
