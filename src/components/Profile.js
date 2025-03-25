@@ -1,90 +1,72 @@
-import React, { useState, useEffect } from "react";
+import { supabase } from "./supabaseClient";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Profile.css";
-import studentImage from "./student.png";
-import checkmark from "./galka.png";
-import { requestPermission } from "./firebase"; // Импорт функции подписки
+import avatar from "./student.png"; // Путь к аватарке
 
 const Profile = () => {
   const navigate = useNavigate();
-  const [selectedGroup, setSelectedGroup] = useState("");
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [subscribed, setSubscribed] = useState(false);
+  const [user, setUser] = useState(null);
+  const [profile, setProfile] = useState({ firstName: "", lastName: "", group: "" });
 
   useEffect(() => {
-    const savedGroup = localStorage.getItem("selectedGroup");
-    if (savedGroup) {
-      setSelectedGroup(savedGroup);
-    }
-  }, []);
-
-  const handleSelectGroup = (group) => {
-    localStorage.setItem("selectedGroup", group);
-    setSelectedGroup(group);
-    setMenuOpen(false);
-  };
-
-  // Функция подписки на уведомления с передачей группы
-  const handleSubscribe = async () => {
-    if (!selectedGroup) {
-      alert("Выберите группу перед подпиской!");
-      return;
-    }
-
-    try {
-      const token = await requestPermission();
-      if (!token) {
-        alert("Не удалось получить токен уведомлений");
-        return;
+    const fetchUser = async () => {
+      const { data: userData } = await supabase.auth.getUser();
+      if (userData?.user) {
+        setUser(userData.user);
+        fetchProfile(userData.user.id);
+      } else {
+        navigate("/login");
       }
+    };
 
-     
-      await fetch("https://backend-schedule-b6vy.onrender.com/api/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ group: selectedGroup, token })
-      });
+    const fetchProfile = async (userId) => {
+      const { data, error } = await supabase
+        .from("profiles")
+        .select("StudentFirstN, StudentSecondN, group")
+        .eq("id", userId)
+        .single();
 
-      setSubscribed(true);
-      alert("Вы успешно подписались на уведомления!");
-    } catch (err) {
-      console.error("Ошибка подписки:", err);
-    }
+      if (!error && data) {
+        setProfile({
+          firstName: data.StudentFirstN || "Неизвестно",
+          lastName: data.StudentSecondN || "Неизвестно",
+          group: data.group || "Не указана",
+        });
+      }
+    };
+
+    fetchUser();
+  }, [navigate]);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    navigate("/auth");
   };
+
+  if (!user) return <p>Загрузка...</p>;
 
   return (
     <div className="profile-container1">
       <div className="profile-header1">
-        <div className="profile-circle"></div>
-        <img src={studentImage} alt="User" className="profile-image" />
-        <h2 className="profile-title">Личный кабинет</h2>
+        <img src={avatar} alt="Аватар" className="profile-image" />
+        <h2 className="profile-title">{profile.lastName} {profile.firstName}</h2>
       </div>
 
       <div className="Viktor">
         <div className="profile-card">
-          <p className="profile-label">Выбрана группа:</p>
-          <button className="profile-group-btn" onClick={() => setMenuOpen(!menuOpen)}>
-            {selectedGroup || "Выбрать группу"}
-          </button>
-          {menuOpen && (
-            <div className="dropdown-menu">
-              {["TE31B", "TE21B"].map((group) => (
-                <div key={group} className="dropdown-item" onClick={() => handleSelectGroup(group)}>
-                  {group}
-                  {selectedGroup === group && <img src={checkmark} alt="✔" className="checkmark" />}
-                </div>
-              ))}
-            </div>
-          )}
+          <p className="profile-label">Email:</p>
+          <p className="profile-email">{user.email}</p>
         </div>
 
-        <div className="subscribe-btn">
-          <button onClick={handleSubscribe} disabled={subscribed}>
-            {subscribed ? "Подписка активна" : "Подписаться на уведомления"}
-          </button>
+        <div className="profile-card">
+          <p className="profile-label">Группа:</p>
+          <p className="profile-group">{profile.group}</p>
         </div>
+
+        <button className="exit-button" onClick={handleLogout}>
+          Выйти
+        </button>
       </div>
     </div>
   );

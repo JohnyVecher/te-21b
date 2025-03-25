@@ -5,12 +5,15 @@ import TE21B from './components/TE21B';
 import TE31B from './components/TE31B';
 import Portfolio from './components/Portfolio';
 import Profile from "./components/Profile";
-import RedirectToSchedule from "./RedirectToSchedule";
+import RedirectToSchedule from "./components/RedirectToSchedule";
 import BottomNav from "./components/BottomNav";
+import Register from "./components/Register";
+import Login from "./components/Login";
 import ProfileSelection from './components/ProfileSelection';
 import CourseSelectionTE from './components/CourseSelectionTE';
 import GroupSelectionTE3 from './components/GroupSelectionTE3';
 import GroupSelectionTE2 from './components/GroupSelectionTE2';
+import AuthPage from './components/auth';
 import './App.css';
 import logo from './logo.png';
 import night from './night.png';
@@ -122,7 +125,10 @@ const App = () => {
             <Route path="/group-selectionte3" element={<GroupSelectionTE3 />} />
             <Route path="/TE21B" element={<TE21B />} />
             <Route path="/portfolio" element={<Portfolio />} />
+			<Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
 			<Route path="/Profile" element={<Profile />} />
+			<Route path="/auth" element={<AuthPage/>} />
 			<Route path="/RedirectToSchedule" element={<RedirectToSchedule />} />
           </Routes>
 		  <BottomNav /> {/* Добавляем нижнюю навигацию */}
